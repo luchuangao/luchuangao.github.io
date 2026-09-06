@@ -1,231 +1,181 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
+<!doctype html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>觉察 App 隐私政策</title>
-
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-        background: #f7f7f8;
-        font-family:
-            -apple-system,
-            BlinkMacSystemFont,
-            "Helvetica Neue",
-            "PingFang SC",
-            "Microsoft YaHei",
-            Arial,
-            sans-serif;
-        color: #333;
-        line-height: 1.8;
-    }
-
-    .container {
-        max-width: 800px;
-        margin: 40px auto;
-        background: white;
-        padding: 32px;
-        border-radius: 20px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    }
-
-    h1 {
-        text-align: center;
-        color: #111;
-        font-size: 28px;
-    }
-
-    h2 {
-        margin-top: 32px;
-        font-size: 20px;
-        color: #111;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    ul {
-        padding-left: 22px;
-    }
-
-    .update {
-        text-align:center;
-        color:#888;
-        font-size:14px;
-        margin-bottom:30px;
-    }
-
-    .footer {
-        margin-top:40px;
-        text-align:center;
-        color:#999;
-        font-size:14px;
-    }
-
-</style>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aware privacy policy, data practices, permissions, and contact information.">
+  <title>Aware · Privacy Policy</title>
+  <style>
+    :root{color-scheme:light;--ink:#102746;--muted:#60748e;--blue:#0e71d1;--line:#d9e8f5}
+    *{box-sizing:border-box}
+    body{margin:0;background:#f7fbff;color:var(--ink);font:16px/1.7 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Arial,sans-serif}
+    .wrap{max-width:760px;margin:auto;padding:28px 20px 64px}
+    .brand{display:flex;align-items:center;gap:12px;margin:8px 0 42px}
+    .mark{width:42px;height:42px;border-radius:13px;background:linear-gradient(145deg,#8bd3ff,#0565c8);display:grid;place-items:center;box-shadow:0 8px 20px #0e71d133}
+    .mark:before{content:"";width:18px;height:25px;background:linear-gradient(160deg,#fff,#c8edff);clip-path:polygon(50% 0,100% 38%,77% 100%,23% 100%,0 38%)}
+    h1{font-size:24px;margin:0;letter-spacing:-.02em}
+    .language-switch{margin-left:auto;display:flex;gap:2px;padding:3px;background:#e5f1fb;border-radius:12px}
+    .language-switch button{border:0;border-radius:9px;background:transparent;color:var(--muted);font:600 13px inherit;padding:7px 9px;cursor:pointer}
+    .language-switch button[aria-pressed="true"]{background:#fff;color:var(--blue);box-shadow:0 2px 7px #48759b1a}
+    .hero{background:linear-gradient(135deg,#e9f7ff,#d7edff);border:1px solid var(--line);border-radius:28px;padding:28px;margin-bottom:22px}
+    .hero h2{font-size:32px;line-height:1.25;margin:0 0 8px;letter-spacing:-.025em}
+    .hero p{margin:0;color:var(--muted)}
+    .update{margin-top:16px;color:var(--muted);font-size:14px}
+    section{background:#fff;border:1px solid var(--line);border-radius:22px;padding:22px 24px;margin:16px 0;box-shadow:0 8px 24px #48759b0d}
+    h3{font-size:19px;margin:0 0 12px;letter-spacing:-.01em}
+    p,li{color:var(--muted)}
+    ul{margin:10px 0 0;padding-left:22px}
+    li{margin:8px 0}
+    strong{color:var(--ink)}
+    .footer{margin-top:28px;text-align:center;color:#8091a4;font-size:13px}
+    :focus-visible{outline:3px solid #67b4f5;outline-offset:3px}
+    @media (max-width:520px){.wrap{padding:22px 16px 48px}.brand{margin-bottom:30px}.hero{padding:24px 20px}.hero h2{font-size:28px}section{padding:20px}.language-switch button{padding:6px 7px}}
+  </style>
 </head>
-
-
 <body>
+<main class="wrap">
+  <header class="brand">
+    <span class="mark" aria-hidden="true"></span>
+    <h1 data-i18n="brand">Aware · Privacy</h1>
+    <div class="language-switch" role="group" aria-label="Language">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+    </div>
+  </header>
 
-<div class="container">
+  <div class="hero">
+    <h2 data-i18n="title">Aware Privacy Policy</h2>
+    <p data-i18n="intro">We respect your privacy and are committed to protecting your personal information. This policy explains what information Aware may access, how it is used, and how it is protected.</p>
+    <div class="update"><span data-i18n="updatedLabel">Last updated:</span> <time datetime="2026-08-02">2026-08-02</time></div>
+  </div>
 
-<h1>觉察 App 隐私政策</h1>
+  <section>
+    <h3 data-i18n="s1Title">1. Information we access</h3>
+    <p data-i18n="s1Body">To provide digital wellbeing tools and usage insights, Aware may access the following information:</p>
+    <ul>
+      <li data-i18n="s1a"><strong>Screen Time data:</strong> used to help you understand daily app usage and build healthier digital habits.</li>
+      <li data-i18n="s1b"><strong>Device information:</strong> such as device model and operating system version, used to improve compatibility and service stability.</li>
+      <li data-i18n="s1c"><strong>App usage statistics:</strong> used to create your personal usage summaries and reports.</li>
+    </ul>
+  </section>
 
-<div class="update">
-更新日期：2026年8月2日
-</div>
+  <section>
+    <h3 data-i18n="s2Title">2. How we use your information</h3>
+    <p data-i18n="s2Body">We use the information we access only for the following purposes:</p>
+    <ul>
+      <li data-i18n="s2a">Showing your digital wellbeing summaries;</li>
+      <li data-i18n="s2b">Helping you reduce unintentional phone use;</li>
+      <li data-i18n="s2c">Improving app features and user experience;</li>
+      <li data-i18n="s2d">Improving app stability and security.</li>
+    </ul>
+  </section>
 
+  <section>
+    <h3 data-i18n="s3Title">3. Screen Time permissions</h3>
+    <p data-i18n="s3a">Aware uses Apple’s Family Controls and Device Activity APIs to help you manage device usage time.</p>
+    <p data-i18n="s3b">The related data is managed by Apple’s system permissions and operates under Apple’s platform security mechanisms. We do not read your chats, photos, contacts, passwords, or other private content.</p>
+  </section>
 
-<p>
-感谢您使用「觉察」App。
-我们重视您的隐私，并致力于保护您的个人信息安全。
-本隐私政策用于说明我们如何收集、使用和保护您的信息。
-</p>
+  <section>
+    <h3 data-i18n="s4Title">4. Storage and security</h3>
+    <p data-i18n="s4Body">Some of your data may be stored only on your device. We use reasonable technical safeguards to protect information from unauthorized access, disclosure, or alteration.</p>
+  </section>
 
+  <section>
+    <h3 data-i18n="s5Title">5. Information sharing</h3>
+    <p data-i18n="s5Body">We do not sell, rent, or trade your personal information with third parties. We will not proactively share your data except when:</p>
+    <ul>
+      <li data-i18n="s5a">You have given us clear authorization;</li>
+      <li data-i18n="s5b">Required by applicable laws or regulations;</li>
+      <li data-i18n="s5c">Necessary to protect the safety of users or the public.</li>
+    </ul>
+  </section>
 
-<h2>一、我们收集的信息</h2>
+  <section>
+    <h3 data-i18n="s6Title">6. Third-party services</h3>
+    <p data-i18n="s6a">To improve app stability, we may use third-party services in the future, such as:</p>
+    <ul>
+      <li data-i18n="s6b">App crash reporting services;</li>
+      <li data-i18n="s6c">Analytics services;</li>
+      <li data-i18n="s6d">Official Apple services.</li>
+    </ul>
+    <p data-i18n="s6e">These third-party services are subject to their own privacy policies.</p>
+  </section>
 
-<p>
-为了提供数字健康管理和使用习惯分析功能，「觉察」可能需要访问以下信息：
-</p>
+  <section>
+    <h3 data-i18n="s7Title">7. Your choices and rights</h3>
+    <p data-i18n="s7Body">You can at any time:</p>
+    <ul>
+      <li data-i18n="s7a">Turn off permissions related to the app;</li>
+      <li data-i18n="s7b">Delete the app and data stored locally;</li>
+      <li data-i18n="s7c">Contact us with privacy-related questions.</li>
+    </ul>
+  </section>
 
-<ul>
-<li>
-<strong>屏幕使用时间数据：</strong>
-用于帮助您了解每日 App 使用情况、建立健康的数字使用习惯。
-</li>
+  <section>
+    <h3 data-i18n="s8Title">8. Children’s privacy</h3>
+    <p data-i18n="s8Body">Aware does not knowingly collect children’s personal identity information. If you believe we have unintentionally collected such information, please contact us so we can address it.</p>
+  </section>
 
-<li>
-<strong>设备信息：</strong>
-例如设备型号、系统版本，用于优化应用兼容性和提升服务稳定性。
-</li>
+  <section>
+    <h3 data-i18n="s9Title">9. Policy updates</h3>
+    <p data-i18n="s9Body">We may update this policy when product features change or when required by law. Any updated policy will be published on this page.</p>
+  </section>
 
-<li>
-<strong>应用使用统计信息：</strong>
-用于生成个人使用分析报告。
-</li>
+  <section>
+    <h3 data-i18n="s10Title">10. Contact us</h3>
+    <p data-i18n="s10Body">If you have questions about this privacy policy, please contact us at:</p>
+    <p><a href="mailto:luchuangao@126.com">luchuangao@126.com</a></p>
+  </section>
 
-</ul>
-
-
-<h2>二、我们如何使用您的信息</h2>
-
-<p>
-我们仅会将收集的信息用于以下目的：
-</p>
-
-<ul>
-<li>展示您的数字生活分析报告；</li>
-<li>帮助您减少无意识使用手机的行为；</li>
-<li>优化 App 功能和用户体验；</li>
-<li>提升应用稳定性和安全性。</li>
-</ul>
-
-
-<h2>三、关于屏幕使用时间权限</h2>
-
-<p>
-「觉察」使用 Apple 提供的 Family Controls 和 Device Activity API
-来帮助用户管理设备使用时间。
-</p>
-
-<p>
-相关数据由 Apple 系统权限管理，并按照 Apple 平台安全机制运行。
-我们不会读取您的聊天内容、照片、联系人、密码或其他私人数据。
-</p>
-
-
-<h2>四、数据存储与安全</h2>
-
-<p>
-您的部分数据可能仅存储在您的设备本地。
-我们采取合理的技术措施保护您的信息安全，防止未经授权的访问、泄露或修改。
-</p>
-
-
-<h2>五、信息共享</h2>
-
-<p>
-我们不会出售、出租或向第三方交易您的个人信息。
-除以下情况外，我们不会主动共享您的数据：
-</p>
-
-<ul>
-<li>获得您的明确授权；</li>
-<li>法律法规要求；</li>
-<li>保护用户或公众安全所必须。</li>
-</ul>
-
-
-<h2>六、第三方服务</h2>
-
-<p>
-为了提升应用稳定性，我们未来可能使用第三方服务，例如：
-</p>
-
-<ul>
-<li>应用崩溃分析服务；</li>
-<li>统计分析服务；</li>
-<li>Apple 官方服务。</li>
-</ul>
-
-<p>
-这些第三方服务均需要遵守其自身隐私政策。
-</p>
-
-
-<h2>七、您的权利</h2>
-
-<p>
-您可以随时：
-</p>
-
-<ul>
-<li>关闭应用相关权限；</li>
-<li>删除应用及本地保存的数据；</li>
-<li>联系我们咨询隐私相关问题。</li>
-</ul>
-
-
-<h2>八、儿童隐私保护</h2>
-
-<p>
-「觉察」不会主动收集儿童个人身份信息。
-如果您认为我们无意中收集了相关信息，请联系我们进行处理。
-</p>
-
-
-<h2>九、政策更新</h2>
-
-<p>
-我们可能根据产品功能变化或法律要求更新本隐私政策。
-更新后的政策将在本页面发布。
-</p>
-
-
-<h2>十、联系我们</h2>
-
-<p>
-如果您对本隐私政策有任何问题，请通过以下方式联系我们：
-</p>
-
-<p>
-邮箱：luchuangao@126.com
-</p>
-
-
-<div class="footer">
-© 2026 觉察 App. All Rights Reserved.
-</div>
-
-
-</div>
-
+  <div class="footer" data-i18n="footer">© 2026 Aware. All rights reserved.</div>
+</main>
+<script>
+  const copy = {
+    en: {
+      brand:'Aware · Privacy', title:'Aware Privacy Policy', intro:'We respect your privacy and are committed to protecting your personal information. This policy explains what information Aware may access, how it is used, and how it is protected.', updatedLabel:'Last updated:',
+      s1Title:'1. Information we access', s1Body:'To provide digital wellbeing tools and usage insights, Aware may access the following information:', s1a:'Screen Time data: used to help you understand daily app usage and build healthier digital habits.', s1b:'Device information: such as device model and operating system version, used to improve compatibility and service stability.', s1c:'App usage statistics: used to create your personal usage summaries and reports.',
+      s2Title:'2. How we use your information', s2Body:'We use the information we access only for the following purposes:', s2a:'Showing your digital wellbeing summaries;', s2b:'Helping you reduce unintentional phone use;', s2c:'Improving app features and user experience;', s2d:'Improving app stability and security.',
+      s3Title:'3. Screen Time permissions', s3a:'Aware uses Apple’s Family Controls and Device Activity APIs to help you manage device usage time.', s3b:'The related data is managed by Apple’s system permissions and operates under Apple’s platform security mechanisms. We do not read your chats, photos, contacts, passwords, or other private content.',
+      s4Title:'4. Storage and security', s4Body:'Some of your data may be stored only on your device. We use reasonable technical safeguards to protect information from unauthorized access, disclosure, or alteration.',
+      s5Title:'5. Information sharing', s5Body:'We do not sell, rent, or trade your personal information with third parties. We will not proactively share your data except when:', s5a:'You have given us clear authorization;', s5b:'Required by applicable laws or regulations;', s5c:'Necessary to protect the safety of users or the public.',
+      s6Title:'6. Third-party services', s6a:'To improve app stability, we may use third-party services in the future, such as:', s6b:'App crash reporting services;', s6c:'Analytics services;', s6d:'Official Apple services.', s6e:'These third-party services are subject to their own privacy policies.',
+      s7Title:'7. Your choices and rights', s7Body:'You can at any time:', s7a:'Turn off permissions related to the app;', s7b:'Delete the app and data stored locally;', s7c:'Contact us with privacy-related questions.',
+      s8Title:'8. Children’s privacy', s8Body:'Aware does not knowingly collect children’s personal identity information. If you believe we have unintentionally collected such information, please contact us so we can address it.',
+      s9Title:'9. Policy updates', s9Body:'We may update this policy when product features change or when required by law. Any updated policy will be published on this page.',
+      s10Title:'10. Contact us', s10Body:'If you have questions about this privacy policy, please contact us at:', footer:'© 2026 Aware. All rights reserved.'
+    },
+    zh: {
+      brand:'觉察 · 隐私协议', title:'觉察 App 隐私政策', intro:'感谢您使用「觉察」App。我们重视您的隐私，并致力于保护您的个人信息安全。本隐私政策用于说明觉察可能访问哪些信息、如何使用这些信息，以及我们如何保护这些信息。', updatedLabel:'更新日期：',
+      s1Title:'一、我们访问的信息', s1Body:'为了提供数字健康管理和使用习惯分析功能，「觉察」可能需要访问以下信息：', s1a:'屏幕使用时间数据：用于帮助您了解每日 App 使用情况，建立健康的数字使用习惯。', s1b:'设备信息：例如设备型号、系统版本，用于优化应用兼容性和提升服务稳定性。', s1c:'应用使用统计信息：用于生成个人使用分析报告。',
+      s2Title:'二、我们如何使用您的信息', s2Body:'我们仅会将访问到的信息用于以下目的：', s2a:'展示您的数字生活分析报告；', s2b:'帮助您减少无意识使用手机的行为；', s2c:'优化 App 功能和用户体验；', s2d:'提升应用稳定性和安全性。',
+      s3Title:'三、关于屏幕使用时间权限', s3a:'「觉察」使用 Apple 提供的 Family Controls 和 Device Activity API 来帮助用户管理设备使用时间。', s3b:'相关数据由 Apple 系统权限管理，并按照 Apple 平台安全机制运行。我们不会读取您的聊天内容、照片、联系人、密码或其他私人数据。',
+      s4Title:'四、数据存储与安全', s4Body:'您的部分数据可能仅存储在您的设备本地。我们采取合理的技术措施保护您的信息安全，防止未经授权的访问、泄露或修改。',
+      s5Title:'五、信息共享', s5Body:'我们不会出售、出租或向第三方交易您的个人信息。除以下情况外，我们不会主动共享您的数据：', s5a:'获得您的明确授权；', s5b:'法律法规要求；', s5c:'保护用户或公众安全所必须。',
+      s6Title:'六、第三方服务', s6a:'为了提升应用稳定性，我们未来可能使用第三方服务，例如：', s6b:'应用崩溃分析服务；', s6c:'统计分析服务；', s6d:'Apple 官方服务。', s6e:'这些第三方服务均需要遵守其自身隐私政策。',
+      s7Title:'七、您的权利', s7Body:'您可以随时：', s7a:'关闭应用相关权限；', s7b:'删除应用及本地保存的数据；', s7c:'联系我们咨询隐私相关问题。',
+      s8Title:'八、儿童隐私保护', s8Body:'「觉察」不会主动收集儿童个人身份信息。如果您认为我们无意中收集了相关信息，请联系我们进行处理。',
+      s9Title:'九、政策更新', s9Body:'我们可能根据产品功能变化或法律要求更新本隐私政策。更新后的政策将在本页面发布。',
+      s10Title:'十、联系我们', s10Body:'如果您对本隐私政策有任何问题，请通过以下方式联系我们：', footer:'© 2026 觉察 App。保留所有权利。'
+    }
+  };
+  const languageKey = 'aware-support-language';
+  function setLanguage(language) {
+    const selected = copy[language] ? language : 'en';
+    document.documentElement.lang = selected === 'zh' ? 'zh-CN' : 'en';
+    document.title = selected === 'zh' ? '觉察｜隐私政策' : 'Aware · Privacy Policy';
+    document.querySelectorAll('[data-i18n]').forEach((element) => {
+      const value = copy[selected][element.dataset.i18n];
+      if (value) element.textContent = value;
+    });
+    document.querySelectorAll('[data-lang]').forEach((button) => button.setAttribute('aria-pressed', String(button.dataset.lang === selected)));
+    try { localStorage.setItem(languageKey, selected); } catch (_) {}
+  }
+  document.querySelectorAll('[data-lang]').forEach((button) => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
+  let initial = 'en';
+  try { initial = localStorage.getItem(languageKey) || initial; } catch (_) {}
+  try { if (!localStorage.getItem(languageKey) && navigator.language.toLowerCase().startsWith('zh')) initial = 'zh'; } catch (_) {}
+  setLanguage(initial);
+</script>
 </body>
 </html>
