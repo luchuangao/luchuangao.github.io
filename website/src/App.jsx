@@ -39,8 +39,7 @@ export function App() {
         <header className="site-header">
           <nav className="navigation" aria-label="主导航">
             <a className="wordmark" href="#home" aria-label="luchuangao 首页">
-              <img className="brand-mark" src="./assets/luchuangao-logo.png" alt="" width="42" height="42" />
-              <span className="brand-name">luchuan<span>gao</span></span>
+              <img className="brand-logo" src="./assets/luchuangao-atelier-logo.png" alt="" width="210" height="44" />
             </a>
             <a href="#products">产品</a>
             <button type="button" onClick={() => setActive('about')}>关于我</button>
