@@ -22,7 +22,11 @@ button { border: 0; }
 .navigation > a, .navigation > button { padding-block: 12px; margin-block: -12px; }
 .navigation > a:not(.wordmark), .navigation button { color: #58627a; }
 .navigation button { padding: 12px 0; background: none; }
-.navigation .wordmark { font-family: Arial, sans-serif; font-size: 24px; letter-spacing: -.8px; font-weight: 700; }
+.navigation .wordmark { display: inline-flex; align-items: center; gap: 8px; font-family: Arial, sans-serif; font-size: 23px; letter-spacing: -.85px; font-weight: 700; color: #080d19; }
+.brand-mark { display: block; width: 42px; height: 42px; flex: none; object-fit: contain; }
+.brand-name { line-height: 1; }
+.brand-name > span { color: var(--blue); }
+.navigation .wordmark:hover { color: #080d19; }
 .navigation > a:hover, .navigation button:hover { color: var(--blue); }
 .hero { position: relative; isolation: isolate; max-width: 1440px; min-height: 568px; margin: 0 auto; padding: 91px 6.1% 85px; }
 .hero-copy { position: relative; z-index: 1; width: max-content; max-width: 62%; }
@@ -71,8 +75,9 @@ h1 span { display: block; white-space: nowrap; }
 }
 @media (max-width: 760px) {
   .site-header { height: 99px; padding: 18px 16px 0; }
-  .navigation { width: auto; max-width: 100%; gap: 20px; padding: 13px 21px; }
-  .navigation .wordmark { font-size: 20px; letter-spacing: -.6px; }
+  .navigation { width: auto; max-width: 100%; gap: 16px; padding: 11px 16px; }
+  .navigation .wordmark { font-size: 20px; letter-spacing: -.65px; gap: 5px; }
+  .brand-mark { width: 34px; height: 34px; }
   .navigation a, .navigation button { font-size: 14px; }
   .hero { display: flex; flex-direction: column; min-height: 0; padding: 40px 24px 22px; }
   .hero-copy { width: 100%; max-width: 100%; }
@@ -94,8 +99,10 @@ h1 span { display: block; white-space: nowrap; }
   .dialog-inner h2 { font-size: 25px; }
 }
 @media (max-width: 370px) {
-  .navigation { gap: 10px; padding-inline: 12px; }
-  .navigation .wordmark { font-size: 18px; }
+  .navigation { gap: 9px; padding-inline: 10px; }
+  .navigation a, .navigation button { font-size: 13px; }
+  .navigation .wordmark { font-size: 17px; gap: 3px; letter-spacing: -.55px; }
+  .brand-mark { width: 30px; height: 30px; }
   .hero { padding-inline: 20px; }
   h1 { font-size: 33px; }
   .hero-copy > p { font-size: 16px; }
