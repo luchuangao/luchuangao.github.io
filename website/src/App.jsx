@@ -2,6 +2,34 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowRightIcon, ArrowUpRightIcon, XIcon, GithubLogoIcon, DownloadSimpleIcon, CopyIcon } from '@phosphor-icons/react';
 import '@fontsource-variable/noto-sans-sc';
 
+const callHome = {
+  id: 'callhome',
+  type: 'app',
+  status: 'released',
+  name: '常回家看看：家的声音',
+  shortName: '常回家看看',
+  subtitle: '家的声音',
+  image: 'callhome-icon.png',
+  platforms: 'iPhone · iPad',
+  tagline: '让关心，落到真实的一天里。',
+  description: ['轻轻提醒你联系家人，也记下每天的照顾。', '一键拨号、吃药与过期提醒，还有给家人的小惊喜。'],
+  highlights: ['家人联系提醒', '吃药与过期提醒', '家庭惊喜转盘'],
+  detail: '为家人设置合适的联系节奏，到点收到轻柔提醒；记录吃药与药品、食品的过期日期，还能用家庭惊喜转盘，为下一件暖心小事做个决定。电话由系统拨号界面发起，提醒使用 iOS 本地通知。支持中文与英文，数据保存在设备本地。',
+  download: 'https://apps.apple.com/hk/app/%E5%B8%B8%E5%9B%9E%E5%AE%B6%E7%9C%8B%E7%9C%8B-%E5%AE%B6%E7%9A%84%E5%A3%B0%E9%9F%B3/id6788785708',
+  support: './callhome/support.html',
+  privacy: './callhome/privacy.html',
+  features: [
+    ['联系家人', '为每位家人设定联系节奏和提醒时间，查看距离上次联系的天数，一键打开系统电话。'],
+    ['日常照顾', '记录每日吃药时间，以及药品、食品和其他物品的过期日期；可在 App 内更新服用或处理状态。'],
+    ['家庭惊喜', '把送礼物、发红包、陪伴家人等想法放进转盘，为下一件小事添一点乐趣。'],
+    ['本地与双语', '支持中文和英文。家人资料与照护记录保存在设备本地，提醒由 iOS 本地通知提供。'],
+  ],
+  screens: [
+    { image: 'callhome-care.png', width: 1242, height: 2688, alt: '常回家看看照顾页面，展示今日吃药与食品、药品过期提醒', caption: '把日常照顾记在心上' },
+    { image: 'callhome-surprise.png', width: 1242, height: 2688, alt: '常回家看看家庭惊喜转盘，包含礼物、红包和陪伴家人等选项', caption: '为家人选一件小惊喜' },
+  ],
+};
+
 const compound = {
   id: 'compound',
   type: 'app',
@@ -90,7 +118,7 @@ const xTracker = {
   screenNote: '实际插件界面 · Naval 公开推文，中文为展示译文。',
 };
 
-const releasedProducts = [compound, littlebird, xTracker];
+const releasedProducts = [callHome, compound, littlebird, xTracker];
 
 function DownloadLink({ product, className = 'primary-button' }) {
   if (product.installMethod === 'unpacked') return <a className={className} href={product.download} download>
