@@ -23,6 +23,25 @@ function AppStoreLink({ className = 'primary-button' }) {
   </a>;
 }
 
+function HeroProducts({ onSelect }) {
+  return <div className="hero-products" role="group" aria-label="产品速览">
+    {[compound, ...products].map(product => <button
+      className={`hero-product hero-product-${product.id}`}
+      key={product.id}
+      type="button"
+      aria-label={`了解${product.name}`}
+      aria-haspopup="dialog"
+      onClick={() => onSelect(product)}
+    >
+      <span className="hero-product-visual">
+        <img src={`./assets/${product.image}`} alt="" width="256" height="256" fetchPriority={product.id === 'compound' ? 'high' : 'auto'} />
+        <span className="hero-product-name">{product.id === 'compound' ? '复利计算器' : product.name}</span>
+        {product.id === 'compound' && <span className="hero-product-subtitle">时间的杠杆</span>}
+      </span>
+    </button>)}
+  </div>;
+}
+
 export function App() {
   const [active, setActive] = useState(null);
   const [filter, setFilter] = useState('all');
@@ -69,7 +88,7 @@ export function App() {
               <p>探索我正在打造的应用与小工具。</p>
               <a className="primary-button" href="#products">探索产品<ArrowRightIcon size={24} weight="regular" aria-hidden="true" /></a>
             </div>
-            <img className="hero-art" src="./assets/hero.png" alt="专注、笔记和图片工具的蓝色图标环绕排列" width="800" height="700" fetchPriority="high" />
+            <HeroProducts onSelect={setActive} />
           </section>
           <section className="products-section" id="products" aria-labelledby="products-title">
             <div className="section-heading"><h2 id="products-title">我的产品</h2><p>从已经发布的 App，到正在探索的想法。</p></div>
