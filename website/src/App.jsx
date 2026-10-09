@@ -10,14 +10,62 @@ const products = [
 
 const compound = {
   id: 'compound',
+  status: 'released',
   name: '复利计算器：时间的杠杆',
+  shortName: '复利计算器',
+  subtitle: '时间的杠杆',
   image: 'compoundly-icon.png',
+  platforms: 'iPhone · iPad',
+  tagline: '看见时间的力量。',
+  description: ['算清复利与定投，探索财富和认知实验。', '让长期思考，变得直观。'],
+  highlights: ['复利计算', '长期规划', '互动实验'],
   detail: '把本金、收益率与时间放进计算，直观看见长期增长。通过互动实验，理解财富、风险与认知。',
   download: 'https://apps.apple.com/cn/app/id6787851299',
+  support: './compoundly/support.html',
+  privacy: './compoundly/privacy.html',
+  note: '计算与实验仅供学习，不构成投资建议。',
+  features: [
+    ['复利与定投', '比较投入、收益和时间的关系。'],
+    ['长期规划', '从目标和退休需求出发，寻找自己的计划。'],
+    ['财富与认知实验', '亲手改变参数，观察不同选择的结果。'],
+  ],
+  screens: [
+    { image: 'compoundly-home.jpg', width: 600, height: 1304, alt: '复利计算页面，展示预计金额、增长倍数和时间轨迹', caption: '把时间放进计算' },
+    { image: 'compoundly-lab.jpg', width: 600, height: 1301, alt: '财富交换互动实验，展示参与者的财富分布和差距指数', caption: '在实验中理解变化' },
+  ],
 };
 
-function AppStoreLink({ className = 'primary-button' }) {
-  return <a className={className} href={compound.download} target="_blank" rel="noopener noreferrer">
+const littlebird = {
+  id: 'littlebird',
+  status: 'released',
+  name: '小小鸟音乐 · Little Bird Music',
+  shortName: '小小鸟音乐',
+  subtitle: '本地音乐，私密聆听',
+  image: 'littlebird-icon.png',
+  platforms: 'iPhone',
+  tagline: '让音乐，陪伴每一天。',
+  description: ['导入喜欢的音乐，整理属于自己的乐库。', '跟随同步歌词，轻松享受每一首歌。'],
+  highlights: ['本地音乐', '同步歌词', '收藏与歌单'],
+  detail: '一款轻巧的本地音乐播放器。将自己的音乐带进 iPhone，用清晰的乐库、同步歌词与便捷的播放控制，享受私密的聆听时光。',
+  download: 'https://apps.apple.com/cn/app/id6807464230',
+  support: './littlebird-support/index.html',
+  privacy: './littlebird-support/privacy.html',
+  features: [
+    ['导入与整理', '支持 MP3、M4A、MP4 等文件，按歌曲、歌手、歌单与收藏管理音乐。'],
+    ['同步歌词', '跟随播放高亮歌词，点击歌词即可跳转到对应位置。'],
+    ['随时掌控播放', '迷你播放器、完整播放页、锁屏与灵动岛，方便切歌和控制播放。'],
+    ['本地聆听', '音乐文件与播放设置保存在设备上，支持中文与英文界面。'],
+  ],
+  screens: [
+    { image: 'littlebird-home.png', width: 1242, height: 2688, alt: '小小鸟音乐首页，展示本地歌曲列表、搜索与迷你播放器', caption: '收藏自己的音乐' },
+    { image: 'littlebird-player.png', width: 1242, height: 2688, alt: '小小鸟音乐播放页，展示小鸟封面、同步歌词与播放控制', caption: '跟随歌词，享受聆听' },
+  ],
+};
+
+const releasedProducts = [compound, littlebird];
+
+function AppStoreLink({ product, className = 'primary-button' }) {
+  return <a className={className} href={product.download} target="_blank" rel="noopener noreferrer">
     App Store 下载<ArrowUpRightIcon size={20} aria-hidden="true" />
     <span className="sr-only">（在新标签页打开）</span>
   </a>;
@@ -25,7 +73,7 @@ function AppStoreLink({ className = 'primary-button' }) {
 
 function HeroProducts({ onSelect }) {
   return <div className="hero-products" role="group" aria-label="产品速览">
-    {[compound, ...products].map(product => <button
+    {[...releasedProducts, ...products].map(product => <button
       className={`hero-product hero-product-${product.id}`}
       key={product.id}
       type="button"
@@ -35,11 +83,36 @@ function HeroProducts({ onSelect }) {
     >
       <span className="hero-product-visual">
         <img src={`./assets/${product.image}`} alt="" width="256" height="256" fetchPriority={product.id === 'compound' ? 'high' : 'auto'} />
-        <span className="hero-product-name">{product.id === 'compound' ? '复利计算器' : product.name}</span>
-        {product.id === 'compound' && <span className="hero-product-subtitle">时间的杠杆</span>}
+        <span className="hero-product-name">{product.shortName || product.name}</span>
+        {product.subtitle && <span className="hero-product-subtitle">{product.subtitle}</span>}
       </span>
     </button>)}
   </div>;
+}
+
+function FeaturedProduct({ product, onSelect }) {
+  return <article className="featured-product" aria-labelledby={`${product.id}-title`}>
+    <div className="featured-copy">
+      <div className="product-status"><span className="release-status">已在 App Store 上架</span><span>{product.platforms}</span></div>
+      <div className="featured-identity">
+        <img src={`./assets/${product.image}`} width="72" height="72" alt="" loading="lazy" />
+        <h3 id={`${product.id}-title`}>{product.shortName}<span>{product.subtitle}</span></h3>
+      </div>
+      <p className="featured-tagline">{product.tagline}</p>
+      <p className="featured-description">{product.description[0]}<br />{product.description[1]}</p>
+      <ul className="product-highlights" aria-label="产品内容">{product.highlights.map(item => <li key={item}>{item}</li>)}</ul>
+      <div className="featured-actions">
+        <button className="secondary-button" type="button" onClick={() => onSelect(product)}>了解更多<ArrowRightIcon size={20} aria-hidden="true" /></button>
+        <AppStoreLink product={product} />
+      </div>
+    </div>
+    <div className="product-screens" aria-label={`${product.shortName}真实界面`}>
+      {product.screens.map(screen => <figure key={screen.image}>
+        <img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" />
+        <figcaption>{screen.caption}</figcaption>
+      </figure>)}
+    </div>
+  </article>;
 }
 
 export function App() {
@@ -93,30 +166,13 @@ export function App() {
           <section className="products-section" id="products" aria-labelledby="products-title">
             <div className="section-heading"><h2 id="products-title">我的产品</h2><p>从已经发布的 App，到正在探索的想法。</p></div>
             <div className="product-filters" role="group" aria-label="按产品状态筛选">
-              {[['all', '全部', 4], ['released', '已发布', 1], ['examples', '设计示例', 3]].map(([id, label, count]) =>
+              {[['all', '全部', releasedProducts.length + products.length], ['released', '已发布', releasedProducts.length], ['examples', '设计示例', products.length]].map(([id, label, count]) =>
                 <button key={id} type="button" aria-pressed={filter === id} onClick={() => setFilter(id)}>{label}<span>{count}</span></button>
               )}
             </div>
-            {filter !== 'examples' && <article className="featured-product" aria-labelledby="compound-title">
-              <div className="featured-copy">
-                <div className="product-status"><span className="release-status">已在 App Store 上架</span><span>iPhone · iPad</span></div>
-                <div className="featured-identity">
-                  <img src="./assets/compoundly-icon.png" width="72" height="72" alt="" loading="lazy" />
-                  <h3 id="compound-title">复利计算器<span>时间的杠杆</span></h3>
-                </div>
-                <p className="featured-tagline">看见时间的力量。</p>
-                <p className="featured-description">算清复利与定投，探索财富和认知实验。<br />让长期思考，变得直观。</p>
-                <ul className="product-highlights" aria-label="产品内容"><li>复利计算</li><li>长期规划</li><li>互动实验</li></ul>
-                <div className="featured-actions">
-                  <button className="secondary-button" type="button" onClick={() => setActive(compound)}>了解更多<ArrowRightIcon size={20} aria-hidden="true" /></button>
-                  <AppStoreLink />
-                </div>
-              </div>
-              <div className="product-screens" aria-label="复利计算器真实界面">
-                <figure><img src="./assets/compoundly-home.jpg" alt="复利计算页面，展示预计金额、增长倍数和时间轨迹" width="600" height="1304" loading="lazy" /><figcaption>把时间放进计算</figcaption></figure>
-                <figure><img src="./assets/compoundly-lab.jpg" alt="财富交换互动实验，展示参与者的财富分布和差距指数" width="600" height="1301" loading="lazy" /><figcaption>在实验中理解变化</figcaption></figure>
-              </div>
-            </article>}
+            {filter !== 'examples' && <div className="released-products">
+              {releasedProducts.map(product => <FeaturedProduct key={product.id} product={product} onSelect={setActive} />)}
+            </div>}
             {filter !== 'released' && <div className="examples-section">
               <div className="examples-heading"><h3>设计示例</h3><p>一些轻量工具的探索。</p></div>
               <div className="product-grid">
@@ -143,18 +199,16 @@ export function App() {
             <p className="dialog-description">这里是我的产品与创作空间。<br />把想法，做成好用的产品。</p>
             <a className="primary-button" href="https://github.com/luchuangao" target="_blank" rel="noopener noreferrer"><GithubLogoIcon size={22} />访问 GitHub<span className="sr-only">（在新标签页打开）</span></a>
           </> : active && <>
-            <img className={`dialog-product-icon${active.id === 'compound' ? ' compound-icon' : ''}`} src={`./assets/${active.image}`} alt="" width="112" height="112" />
-            <p className="eyebrow">{active.id === 'compound' ? 'iPhone 与 iPad · 已发布' : '设计示例'}</p><h2 id="dialog-title">{active.name}</h2>
+            <img className={`dialog-product-icon${active.status === 'released' ? ' app-icon' : ''}`} src={`./assets/${active.image}`} alt="" width="112" height="112" />
+            <p className="eyebrow">{active.status === 'released' ? `${active.platforms} · 已发布` : '设计示例'}</p><h2 id="dialog-title">{active.name}</h2>
             <p className="dialog-description">{active.detail}</p>
-            {active.id === 'compound' ? <>
+            {active.status === 'released' ? <>
               <ul className="detail-features">
-                <li><strong>复利与定投</strong><span>比较投入、收益和时间的关系。</span></li>
-                <li><strong>长期规划</strong><span>从目标和退休需求出发，寻找自己的计划。</span></li>
-                <li><strong>财富与认知实验</strong><span>亲手改变参数，观察不同选择的结果。</span></li>
+                {active.features.map(([title, description]) => <li key={title}><strong>{title}</strong><span>{description}</span></li>)}
               </ul>
-              <AppStoreLink />
-              <div className="support-links"><a href="./compoundly/support.html">产品支持</a><a href="./compoundly/privacy.html">隐私政策</a></div>
-              <p className="learning-note">计算与实验仅供学习，不构成投资建议。</p>
+              <AppStoreLink product={active} />
+              <div className="support-links"><a href={active.support}>产品支持</a><a href={active.privacy}>隐私政策</a></div>
+              {active.note && <p className="learning-note">{active.note}</p>}
             </> : <>
               <p className="example-note">这是用于展示网站设计的示例产品，暂无下载入口。</p>
               <button className="primary-button" type="button" onClick={() => setActive(null)}>返回产品</button>

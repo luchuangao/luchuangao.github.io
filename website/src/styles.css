@@ -32,18 +32,20 @@ h1 span { display: block; white-space: nowrap; }
 .hero-copy > p { margin: 31px 0 40px; font-size: clamp(22px, 2.18vw, 31px); color: var(--muted); font-weight: 450; letter-spacing: -.025em; }
 .primary-button { display: inline-flex; align-items: center; justify-content: center; gap: 15px; min-height: 60px; padding: 15px 30px; border-radius: 999px; background: var(--blue); color: white; font-size: 19px; font-weight: 500; box-shadow: 0 15px 30px #165dff16; transition: background .2s, transform .2s, box-shadow .2s; }
 .primary-button:hover { background: #074ce0; transform: translateY(-2px); box-shadow: 0 18px 30px #165dff25; }
-.hero-products { position: absolute; z-index: 0; width: 40.5%; aspect-ratio: 1.12; right: 3%; top: 20px; }
+.hero-products { position: absolute; z-index: 0; width: 40.5%; aspect-ratio: 1.05; right: 3%; top: 20px; }
 .hero-product { position: absolute; display: block; padding: 10px 0 0; color: #18233a; background: transparent; letter-spacing: 0; }
 .hero-product-visual { display: flex; flex-direction: column; align-items: center; width: 100%; animation: product-float 6s ease-in-out infinite; }
 .hero-product img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; filter: drop-shadow(0 14px 14px #165dff14); transition: transform .25s ease, filter .25s ease; }
 .hero-product-name { display: block; margin-top: 10px; font-size: 16px; font-weight: 650; line-height: 1.5; white-space: nowrap; transition: color .2s; }
 .hero-product-subtitle { margin-top: 3px; color: var(--muted); font-size: 13px; line-height: 1.6; }
-.hero-product-compound { width: 36%; left: 3%; top: 26%; }
-.hero-product-compound img { border-radius: 23%; filter: drop-shadow(0 18px 20px #132e4326); }
-.hero-product-compound .hero-product-name { font-size: 19px; margin-top: 17px; }
-.hero-product-focus { width: 28%; right: 10%; top: 3%; }
-.hero-product-notes { width: 27%; right: 0; top: 52%; }
-.hero-product-image { width: 26%; left: 43%; top: 66%; }
+.hero-product-compound { width: 29%; left: 4%; top: 15%; }
+.hero-product-littlebird { width: 29%; right: 8%; top: 4%; }
+.hero-product-compound img, .hero-product-littlebird img { border-radius: 23%; filter: drop-shadow(0 18px 20px #132e4326); }
+.hero-product-compound .hero-product-name, .hero-product-littlebird .hero-product-name { font-size: 19px; margin-top: 17px; }
+.hero-product-focus { width: 21%; left: 5%; top: 68%; }
+.hero-product-notes { width: 21%; right: 0; top: 66%; }
+.hero-product-image { width: 21%; left: 43%; top: 57%; }
+.hero-product-littlebird .hero-product-visual { animation-delay: -.9s; }
 .hero-product-focus .hero-product-visual { animation-delay: -1.8s; }
 .hero-product-notes .hero-product-visual { animation-delay: -3.4s; }
 .hero-product-image .hero-product-visual { animation-delay: -4.8s; }
@@ -64,6 +66,7 @@ h1 span { display: block; white-space: nowrap; }
 .product-filters button:hover { color: var(--blue); }
 .product-filters span { font-size: 13px; font-variant-numeric: tabular-nums; }
 .featured-product { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 44px; align-items: center; padding: 38px 42px; border: 1px solid #e6ebf3; border-radius: 8px; background: #f6f9fc; }
+.released-products { display: grid; gap: 24px; }
 .featured-copy { min-width: 0; }
 .product-status { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-bottom: 30px; color: #697386; font-size: 13px; }
 .release-status { display: inline-flex; align-items: center; gap: 7px; color: #367263; }
@@ -82,7 +85,7 @@ h1 span { display: block; white-space: nowrap; }
 .secondary-button:hover { background: #edf2fa; }
 .product-screens { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; width: 100%; max-width: 436px; justify-self: end; }
 .product-screens figure { min-width: 0; margin: 0; }
-.product-screens img { display: block; width: 100%; height: auto; aspect-ratio: 600 / 1304; object-fit: contain; border-radius: 18px; background: #101413; box-shadow: 0 12px 24px #102a3c16; }
+.product-screens img { display: block; width: 100%; height: auto; border-radius: 18px; background: #101413; box-shadow: 0 12px 24px #102a3c16; }
 .product-screens figcaption { color: #58627a; font-size: 12px; line-height: 1.6; text-align: center; margin-top: 12px; }
 .examples-section { margin-top: 48px; }
 .examples-heading h3 { font-size: 23px; line-height: 1.5; font-weight: 700; margin: 0 0 5px; letter-spacing: 0; }
@@ -105,7 +108,7 @@ h1 span { display: block; white-space: nowrap; }
 .close-button { position: absolute; right: 14px; top: 14px; width: 44px; height: 44px; border-radius: 50%; background: #f4f6fb; color: #58627a; display: grid; place-items: center; }
 .close-button:hover { background: #e9effb; }
 .dialog-product-icon { object-fit: contain; display: block; margin: -8px 0 15px -6px; }
-.compound-icon { border-radius: 24px; }
+.app-icon { border-radius: 24px; }
 .eyebrow { color: var(--blue); font-size: 14px; font-weight: 650; margin: 0 0 8px; }
 .dialog-inner h2 { font-size: 30px; line-height: 1.45; letter-spacing: -.03em; margin: 0 0 17px; }
 .dialog-description { color: #58627a; font-size: 17px; line-height: 1.9; margin: 0 0 22px; }
@@ -125,7 +128,7 @@ h1 span { display: block; white-space: nowrap; }
   h1 { font-size: 5.72vw; }
   .hero-products { top: 68px; }
   .hero-product-name { font-size: 14px; margin-top: 7px; }
-  .hero-product-compound .hero-product-name { font-size: 16px; margin-top: 12px; }
+  .hero-product-compound .hero-product-name, .hero-product-littlebird .hero-product-name { font-size: 16px; margin-top: 12px; }
   .hero-product-subtitle { font-size: 12px; }
   .hero-copy > p { font-size: 2.18vw; }
   .product-grid { gap: 16px; }
@@ -153,7 +156,7 @@ h1 span { display: block; white-space: nowrap; }
   .primary-button { min-height: 52px; font-size: 16px; padding: 13px 25px; gap: 12px; }
   .hero-products { position: relative; top: auto; right: auto; width: min(100%, 470px); margin: 24px auto 10px; flex: none; }
   .hero-product-name { font-size: 14px; margin-top: 7px; }
-  .hero-product-compound .hero-product-name { font-size: 16px; margin-top: 12px; }
+  .hero-product-compound .hero-product-name, .hero-product-littlebird .hero-product-name { font-size: 16px; margin-top: 12px; }
   .hero-product-subtitle { font-size: 12px; }
   .products-section { padding: 35px 24px 26px; }
   .section-heading h2 { font-size: 29px; }
