@@ -118,11 +118,45 @@ const xTracker = {
   screenNote: '实际插件界面 · Naval 公开推文，中文为展示译文。',
 };
 
-const releasedProducts = [callHome, compound, littlebird, xTracker];
+const zilo = {
+  id: 'zilo',
+  type: 'app',
+  status: 'released',
+  installMethod: 'dmg',
+  name: 'Zilo',
+  shortName: 'Zilo',
+  subtitle: '自己的清单，自己掌握',
+  image: 'zilo-icon.png',
+  platforms: 'macOS 14+',
+  version: '1.0',
+  build: '11',
+  tagline: '让每天的事，有处安放。',
+  description: ['在一处管理清单、日历、习惯与专注。', '用 Markdown 记录文档，插入图片和思维导图，并导出 Word、PDF 与 Markdown。'],
+  highlights: ['Apple 芯片与 Intel Mac', 'Markdown · 图片 · 思维导图', '任务、日历、专注与习惯'],
+  detail: 'Zilo 是一款面向个人的原生 Mac 清单应用。离线管理任务、日历、习惯和专注，也可在任务中撰写 Markdown 文档、插入图片与思维导图，并导出 Word、PDF 或 Markdown。',
+  download: './assets/Zilo-1.0-11.dmg',
+  source: 'https://github.com/luchuangao/Zilo',
+  note: '需要 macOS 14 或更高版本。此版本已完成 Developer ID 签名与 Apple 公证。应用以本机数据为主；iCloud 同步尚未完成生产环境验证。',
+  features: [
+    ['清单与规划', '用清单、文件夹、标签和过滤器整理任务；通过列表、看板、时间线与日历安排每天的事。'],
+    ['Markdown 文档', '支持 Markdown、代码块语法高亮、检查项、图片和思维导图，并可导出 Word、PDF 与 Markdown。'],
+    ['专注与习惯', '使用番茄钟或正计时记录专注，也可设定习惯目标、提醒和打卡频率。'],
+  ],
+  screens: [
+    { image: 'zilo-mindmap.png', width: 2520, height: 1410, alt: 'Zilo Mac 应用真实界面，任务详情中展示 Markdown 表格和思维导图', caption: '在任务文档中整理思维导图' },
+    { image: 'zilo-markdown.png', width: 2520, height: 1410, alt: 'Zilo Mac 应用真实界面，展示 Markdown 排版、任务清单与 Python 代码高亮', caption: 'Markdown 排版与代码高亮' },
+  ],
+};
+
+
+const releasedProducts = [callHome, compound, littlebird, xTracker, zilo];
 
 function DownloadLink({ product, className = 'primary-button' }) {
   if (product.installMethod === 'unpacked') return <a className={className} href={product.download} download>
     下载插件 ZIP<DownloadSimpleIcon size={20} aria-hidden="true" />
+  </a>;
+  if (product.installMethod === 'dmg') return <a className={className} href={product.download} download>
+    下载 Mac 版 DMG<DownloadSimpleIcon size={20} aria-hidden="true" />
   </a>;
   return <a className={className} href={product.download} target="_blank" rel="noopener noreferrer">
     App Store 下载<ArrowUpRightIcon size={20} aria-hidden="true" />
@@ -151,7 +185,7 @@ function HeroProducts({ onSelect }) {
 function FeaturedProduct({ product, onSelect, onGuide, index }) {
   return <article className={`featured-product featured-${product.id}${product.type === 'extension' ? ' featured-extension' : ''}`} id={`product-${product.id}`} aria-labelledby={`${product.id}-title`}>
     <div className="featured-copy">
-      <div className="product-status"><span className="release-status">{product.installMethod === 'unpacked' ? '网站下载 · 手动安装' : '已发布'}</span><span>{product.platforms}</span><span className="product-number">0{index + 1}</span></div>
+      <div className="product-status"><span className="release-status">{product.installMethod === 'unpacked' ? '网站下载 · 手动安装' : product.installMethod === 'dmg' ? '网站下载 · 已公证' : '已发布'}</span><span>{product.platforms}</span><span className="product-number">0{index + 1}</span></div>
       <div className="featured-identity">
         <img src={`./assets/${product.image}`} width="72" height="72" alt="" loading="lazy" />
         <h3 id={`${product.id}-title`}>{product.shortName}<span>{product.subtitle}</span></h3>
@@ -277,7 +311,7 @@ export function App() {
           <a className="primary-button" href="https://github.com/luchuangao" target="_blank" rel="noopener noreferrer"><GithubLogoIcon size={22} aria-hidden="true" />访问 GitHub<span className="sr-only">（在新标签页打开）</span></a>
         </> : active && <>
           <img className="dialog-product-icon app-icon" src={`./assets/${active.image}`} alt="" width="88" height="88" />
-          <p className="eyebrow">{active.platforms} · 已发布</p><h2 id="dialog-title">{active.name}</h2>
+          <p className="eyebrow">{active.platforms} · {active.installMethod === 'dmg' ? '网站下载 · 已公证' : '已发布'}</p><h2 id="dialog-title">{active.name}</h2>
           <p className="dialog-description">{active.detail}</p>
           {showGuide && active.installMethod === 'unpacked' ? <InstallGuide key={active.id} product={active} /> : <>
             <ul className="detail-features">{active.features.map(([title, description]) => <li key={title}><strong>{title}</strong><span>{description}</span></li>)}</ul>
@@ -286,6 +320,7 @@ export function App() {
           <div className="dialog-actions"><DownloadLink product={active} />
             {active.installMethod === 'unpacked' && <button className="secondary-button" type="button" onClick={() => setShowGuide(!showGuide)}>{showGuide ? '产品介绍' : '安装指南'}</button>}
           </div>
+          {active.note && <p className="learning-note">{active.note}</p>}
           <div className="support-links">
             {active.support && <a href={active.support} target={active.type === 'extension' ? '_blank' : undefined} rel={active.type === 'extension' ? 'noopener noreferrer' : undefined}>{active.type === 'extension' ? '问题反馈' : '产品支持'}{active.type === 'extension' && <span className="sr-only">（在新标签页打开）</span>}</a>}
             {active.privacy && <a href={active.privacy}>隐私政策</a>}
