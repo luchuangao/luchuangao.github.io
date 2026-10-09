@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowRightIcon, XIcon, GithubLogoIcon } from '@phosphor-icons/react';
+import { ArrowRightIcon, ArrowUpRightIcon, XIcon, GithubLogoIcon } from '@phosphor-icons/react';
 import '@fontsource-variable/noto-sans-sc';
 
 const products = [
@@ -8,8 +8,24 @@ const products = [
   { id: 'image', name: '图片助手', image: 'image.png', description: '简单高效地处理图片，', secondLine: '让创作与分享更轻松。', detail: '让日常图片处理更轻松。一个让图片整理与基础编辑更直接的工具概念。' },
 ];
 
+const compound = {
+  id: 'compound',
+  name: '复利计算器：时间的杠杆',
+  image: 'compoundly-icon.png',
+  detail: '把本金、收益率与时间放进计算，直观看见长期增长。通过互动实验，理解财富、风险与认知。',
+  download: 'https://apps.apple.com/cn/app/id6787851299',
+};
+
+function AppStoreLink({ className = 'primary-button' }) {
+  return <a className={className} href={compound.download} target="_blank" rel="noopener noreferrer">
+    App Store 下载<ArrowUpRightIcon size={20} aria-hidden="true" />
+    <span className="sr-only">（在新标签页打开）</span>
+  </a>;
+}
+
 export function App() {
   const [active, setActive] = useState(null);
+  const [filter, setFilter] = useState('all');
   const dialogRef = useRef(null);
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -56,8 +72,35 @@ export function App() {
             <img className="hero-art" src="./assets/hero.png" alt="专注、笔记和图片工具的蓝色图标环绕排列" width="800" height="700" fetchPriority="high" />
           </section>
           <section className="products-section" id="products" aria-labelledby="products-title">
-            <div className="section-heading"><h2 id="products-title">我的产品</h2><p>产品内容为设计示例。</p></div>
-            <div className="product-grid">
+            <div className="section-heading"><h2 id="products-title">我的产品</h2><p>从已经发布的 App，到正在探索的想法。</p></div>
+            <div className="product-filters" role="group" aria-label="按产品状态筛选">
+              {[['all', '全部', 4], ['released', '已发布', 1], ['examples', '设计示例', 3]].map(([id, label, count]) =>
+                <button key={id} type="button" aria-pressed={filter === id} onClick={() => setFilter(id)}>{label}<span>{count}</span></button>
+              )}
+            </div>
+            {filter !== 'examples' && <article className="featured-product" aria-labelledby="compound-title">
+              <div className="featured-copy">
+                <div className="product-status"><span className="release-status">已在 App Store 上架</span><span>iPhone · iPad</span></div>
+                <div className="featured-identity">
+                  <img src="./assets/compoundly-icon.png" width="72" height="72" alt="" loading="lazy" />
+                  <h3 id="compound-title">复利计算器<span>时间的杠杆</span></h3>
+                </div>
+                <p className="featured-tagline">看见时间的力量。</p>
+                <p className="featured-description">算清复利与定投，探索财富和认知实验。<br />让长期思考，变得直观。</p>
+                <ul className="product-highlights" aria-label="产品内容"><li>复利计算</li><li>长期规划</li><li>互动实验</li></ul>
+                <div className="featured-actions">
+                  <button className="secondary-button" type="button" onClick={() => setActive(compound)}>了解更多<ArrowRightIcon size={20} aria-hidden="true" /></button>
+                  <AppStoreLink />
+                </div>
+              </div>
+              <div className="product-screens" aria-label="复利计算器真实界面">
+                <figure><img src="./assets/compoundly-home.jpg" alt="复利计算页面，展示预计金额、增长倍数和时间轨迹" width="600" height="1304" loading="lazy" /><figcaption>把时间放进计算</figcaption></figure>
+                <figure><img src="./assets/compoundly-lab.jpg" alt="财富交换互动实验，展示参与者的财富分布和差距指数" width="600" height="1301" loading="lazy" /><figcaption>在实验中理解变化</figcaption></figure>
+              </div>
+            </article>}
+            {filter !== 'released' && <div className="examples-section">
+              <div className="examples-heading"><h3>设计示例</h3><p>一些轻量工具的探索。</p></div>
+              <div className="product-grid">
               {products.map(product => (
                 <article className="product" key={product.id}>
                   <button className="product-image-button" type="button" onClick={() => setActive(product)} aria-label={`了解${product.name}`}>
@@ -68,7 +111,8 @@ export function App() {
                   <button className="text-button" type="button" onClick={() => setActive(product)}>了解更多<ArrowRightIcon size={21} aria-hidden="true" /></button>
                 </article>
               ))}
-            </div>
+              </div>
+            </div>}
           </section>
         </main>
       </div>
@@ -80,11 +124,22 @@ export function App() {
             <p className="dialog-description">这里是我的产品与创作空间。<br />把想法，做成好用的产品。</p>
             <a className="primary-button" href="https://github.com/luchuangao" target="_blank" rel="noopener noreferrer"><GithubLogoIcon size={22} />访问 GitHub<span className="sr-only">（在新标签页打开）</span></a>
           </> : active && <>
-            <img className="dialog-product-icon" src={`./assets/${active.image}`} alt="" width="112" height="112" />
-            <p className="eyebrow">设计示例</p><h2 id="dialog-title">{active.name}</h2>
+            <img className={`dialog-product-icon${active.id === 'compound' ? ' compound-icon' : ''}`} src={`./assets/${active.image}`} alt="" width="112" height="112" />
+            <p className="eyebrow">{active.id === 'compound' ? 'iPhone 与 iPad · 已发布' : '设计示例'}</p><h2 id="dialog-title">{active.name}</h2>
             <p className="dialog-description">{active.detail}</p>
-            <p className="example-note">这是用于展示网站设计的示例产品，暂无下载入口。</p>
-            <button className="primary-button" type="button" onClick={() => setActive(null)}>返回产品</button>
+            {active.id === 'compound' ? <>
+              <ul className="detail-features">
+                <li><strong>复利与定投</strong><span>比较投入、收益和时间的关系。</span></li>
+                <li><strong>长期规划</strong><span>从目标和退休需求出发，寻找自己的计划。</span></li>
+                <li><strong>财富与认知实验</strong><span>亲手改变参数，观察不同选择的结果。</span></li>
+              </ul>
+              <AppStoreLink />
+              <div className="support-links"><a href="./compoundly/support.html">产品支持</a><a href="./compoundly/privacy.html">隐私政策</a></div>
+              <p className="learning-note">计算与实验仅供学习，不构成投资建议。</p>
+            </> : <>
+              <p className="example-note">这是用于展示网站设计的示例产品，暂无下载入口。</p>
+              <button className="primary-button" type="button" onClick={() => setActive(null)}>返回产品</button>
+            </>}
           </>}
         </div>
       </dialog>

@@ -11,7 +11,7 @@ npm ci
 npm run dev
 ```
 
-修改 src/App.jsx 中的产品名称和介绍、src/styles.css 中的样式，或 public/assets/ 中的图片。当前三个产品均为明确标注的设计示例。
+修改 src/App.jsx 中的产品名称和介绍、src/styles.css 中的样式，或 public/assets/ 中的图片。复利计算器使用真实界面截图，下载入口指向现有 App Store 产品（ID 6787851299）；其他三个产品仍明确标注为设计示例，没有下载入口。
 
 准备发布时运行：
 
