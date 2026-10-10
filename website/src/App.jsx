@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRightIcon, ArrowUpRightIcon, XIcon, GithubLogoIcon, DownloadSimpleIcon, CopyIcon } from '@phosphor-icons/react';
 import '@fontsource-variable/noto-sans-sc';
-import { TranslateIcon, SquaresFourIcon, DeviceMobileIcon, DesktopIcon, GlobeIcon } from '@phosphor-icons/react';
+import { SquaresFourIcon, DeviceMobileIcon, DesktopIcon, GlobeIcon } from '@phosphor-icons/react';
 import { translator, initialLanguage, localizeProduct, platformFilters, categoryFilters } from './i18n.js';
 
 const callHome = {
@@ -285,7 +285,10 @@ export function App() {
       <header className="site-header"><nav className="navigation" aria-label={t('主导航')}>
         <a className="wordmark" href="#home" aria-label={t('luchuangao 首页')}><img className="brand-logo" src="./assets/luchuangao-atelier-logo.png" alt="" width="210" height="44" /></a>
         <div className="nav-links"><a href="#products">{t('产品')}</a><button type="button" onClick={() => selectProduct('about')}>{t('关于我')}</button><a href="https://github.com/luchuangao" target="_blank" rel="noopener noreferrer">GitHub<span className="sr-only">{t('（在新标签页打开）')}</span></a></div>
-        <button className="language-button" type="button" lang={language === 'zh' ? 'en' : 'zh-CN'} aria-label={language === 'zh' ? 'Switch to English' : '切换为中文'} onClick={() => setLanguage(language === 'zh' ? 'en' : 'zh')}><TranslateIcon size={20} aria-hidden="true" /><span>{language === 'zh' ? 'English' : '中文'}</span></button>
+        <div className="language-switch" role="group" aria-label={language === 'zh' ? '网站语言' : 'Website language'}>
+          <button className="language-option" type="button" lang="zh-CN" aria-label="切换为中文" aria-pressed={language === 'zh'} onClick={() => setLanguage('zh')}>中</button>
+          <button className="language-option" type="button" lang="en" aria-label="Switch to English" aria-pressed={language === 'en'} onClick={() => setLanguage('en')}>EN</button>
+        </div>
       </nav></header>
       <main id="home">
         <section className="hero" aria-labelledby="hero-title"><div className="hero-copy"><p className="hero-eyebrow"><span aria-hidden="true" />luchuangao · {t('产品与创作')}</p><h1 id="hero-title"><span>{t('把想法，')}</span><span>{t('做成好用的产品。')}</span></h1><p className="hero-description">{t('从长期思考、日常聆听，到专注阅读。')}<br />{t('为生活里的小事，做一些好用的工具。')}</p><a className="primary-button" href="#products">{t('探索产品')}<ArrowRightIcon size={23} aria-hidden="true" /></a></div><HeroProducts products={products} onSelect={selectProduct} t={t} language={language} /></section>

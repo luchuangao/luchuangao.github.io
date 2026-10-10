@@ -273,7 +273,11 @@ h1 span { display: block; white-space: nowrap; }
 /* Language switch and real-product classification. */
 .nav-links { display: flex; align-items: center; gap: 28px; }
 .nav-links > a, .nav-links > button { min-height: 44px; display: inline-flex; align-items: center; }
-.navigation .language-button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; min-height: 44px; padding: 8px 0 8px 20px; border-left: 1px solid #e4eaf4; margin: 0; font-size: 13px; }
+.language-switch { display: flex; flex-shrink: 0; align-items: center; padding: 4px; border: 1px solid #e7ecf5; border-radius: 999px; background: #f5f7fb; }
+.navigation .language-option { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 34px; margin: 0; padding: 0; border-radius: 999px; color: #7d879a; font-size: 12px; font-weight: 600; line-height: 1; transition: background .18s, color .18s, box-shadow .18s; }
+.navigation .language-option:hover { color: var(--blue); background: #eaf0fc; }
+.navigation .language-option[aria-pressed="true"] { color: #1858e8; background: #fff; box-shadow: 0 1px 5px #15285712; }
+.navigation .language-option:focus-visible { outline-offset: 2px; }
 .product-filters { display: grid; gap: 16px; padding: 23px 25px; border: 1px solid #e4eaf3; background: #fff9; border-radius: 22px; }
 .filter-row { display: flex; align-items: center; gap: 22px; }
 .filter-label { color: #8a95a6; font-size: 10px; font-weight: 650; letter-spacing: .08em; min-width: 58px; }
@@ -299,7 +303,6 @@ html[lang="en"] .featured-identity h3 { font-size: 23px; }
 @media (max-width: 760px) {
   .nav-links { gap: 18px; }
   .navigation { gap: 18px; }
-  .navigation .language-button { padding-left: 15px; font-size: 12px; }
   .filter-row { align-items: flex-start; flex-direction: column; gap: 10px; }
   .product-filters { padding: 18px; gap: 14px; border-radius: 18px; }
   .filter-options { gap: 8px; }
@@ -312,7 +315,7 @@ html[lang="en"] .featured-identity h3 { font-size: 23px; }
 @media (max-width: 600px) {
   .navigation { display: grid; grid-template-columns: 1fr auto; width: min(100%,430px); padding: 10px 17px 0; border-radius: 23px; gap: 5px 14px; }
   .navigation .wordmark { grid-column: 1; grid-row: 1; margin: 0; padding: 0; }
-  .navigation .language-button { grid-column: 2; grid-row: 1; border: 0; padding: 0; }
+  .language-switch { grid-column: 2; grid-row: 1; }
   .nav-links { grid-column: 1/-1; justify-content: center; gap: 34px; border-top: 1px solid #edf0f6; margin-top: 4px; }
   .navigation .brand-logo { width: 158px; height: 34px; }
 }
