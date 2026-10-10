@@ -1,0 +1,1561 @@
+[
+  {
+    "name": "Evan You",
+    "role": "Vue 与 Vite 创建者",
+    "description": "创建 Vue 和 Vite，推动 JavaScript 工具链演进。适合关注框架设计、开发体验与开源项目的长期维护。",
+    "category": "前端与工具",
+    "tags": [
+      "Vue",
+      "Vite",
+      "工具链"
+    ],
+    "x": "https://x.com/evanyou",
+    "website": "https://evanyou.me/",
+    "github": "https://github.com/yyx990803",
+    "works": [
+      {
+        "title": "Vue",
+        "url": "https://github.com/vuejs/core"
+      },
+      {
+        "title": "Vite",
+        "url": "https://github.com/vitejs/vite"
+      }
+    ],
+    "start": {
+      "title": "Vue 官方指南",
+      "url": "https://vuejs.org/guide/introduction.html",
+      "note": "从组件、响应式和组合式 API 理解 Vue 的设计思路；指南也提供中文版本。"
+    },
+    "sources": [
+      "https://evanyou.me/"
+    ],
+    "language": "中文 / English",
+    "alias": "尤雨溪",
+    "verification": "个人官网与公开档案互链核实；账号可访问性可能受平台登录要求影响。",
+    "otherLinks": [
+      {
+        "title": "X 中文账号",
+        "url": "https://x.com/yuxiyou"
+      }
+    ],
+    "checkedAt": "2026-10-10",
+    "id": "evan-you"
+  },
+  {
+    "name": "Kelsey Hightower",
+    "category": "云原生与平台",
+    "tags": [
+      "Kubernetes",
+      "云原生",
+      "技术教育"
+    ],
+    "x": "https://x.com/kelseyhightower",
+    "website": null,
+    "github": "https://github.com/kelseyhightower",
+    "language": "English",
+    "works": [
+      {
+        "title": "Kubernetes the Hard Way",
+        "url": "https://github.com/kelseyhightower/kubernetes-the-hard-way"
+      },
+      {
+        "title": "confd",
+        "url": "https://github.com/kelseyhightower/confd"
+      }
+    ],
+    "start": {
+      "title": "Kubernetes the Hard Way",
+      "url": "https://github.com/kelseyhightower/kubernetes-the-hard-way",
+      "note": "适合已有 Linux 与网络基础后，通过手工搭建理解集群组件。"
+    },
+    "sources": [
+      "https://github.com/kelseyhightower",
+      "https://cloud.google.com/blog/products/serverless/serverless-hackathon-winners-announced"
+    ],
+    "evidence": {
+      "x": "Google Cloud 官方文章链接本人 @kelseyhightower 推文；只确认身份关联。",
+      "website": "未确认可访问的独立个人站，保留空值。",
+      "github": "GitHub 页面署名 Kelsey Hightower，并展示 Kubernetes the Hard Way。"
+    },
+    "verification": "X 身份由官方历史文章佐证；未核实最近发帖活跃度。个人网站未确认。",
+    "role": "Kubernetes 实践教育者",
+    "description": "以实践教学推动 Kubernetes 和云原生知识普及，把集群组件、配置与排障讲解成可动手完成的步骤。",
+    "checkedAt": "2026-10-10",
+    "id": "kelsey-hightower"
+  },
+  {
+    "name": "Linus Torvalds",
+    "role": "Linux 与 Git 创始人",
+    "description": "创建 Linux 内核和 Git，将系统开发与大规模开源协作的基础工具带给全球开发者。",
+    "category": "语言与系统",
+    "tags": [
+      "Linux",
+      "Git",
+      "开源协作"
+    ],
+    "language": "English",
+    "x": null,
+    "website": null,
+    "github": "https://github.com/torvalds",
+    "works": [
+      {
+        "title": "Linux 内核",
+        "url": "https://github.com/torvalds/linux"
+      },
+      {
+        "title": "Git",
+        "url": "https://git-scm.com/"
+      }
+    ],
+    "start": {
+      "title": "Linux 内核开发 HOWTO",
+      "url": "https://docs.kernel.org/process/howto.html",
+      "note": "先了解内核开发流程、代码规范与提交补丁的方式；适合已有 C 基础的读者。"
+    },
+    "sources": [
+      "https://github.com/torvalds",
+      "https://www.kernel.org/linux.html",
+      "https://docs.kernel.org/process/howto.html"
+    ],
+    "verification": {
+      "x": "未获得本人或项目官方对 X 账号的背书；同名账号不收录。",
+      "website": "未核实当前面向开发者的个人网站，项目网站另列为作品。",
+      "github": "GitHub 资料显示 Linus Torvalds，并维护 Linux 内核源代码仓库，与内核官方项目记录交叉核对。",
+      "note": "缺失表示本次未确认，不能解释为本人一定没有该平台账号。"
+    },
+    "checkedAt": "2026-10-10",
+    "id": "linus-torvalds"
+  },
+  {
+    "name": "Julia Evans",
+    "category": "运维与可观测性",
+    "tags": [
+      "Linux",
+      "调试",
+      "技术教育"
+    ],
+    "x": "https://x.com/b0rk",
+    "website": "https://jvns.ca/",
+    "github": "https://github.com/jvns",
+    "language": "English",
+    "works": [
+      {
+        "title": "Wizard Zines",
+        "url": "https://wizardzines.com/"
+      },
+      {
+        "title": "rbspy",
+        "url": "https://github.com/rbspy/rbspy"
+      },
+      {
+        "title": "pandas cookbook",
+        "url": "https://github.com/jvns/pandas-cookbook"
+      }
+    ],
+    "start": {
+      "title": "Julia Evans 博客",
+      "url": "https://jvns.ca/",
+      "note": "从感兴趣的命令、网络协议或调试问题开始，适合边读边做小实验。"
+    },
+    "sources": [
+      "https://github.com/jvns",
+      "https://jvns.ca/"
+    ],
+    "evidence": {
+      "x": "GitHub 个人 README 明确列出 twitter.com/b0rk。",
+      "website": "GitHub 资料和 README 均指向 jvns.ca，个人站反向提供作品。",
+      "github": "GitHub 页面署名 Julia Evans，并列出其个人作品。"
+    },
+    "verification": "账号由 GitHub README 自填链接确认；同时列有 Mastodon 和 Bluesky，X 活跃度未核实。",
+    "role": "系统知识作者 · 图解教育者",
+    "description": "用博客、图解小册子和小型实验解释 Linux、网络、Git 与调试工具，让底层计算机知识更容易学习。",
+    "checkedAt": "2026-10-10",
+    "id": "julia-evans"
+  },
+  {
+    "name": "Simon Willison",
+    "role": "Django 联合创始人、Datasette 作者",
+    "description": "构建数据探索与发布工具，并以持续实验和可复现记录分享 Web 开发、SQLite 与大语言模型实践。",
+    "category": "数据与后端",
+    "tags": [
+      "Django",
+      "Datasette",
+      "LLM"
+    ],
+    "language": "English",
+    "x": "https://x.com/simonw",
+    "website": "https://simonwillison.net/",
+    "github": "https://github.com/simonw",
+    "works": [
+      {
+        "title": "Datasette",
+        "url": "https://datasette.io/"
+      },
+      {
+        "title": "Django",
+        "url": "https://www.djangoproject.com/"
+      },
+      {
+        "title": "个人 TIL 笔记",
+        "url": "https://til.simonwillison.net/"
+      }
+    ],
+    "start": {
+      "title": "Datasette Getting Started",
+      "url": "https://docs.datasette.io/en/stable/getting_started.html",
+      "note": "动手把 SQLite 数据变成可浏览、可查询的网站，适合从作品理解作者。"
+    },
+    "sources": [
+      "https://simonwillison.net/about/",
+      "https://github.com/simonw",
+      "https://simonwillison.net/"
+    ],
+    "verification": {
+      "x": "官网 About 明确链接 @simonw，GitHub 资料也链接相同账号。",
+      "website": "个人 About 描述职业和项目，GitHub 直接链接网站。",
+      "github": "官网 GitHub Sponsors 链接与本人 GitHub 资料互相对应。",
+      "note": "身份核实依赖本人互链，不依据昵称或头像判断。"
+    },
+    "checkedAt": "2026-10-10",
+    "id": "simon-willison"
+  },
+  {
+    "name": "Martin Fowler",
+    "role": "软件工程作者与架构思想传播者",
+    "description": "系统化讲解重构、企业应用架构和敏捷实践，帮助团队在变化中维护清晰的软件结构。",
+    "category": "软件工程",
+    "tags": [
+      "重构",
+      "架构",
+      "敏捷"
+    ],
+    "language": "English",
+    "x": "https://x.com/martinfowler",
+    "website": "https://martinfowler.com/",
+    "github": null,
+    "works": [
+      {
+        "title": "Refactoring",
+        "url": "https://refactoring.com/"
+      },
+      {
+        "title": "Patterns of Enterprise Application Architecture",
+        "url": "https://martinfowler.com/eaaCatalog/"
+      }
+    ],
+    "start": {
+      "title": "Refactoring：重构主题入口",
+      "url": "https://refactoring.com/",
+      "note": "从重构定义、实例与目录开始，学习如何在保持行为的前提下改善代码。"
+    },
+    "sources": [
+      "https://martinfowler.com/",
+      "https://martinfowler.com/books/",
+      "https://refactoring.com/"
+    ],
+    "verification": {
+      "x": "官网 follow 导航与更新通知段落直接提供 X/Twitter 链接。",
+      "website": "网站署名 Martin Fowler，并包含本人著作目录及写作介绍。",
+      "github": "未找到官网确认的个人 GitHub；同名候选仅单向填写官网，证据不足，留空。",
+      "note": "X 身份以官网链接为依据；并未核实其最新发帖状态。"
+    },
+    "checkedAt": "2026-10-10",
+    "id": "martin-fowler"
+  },
+  {
+    "name": "Anthony Fu",
+    "role": "开源工具作者 · Vue / Vite 生态",
+    "description": "创建 Vitest、VueUse、UnoCSS 和 Slidev，将开发过程中的小问题变成可组合的开源工具。适合学习工具设计和开源协作。",
+    "category": "前端与工具",
+    "tags": [
+      "Vitest",
+      "VueUse",
+      "UnoCSS"
+    ],
+    "x": "https://x.com/antfu7",
+    "website": "https://antfu.me/",
+    "github": "https://github.com/antfu",
+    "works": [
+      {
+        "title": "Vitest",
+        "url": "https://github.com/vitest-dev/vitest"
+      },
+      {
+        "title": "VueUse",
+        "url": "https://github.com/vueuse/vueuse"
+      },
+      {
+        "title": "UnoCSS",
+        "url": "https://github.com/unocss/unocss"
+      }
+    ],
+    "start": {
+      "title": "Anthony 的开源项目地图",
+      "url": "https://antfu.me/projects",
+      "note": "从项目索引选一个日常使用的工具，沿着文档、源码与文章了解它的取舍。"
+    },
+    "sources": [
+      "https://antfu.me/"
+    ],
+    "language": "中文 / English",
+    "alias": null,
+    "verification": "英文 X 为 @antfu7；官网另列中文 @antfuzh。个人 GitHub 为 @antfu。",
+    "otherLinks": [
+      {
+        "title": "X 中文账号",
+        "url": "https://x.com/antfuzh"
+      },
+      {
+        "title": "Bluesky",
+        "url": "https://bsky.app/profile/antfu.me"
+      }
+    ],
+    "checkedAt": "2026-10-10",
+    "id": "anthony-fu"
+  },
+  {
+    "name": "Guido van Rossum",
+    "role": "Python 创始人",
+    "description": "以可读性和开发效率为核心创造 Python，并长期推动语言设计与社区治理。",
+    "category": "语言与系统",
+    "tags": [
+      "Python",
+      "语言设计",
+      "开源"
+    ],
+    "language": "English",
+    "x": "https://x.com/gvanrossum",
+    "website": "https://gvanrossum.github.io/",
+    "github": "https://github.com/gvanrossum",
+    "works": [
+      {
+        "title": "Python",
+        "url": "https://www.python.org/"
+      },
+      {
+        "title": "The History of Python",
+        "url": "https://gvanrossum.github.io/python-history/index.html"
+      }
+    ],
+    "start": {
+      "title": "Python 官方教程",
+      "url": "https://docs.python.org/3/tutorial/",
+      "note": "先学习 Python 的基础语法和标准数据结构，再读作者的语言历史。"
+    },
+    "sources": [
+      "https://gvanrossum.github.io/",
+      "https://github.com/gvanrossum"
+    ],
+    "verification": {
+      "x": "个人主页明确链接 @gvanrossum。",
+      "website": "主页自述为 Python 创始人的个人主页，GitHub 也链接其个人页面。",
+      "github": "个人主页直接链接此 GitHub 账号。",
+      "note": "链接核实不代表平台蓝标认证或账号持续活跃。"
+    },
+    "checkedAt": "2026-10-10",
+    "id": "guido-van-rossum"
+  },
+  {
+    "name": "Sarah Drasner",
+    "role": "工程领导者 · 开发与管理作者",
+    "description": "连接前端开发、动画与工程管理，撰写 SVG Animations 和 Engineering Management for the Rest of Us。适合学习技术表达与团队建设。",
+    "category": "软件工程",
+    "tags": [
+      "工程管理",
+      "SVG",
+      "Web"
+    ],
+    "x": "https://x.com/sarah_edo",
+    "website": "https://sarah.dev/",
+    "github": "https://github.com/sdras",
+    "works": [
+      {
+        "title": "Engineering Management for the Rest of Us",
+        "url": "https://www.engmanagement.dev/"
+      },
+      {
+        "title": "Night Owl",
+        "url": "https://github.com/sdras/night-owl-vscode-theme"
+      }
+    ],
+    "start": {
+      "title": "Sarah 的写作目录",
+      "url": "https://sarah.dev/writing",
+      "note": "按技术与管理主题选读；从清楚表达复杂问题开始，再延伸到工程团队协作。"
+    },
+    "sources": [
+      "https://github.com/sdras",
+      "https://sarah.dev/"
+    ],
+    "language": "English",
+    "alias": null,
+    "verification": "GitHub 档案明确列出个人站 sarah.dev 与 @sarah_edo。旧站 sarahdrasnerdesign.com 本轮返回 403，不作为首选入口。",
+    "otherLinks": [],
+    "checkedAt": "2026-10-10",
+    "id": "sarah-drasner"
+  },
+  {
+    "name": "David Heinemeier Hansson",
+    "role": "Ruby on Rails 创建者",
+    "description": "创建 Ruby on Rails，分享全栈开发、软件经营和基础设施选择的实践。适合关注约定优于配置、简化架构与产品交付。",
+    "category": "数据与后端",
+    "tags": [
+      "Ruby on Rails",
+      "全栈",
+      "软件经营"
+    ],
+    "x": "https://x.com/dhh",
+    "website": "https://dhh.dk/",
+    "github": "https://github.com/dhh",
+    "works": [
+      {
+        "title": "Ruby on Rails",
+        "url": "https://github.com/rails/rails"
+      },
+      {
+        "title": "Omarchy",
+        "url": "https://omarchy.org/"
+      }
+    ],
+    "start": {
+      "title": "Rails 官方入门指南",
+      "url": "https://guides.rubyonrails.org/getting_started.html",
+      "note": "用一个完整应用理解 Rails 的约定与全栈组织方式，再结合作者博客观察架构选择。"
+    },
+    "sources": [
+      "https://dhh.dk/",
+      "https://github.com/dhh"
+    ],
+    "language": "English",
+    "alias": "DHH",
+    "verification": "个人官网与公开档案互链核实；账号可访问性可能受平台登录要求影响。",
+    "otherLinks": [
+      {
+        "title": "HEY World 博客",
+        "url": "https://world.hey.com/dhh"
+      }
+    ],
+    "checkedAt": "2026-10-10",
+    "id": "david-heinemeier-hansson"
+  },
+  {
+    "name": "Jessie Frazelle",
+    "category": "云原生与平台",
+    "tags": [
+      "容器",
+      "Linux",
+      "安全"
+    ],
+    "x": "https://x.com/jessfraz",
+    "website": "https://jessfraz.com/",
+    "github": "https://github.com/jessfraz",
+    "language": "English",
+    "works": [
+      {
+        "title": "dockerfiles",
+        "url": "https://github.com/jessfraz/dockerfiles"
+      },
+      {
+        "title": "Ramblings from Jessie",
+        "url": "https://blog.jessfraz.com/"
+      }
+    ],
+    "start": {
+      "title": "dockerfiles",
+      "url": "https://github.com/jessfraz/dockerfiles",
+      "note": "阅读实际容器配置与隔离思路；旧例子的依赖和安全设置需结合当前文档判断。"
+    },
+    "sources": [
+      "https://jessfraz.com/",
+      "https://github.com/jessfraz"
+    ],
+    "evidence": {
+      "x": "个人站页脚和 GitHub 资料均直接链接 @jessfraz。",
+      "website": "首页署名 Jessie Frazelle 并链接个人博客。",
+      "github": "个人站导航直接链接 github.com/jessfraz，GitHub 同时链接个人博客。"
+    },
+    "verification": "个人站与 GitHub 双向互链确认；部分容器教程为历史文章。",
+    "role": "容器与系统工程师",
+    "description": "围绕容器隔离、安全、Linux 与个人基础设施开展实践，分享 Dockerfile、系统实验和自动化经验。",
+    "checkedAt": "2026-10-10",
+    "id": "jessie-frazelle"
+  },
+  {
+    "name": "Brendan Gregg",
+    "category": "运维与可观测性",
+    "tags": [
+      "性能工程",
+      "eBPF",
+      "Linux"
+    ],
+    "x": "https://x.com/brendangregg",
+    "website": "https://www.brendangregg.com/",
+    "github": "https://github.com/brendangregg",
+    "language": "English",
+    "works": [
+      {
+        "title": "FlameGraph",
+        "url": "https://github.com/brendangregg/FlameGraph"
+      },
+      {
+        "title": "Systems Performance, 2nd Edition",
+        "url": "https://www.brendangregg.com/systems-performance-2nd-edition-book.html"
+      },
+      {
+        "title": "BPF Performance Tools",
+        "url": "https://www.brendangregg.com/bpf-performance-tools-book.html"
+      }
+    ],
+    "start": {
+      "title": "Start Here / Overview",
+      "url": "https://www.brendangregg.com/overview.html",
+      "note": "先阅读作者精选索引，再按性能方法、火焰图和 Linux 工具深入。"
+    },
+    "sources": [
+      "https://www.brendangregg.com/",
+      "https://github.com/brendangregg"
+    ],
+    "evidence": {
+      "x": "个人站首页直接链接 twitter.com/brendangregg。",
+      "website": "个人站首页署名并说明其个人作品与观点。",
+      "github": "个人站 Software 列出 brendangregg 名下 FlameGraph、perf-tools 等仓库；GitHub 署名一致。"
+    },
+    "verification": "个人站互链确认账号归属；X 最近发帖活跃度未单独核实。",
+    "role": "系统性能专家 · 火焰图作者",
+    "description": "长期研究系统性能，开发火焰图并整理 Linux、eBPF 与性能分析方法，让瓶颈定位更有依据。",
+    "checkedAt": "2026-10-10",
+    "id": "brendan-gregg"
+  },
+  {
+    "name": "Dan Abramov",
+    "role": "React 贡献者 · 技术写作者",
+    "description": "参与 React 开发，通过 Overreacted 与 Just JavaScript 解释 UI、状态和 JavaScript 心智模型。适合补齐原理，而不仅是记住 API。",
+    "category": "前端与工具",
+    "tags": [
+      "React",
+      "JavaScript",
+      "心智模型"
+    ],
+    "x": null,
+    "website": "https://danabra.mov/",
+    "github": "https://github.com/gaearon",
+    "works": [
+      {
+        "title": "Overreacted",
+        "url": "https://overreacted.io/"
+      },
+      {
+        "title": "Just JavaScript",
+        "url": "https://justjavascript.com/"
+      }
+    ],
+    "start": {
+      "title": "Overreacted 文章集",
+      "url": "https://overreacted.io/",
+      "note": "从作者的 React 与 JavaScript 文章入手，逐步建立关于渲染、状态和数据流的理解。"
+    },
+    "sources": [
+      "https://danabra.mov/",
+      "https://github.com/gaearon"
+    ],
+    "language": "English",
+    "alias": null,
+    "verification": "当前官网与 GitHub 档案均列出 Bluesky，未列可确认的当前 X 入口；不收录历史用户名作为现用账号。",
+    "otherLinks": [
+      {
+        "title": "Bluesky",
+        "url": "https://bsky.app/profile/danabra.mov"
+      }
+    ],
+    "checkedAt": "2026-10-10",
+    "id": "dan-abramov"
+  },
+  {
+    "name": "Rob Pike",
+    "role": "Go 联合设计者、系统程序员",
+    "description": "参与 Go、Plan 9 和 UTF-8 的设计，持续探索并发、简洁性与软件工程之间的关系。",
+    "category": "语言与系统",
+    "tags": [
+      "Go",
+      "并发",
+      "Plan 9"
+    ],
+    "language": "English",
+    "x": null,
+    "website": "https://commandcenter.blogspot.com/",
+    "github": "https://github.com/robpike",
+    "works": [
+      {
+        "title": "Go",
+        "url": "https://go.dev/"
+      },
+      {
+        "title": "ivy：APL 风格计算器",
+        "url": "https://github.com/robpike/ivy"
+      },
+      {
+        "title": "What We Got Right, What We Got Wrong",
+        "url": "https://commandcenter.blogspot.com/2024/01/what-we-got-right-what-we-got-wrong.html"
+      }
+    ],
+    "start": {
+      "title": "What We Got Right, What We Got Wrong",
+      "url": "https://commandcenter.blogspot.com/2024/01/what-we-got-right-what-we-got-wrong.html",
+      "note": "从 Go 的设计回顾理解工具链、兼容性、并发与项目协作的取舍。"
+    },
+    "sources": [
+      "https://commandcenter.blogspot.com/2024/01/what-we-got-right-what-we-got-wrong.html",
+      "https://github.com/robpike",
+      "https://gist.github.com/robpike"
+    ],
+    "verification": {
+      "x": "GitHub 当前只列 Mastodon 与 Bluesky；未确认本人 X，排除仅同名的搜索结果。",
+      "website": "个人博客的演讲原稿可读取；旧主页 herpolhode.com 本次无法读取，故优先采用博客。",
+      "github": "GitHub 资料、本人博客作品及其签名的 Keybase 身份声明相互对应。",
+      "note": "博客首页本次抓取失败，但所列具体文章可读取。"
+    },
+    "checkedAt": "2026-10-10",
+    "id": "rob-pike"
+  },
+  {
+    "name": "Kent Beck",
+    "role": "极限编程与测试驱动开发先驱",
+    "description": "推广小步反馈、测试驱动开发与渐进式软件设计，让代码质量成为日常开发的一部分。",
+    "category": "软件工程",
+    "tags": [
+      "TDD",
+      "极限编程",
+      "软件设计"
+    ],
+    "language": "English",
+    "x": "https://x.com/KentBeck",
+    "website": "https://kentbeck.com/",
+    "github": "https://github.com/KentBeck",
+    "works": [
+      {
+        "title": "Tidy First? 写作与软件设计系列",
+        "url": "https://newsletter.kentbeck.com/"
+      },
+      {
+        "title": "个人开源实验",
+        "url": "https://github.com/KentBeck"
+      }
+    ],
+    "start": {
+      "title": "Tidy First? Newsletter",
+      "url": "https://newsletter.kentbeck.com/",
+      "note": "从公开文章学习小步整理代码、设计取舍与反馈循环；部分内容需订阅。"
+    },
+    "sources": [
+      "https://kentbeck.com/",
+      "https://github.com/KentBeck",
+      "https://newsletter.kentbeck.com/"
+    ],
+    "verification": {
+      "x": "本人 GitHub 资料明确链接 @KentBeck。",
+      "website": "GitHub 链接 www.kentbeck.com，跳转至 kentbeck.com；网站介绍本人软件设计工作。",
+      "github": "资料署名 Kent Beck，与个人官网一致。",
+      "note": "旧 tidyfirst.substack.com 已跳转至 newsletter.kentbeck.com。"
+    },
+    "checkedAt": "2026-10-10",
+    "id": "kent-beck"
+  },
+  {
+    "name": "Salvatore Sanfilippo",
+    "role": "Redis 创始人，网名 antirez",
+    "description": "创建 Redis，并持续分享数据结构、系统编程和简洁代码的实践，展示高性能后端工具的设计过程。",
+    "category": "数据与后端",
+    "tags": [
+      "Redis",
+      "C",
+      "数据结构"
+    ],
+    "language": "English",
+    "x": "https://x.com/antirez",
+    "website": "https://antirez.com/",
+    "github": "https://github.com/antirez",
+    "works": [
+      {
+        "title": "Redis",
+        "url": "https://github.com/redis/redis"
+      },
+      {
+        "title": "kilo：小型文本编辑器",
+        "url": "https://github.com/antirez/kilo"
+      },
+      {
+        "title": "Redis patterns for coding",
+        "url": "https://redis.antirez.com/"
+      }
+    ],
+    "start": {
+      "title": "Redis Quick Starts",
+      "url": "https://redis.io/docs/latest/develop/get-started/",
+      "note": "先动手理解键值与数据结构，再阅读作者博客中的实现与设计讨论。"
+    },
+    "sources": [
+      "https://antirez.com/",
+      "https://github.com/antirez",
+      "https://github.com/antirez/kilo"
+    ],
+    "verification": {
+      "x": "GitHub 资料明确链接 @antirez。",
+      "website": "个人博客署名 antirez，并链接本人 GitHub 开源项目；采用技术博客而非公司网站。",
+      "github": "资料署名 Salvatore Sanfilippo，博客链接此账号的项目。",
+      "note": "GitHub 另列旧个人域名 invece.org，本次无法读取；本站使用可读取的 antirez.com 技术博客。"
+    },
+    "checkedAt": "2026-10-10",
+    "id": "salvatore-sanfilippo"
+  },
+  {
+    "name": "Mitchell Hashimoto",
+    "category": "云原生与平台",
+    "tags": [
+      "基础设施即代码",
+      "开发者工具",
+      "Zig"
+    ],
+    "x": "https://x.com/mitchellh",
+    "website": "https://mitchellh.com/",
+    "github": "https://github.com/mitchellh",
+    "language": "English",
+    "works": [
+      {
+        "title": "Ghostty",
+        "url": "https://github.com/ghostty-org/ghostty"
+      },
+      {
+        "title": "libxev",
+        "url": "https://github.com/mitchellh/libxev"
+      }
+    ],
+    "start": {
+      "title": "Mitchell Hashimoto 个人站",
+      "url": "https://mitchellh.com/",
+      "note": "阅读项目与工程实践文章，按自己的需求选择基础设施或终端工具方向。"
+    },
+    "sources": [
+      "https://github.com/mitchellh",
+      "https://mitchellh.com/",
+      "https://www.hashicorp.com/en/about/origin-story"
+    ],
+    "evidence": {
+      "x": "GitHub 资料和个人站社交链接均指向 @mitchellh。",
+      "website": "GitHub 自填链接 mitchellh.com，网站署名一致。",
+      "github": "个人站链接 github.com/mitchellh，GitHub 置顶 Ghostty、libxev。"
+    },
+    "verification": "个人站与 GitHub 互链确认；X 活跃度未单独核实。",
+    "role": "HashiCorp 联合创始人 · Ghostty 作者",
+    "description": "HashiCorp 联合创始人，参与建立基础设施自动化工具生态，并开发 Ghostty、libxev 等系统工具。",
+    "checkedAt": "2026-10-10",
+    "id": "mitchell-hashimoto"
+  },
+  {
+    "name": "Charity Majors",
+    "category": "运维与可观测性",
+    "tags": [
+      "可观测性",
+      "工程管理",
+      "On-call"
+    ],
+    "x": "https://x.com/mipsytipsy",
+    "website": "https://charity.wtf/",
+    "github": null,
+    "language": "English",
+    "works": [
+      {
+        "title": "Observability Engineering",
+        "url": "https://www.honeycomb.io/observability-engineering-oreilly-book"
+      },
+      {
+        "title": "On Call Shouldn’t Suck: A Guide For Managers",
+        "url": "https://charity.wtf/p/on-call-shouldnt-suck-a-guide-for-managers"
+      }
+    ],
+    "start": {
+      "title": "On Call Shouldn’t Suck",
+      "url": "https://charity.wtf/p/on-call-shouldnt-suck-a-guide-for-managers",
+      "note": "从值班责任、告警质量与团队反馈理解生产工程的日常实践。"
+    },
+    "sources": [
+      "https://charity.wtf/about",
+      "https://charity.wtf/p/on-call-shouldnt-suck-a-guide-for-managers",
+      "https://lizthegrey.com/"
+    ],
+    "evidence": {
+      "x": "本人署名文章中引用其 @mipsytipsy 推文；X 页面署名及 charity.wtf 链接一致。",
+      "website": "charity.wtf 的 About 页面署名 Charity Majors。",
+      "github": "候选 mipsytipsy GitHub 访问返回 404，未找到可靠的公开个人账号。"
+    },
+    "verification": "X 页面说明仅偶尔使用；charity.wtf 现使用 Substack 发布。GitHub 未确认，不展示猜测账号。",
+    "role": "可观测性实践者",
+    "description": "围绕可观测性、生产环境调试和工程团队协作持续写作，推动开发者承担代码运行后的反馈与维护。",
+    "checkedAt": "2026-10-10",
+    "id": "charity-majors"
+  },
+  {
+    "name": "Rich Harris",
+    "role": "Svelte 与 Rollup 创建者",
+    "description": "用编译器思路探索 UI 框架，并创建 Rollup。适合关注响应式、构建工具和让开发体验更简单的设计取舍。",
+    "category": "前端与工具",
+    "tags": [
+      "Svelte",
+      "Rollup",
+      "编译器"
+    ],
+    "x": null,
+    "website": null,
+    "github": "https://github.com/Rich-Harris",
+    "works": [
+      {
+        "title": "Svelte",
+        "url": "https://github.com/sveltejs/svelte"
+      },
+      {
+        "title": "Rollup",
+        "url": "https://github.com/rollup/rollup"
+      }
+    ],
+    "start": {
+      "title": "Svelte 交互教程",
+      "url": "https://svelte.dev/tutorial",
+      "note": "通过可运行的示例学习组件和响应式；想理解历史设计，可继续读作者的 Svelte 3 发布文章。"
+    },
+    "sources": [
+      "https://github.com/Rich-Harris",
+      "https://svelte.dev/blog/svelte-3-rethinking-reactivity"
+    ],
+    "language": "English",
+    "alias": null,
+    "verification": "本轮可确认 GitHub 和 Bluesky。未确认独立个人站及当前 X；Svelte 网站是项目官网，不作为个人网站。",
+    "otherLinks": [
+      {
+        "title": "Bluesky",
+        "url": "https://bsky.app/profile/rich-harris.dev"
+      }
+    ],
+    "checkedAt": "2026-10-10",
+    "id": "rich-harris"
+  },
+  {
+    "name": "Russ Cox",
+    "role": "Go 核心设计与实现贡献者",
+    "description": "深入研究 Go 工具链、正则表达式和软件依赖，用清晰文章解释工程实现与正确性。",
+    "category": "语言与系统",
+    "tags": [
+      "Go",
+      "正则表达式",
+      "供应链安全"
+    ],
+    "language": "English",
+    "x": "https://x.com/_rsc",
+    "website": "https://research.swtch.com/",
+    "github": "https://github.com/rsc",
+    "works": [
+      {
+        "title": "Go",
+        "url": "https://go.dev/"
+      },
+      {
+        "title": "Go Testing By Example",
+        "url": "https://research.swtch.com/testing"
+      },
+      {
+        "title": "Plan 9 from User Space",
+        "url": "https://github.com/9fans/plan9port"
+      }
+    ],
+    "start": {
+      "title": "Go Testing By Example",
+      "url": "https://research.swtch.com/testing",
+      "note": "通过具体实例学习测试方式，适合已有 Go 基础的读者。"
+    },
+    "sources": [
+      "https://research.swtch.com/",
+      "https://github.com/rsc",
+      "https://go.dev/wiki/NewSpeakers"
+    ],
+    "verification": {
+      "x": "Go 官方 Wiki 明确列出 Russ Cox 的 @_rsc；注意前导下划线，不能写成 @rsc。",
+      "website": "博客明确署名 Russ Cox，GitHub 资料直接链接该博客。",
+      "github": "资料页署名 Russ Cox，并列 Go 和 Plan 9 项目。",
+      "note": "X 页面本次无法直接读取；身份依据来自 Go 官方 Wiki，不据此判断活跃状态。"
+    },
+    "checkedAt": "2026-10-10",
+    "id": "russ-cox"
+  },
+  {
+    "name": "Robert C. Martin",
+    "role": "Clean Code 作者、软件工程讲师",
+    "description": "围绕整洁代码、测试纪律和架构边界写作，强调开发者对可维护性与专业实践的责任。",
+    "category": "软件工程",
+    "tags": [
+      "Clean Code",
+      "测试",
+      "架构"
+    ],
+    "language": "English",
+    "x": "https://x.com/unclebobmartin",
+    "website": "https://cleancoder.com/",
+    "github": "https://github.com/unclebob",
+    "works": [
+      {
+        "title": "个人开源实践",
+        "url": "https://github.com/unclebob"
+      },
+      {
+        "title": "Clean Coder Blog",
+        "url": "https://blog.cleancoder.com/"
+      },
+      {
+        "title": "The Three Rules of TDD",
+        "url": "https://blog.cleancoder.com/uncle-bob/2014/05/19/First.html"
+      }
+    ],
+    "start": {
+      "title": "The Three Rules of TDD",
+      "url": "https://blog.cleancoder.com/uncle-bob/2014/05/19/First.html",
+      "note": "从短文理解作者对测试驱动开发的具体要求，再结合自己的项目做练习。"
+    },
+    "sources": [
+      "https://cleancoder.com/",
+      "https://github.com/unclebob",
+      "https://blog.cleancoder.com/uncle-bob/2023/01/18/functional-classes.html"
+    ],
+    "verification": {
+      "x": "本人博客明确将 @unclebobmartin 推文称为自己的推文，官网也链接 X 内容。",
+      "website": "官网署名 Uncle Bob Martin，GitHub 资料直接链接 cleancoder.com。",
+      "github": "资料署名 Robert C. Martin，简介注明 Clean Code 作者。",
+      "note": "Uncle Bob 是其公开使用的称呼；GitHub 与 X 的用户名不同。"
+    },
+    "checkedAt": "2026-10-10",
+    "id": "robert-c-martin"
+  },
+  {
+    "name": "Armon Dadgar",
+    "category": "云原生与平台",
+    "tags": [
+      "分布式系统",
+      "云基础设施",
+      "安全"
+    ],
+    "x": "https://x.com/armon",
+    "website": null,
+    "github": "https://github.com/armon",
+    "language": "English",
+    "works": [
+      {
+        "title": "bloomd",
+        "url": "https://github.com/armon/bloomd"
+      },
+      {
+        "title": "go-socks5",
+        "url": "https://github.com/armon/go-socks5"
+      }
+    ],
+    "start": {
+      "title": "HashiCast: Armon Dadgar",
+      "url": "https://www.hashicorp.com/en/resources/hashicast-episode-2-armon-dadgar-hashicorp",
+      "note": "了解工具生态、分布式系统与基础设施产品设计的出发点。"
+    },
+    "sources": [
+      "https://github.com/armon",
+      "https://www.hashicorp.com/about/person/armon-dadgar",
+      "https://www.hashicorp.com/en/resources/hashicast-episode-2-armon-dadgar-hashicorp"
+    ],
+    "evidence": {
+      "x": "GitHub 个人资料自填链接 twitter.com/armon。",
+      "website": "未确认独立个人网站；公司人物页仅作为来源。",
+      "github": "GitHub 署名 Armon Dadgar，HashiCorp 官方访谈确认其维护 Bloomd。"
+    },
+    "verification": "X 由 GitHub 自填链接确认；个人网站未确认。公司人物页的职务可能随时间变化。",
+    "role": "HashiCorp 联合创始人",
+    "description": "HashiCorp 联合创始人，围绕分布式系统、安全与多云基础设施推动工具设计，也维护数据结构和网络项目。",
+    "checkedAt": "2026-10-10",
+    "id": "armon-dadgar"
+  },
+  {
+    "name": "Liz Fong-Jones",
+    "category": "运维与可观测性",
+    "tags": [
+      "SRE",
+      "可观测性",
+      "OpenTelemetry"
+    ],
+    "x": "https://x.com/lizthegrey",
+    "website": "https://lizthegrey.com/",
+    "github": "https://github.com/lizthegrey",
+    "language": "English",
+    "works": [
+      {
+        "title": "Observability Engineering, 2nd Edition",
+        "url": "https://www.oreilly.com/library/view/observability-engineering-2nd/9781098179915/"
+      },
+      {
+        "title": "演讲与实践资料索引",
+        "url": "https://lizthegrey.com/"
+      }
+    ],
+    "start": {
+      "title": "个人站演讲索引",
+      "url": "https://lizthegrey.com/",
+      "note": "可按 SRE、错误预算、技术债和可观测性主题选择演讲或幻灯片。"
+    },
+    "sources": [
+      "https://lizthegrey.com/",
+      "https://github.com/lizthegrey"
+    ],
+    "evidence": {
+      "x": "本人站的演讲资料链接其 twitter.com/lizthegrey 历史推文。",
+      "website": "个人站署名 Liz Fong-Jones，GitHub 资料链接此站。",
+      "github": "个人站社交导航链接 github.com/lizthegrey，GitHub 页面署名一致。"
+    },
+    "verification": "X 为个人站历史内容所关联的账号；当前个人站和 GitHub 主要列 Bluesky 等渠道，未确认 X 活跃度。",
+    "role": "SRE 与可观测性实践者",
+    "description": "结合 SRE 实践和可观测性教学，讨论可靠性、生产调试以及技术债与值班中断的治理。",
+    "checkedAt": "2026-10-10",
+    "id": "liz-fong-jones"
+  },
+  {
+    "name": "Tanner Linsley",
+    "role": "TanStack 创建者",
+    "description": "构建 TanStack 系列工具，覆盖异步数据、表格和路由等应用难题。适合关注跨框架 API、状态管理与开源工具的产品化。",
+    "category": "前端与工具",
+    "tags": [
+      "TanStack",
+      "数据获取",
+      "TypeScript"
+    ],
+    "x": "https://x.com/tannerlinsley",
+    "website": "https://tannerlinsley.com/",
+    "github": "https://github.com/tannerlinsley",
+    "works": [
+      {
+        "title": "TanStack",
+        "url": "https://tanstack.com/"
+      },
+      {
+        "title": "TanStack Query",
+        "url": "https://github.com/TanStack/query"
+      }
+    ],
+    "start": {
+      "title": "TanStack Query 文档",
+      "url": "https://tanstack.com/query/latest/docs",
+      "note": "先理解服务器状态与客户端状态的区别，再学习缓存、失效和异步请求的管理。"
+    },
+    "sources": [
+      "https://tannerlinsley.com/"
+    ],
+    "language": "English",
+    "alias": null,
+    "verification": "个人官网与公开档案互链核实；账号可访问性可能受平台登录要求影响。",
+    "otherLinks": [],
+    "checkedAt": "2026-10-10",
+    "id": "tanner-linsley"
+  },
+  {
+    "name": "Fabrice Bellard",
+    "role": "QEMU、FFmpeg 与 QuickJS 创始开发者",
+    "description": "在模拟器、编译器、多媒体和 JavaScript 引擎之间持续创作，以紧凑实现展示系统编程的可能性。",
+    "category": "语言与系统",
+    "tags": [
+      "QEMU",
+      "FFmpeg",
+      "QuickJS"
+    ],
+    "language": "English",
+    "x": null,
+    "website": "https://bellard.org/",
+    "github": "https://github.com/bellard",
+    "works": [
+      {
+        "title": "QEMU",
+        "url": "https://www.qemu.org/"
+      },
+      {
+        "title": "FFmpeg",
+        "url": "https://ffmpeg.org/"
+      },
+      {
+        "title": "QuickJS",
+        "url": "https://bellard.org/quickjs/"
+      }
+    ],
+    "start": {
+      "title": "JSLinux",
+      "url": "https://bellard.org/jslinux/",
+      "note": "先在浏览器中体验完整操作系统，再从官网探索模拟器和语言引擎的实现。"
+    },
+    "sources": [
+      "https://bellard.org/",
+      "https://github.com/bellard",
+      "https://github.com/bellard/mquickjs"
+    ],
+    "verification": {
+      "x": "个人官网与 GitHub 未找到可确认的 X 链接，留空。",
+      "website": "个人主页列本人项目，并明确说明曾创建 FFmpeg。",
+      "github": "官网直接链接 bellard/mquickjs；该账号还维护 QuickJS 仓库。",
+      "note": "项目官网用于代表作品，个人网站采用 bellard.org。"
+    },
+    "checkedAt": "2026-10-10",
+    "id": "fabrice-bellard"
+  },
+  {
+    "name": "阮一峰",
+    "role": "技术作者、科技爱好者周刊作者",
+    "description": "以中文教程和持续更新的技术周刊连接开发知识、工具与行业观察，降低读者接触新技术的门槛。",
+    "category": "软件工程",
+    "tags": [
+      "技术写作",
+      "JavaScript",
+      "科技周刊"
+    ],
+    "language": "中文",
+    "x": "https://x.com/ruanyf",
+    "website": "https://www.ruanyifeng.com/",
+    "github": "https://github.com/ruanyf",
+    "works": [
+      {
+        "title": "科技爱好者周刊",
+        "url": "https://github.com/ruanyf/weekly"
+      },
+      {
+        "title": "ECMAScript 6 入门",
+        "url": "https://github.com/ruanyf/es6tutorial"
+      },
+      {
+        "title": "全栈工程师培训材料",
+        "url": "https://github.com/ruanyf/jstraining"
+      }
+    ],
+    "start": {
+      "title": "科技爱好者周刊",
+      "url": "https://github.com/ruanyf/weekly",
+      "note": "从近期周刊发现开发工具与学习资料；学习 JavaScript 可继续阅读 ES6 教程。"
+    },
+    "sources": [
+      "https://www.ruanyifeng.com/",
+      "https://www.ruanyifeng.com/blog/index.html",
+      "https://github.com/ruanyf"
+    ],
+    "verification": {
+      "x": "个人博客页脚直接链接 Twitter，GitHub 资料也明确链接 twitter.com/ruanyf。",
+      "website": "网站自述为阮一峰个人网站。",
+      "github": "个人博客页脚直接链接 GitHub，与教程、周刊作者一致。",
+      "note": "收录的是公开技术资料入口。"
+    },
+    "checkedAt": "2026-10-10",
+    "id": "ruan-yifeng"
+  },
+  {
+    "name": "Solomon Hykes",
+    "category": "云原生与平台",
+    "tags": [
+      "Docker",
+      "CI/CD",
+      "容器"
+    ],
+    "x": "https://x.com/solomonstre",
+    "website": null,
+    "github": "https://github.com/shykes",
+    "language": "English",
+    "works": [
+      {
+        "title": "Dagger",
+        "url": "https://dagger.io/"
+      },
+      {
+        "title": "The Great CI Bottleneck of 2026",
+        "url": "https://dagger.io/blog/the-great-ci-bottleneck-of-2026/"
+      }
+    ],
+    "start": {
+      "title": "The Great CI Bottleneck of 2026",
+      "url": "https://dagger.io/blog/the-great-ci-bottleneck-of-2026/",
+      "note": "从作者关于 CI 成本、规模与软件架构的讨论理解 Dagger 的动机。"
+    },
+    "sources": [
+      "https://github.com/shykes",
+      "https://dagger.io/blog/infrared-100/",
+      "https://dagger.io/blog/the-great-ci-bottleneck-of-2026/"
+    ],
+    "evidence": {
+      "x": "GitHub 个人资料直接链接 twitter.com/solomonstre。",
+      "website": "未确认独立个人站；Dagger 是其项目网站，不作为个人站。",
+      "github": "GitHub 页面署名 Solomon Hykes，Dagger 官方博客署名和项目描述一致。"
+    },
+    "verification": "X 使用 GitHub 当前自填的 @solomonstre；GitHub 用户名为 shykes，两者不同。未确认 X 最近活跃度。",
+    "role": "Docker 创始人 · Dagger 联合创始人",
+    "description": "Docker 创始人，后来共同创办 Dagger，持续探索以容器构建可编程、可复现的开发与 CI 流程。",
+    "checkedAt": "2026-10-10",
+    "id": "solomon-hykes"
+  },
+  {
+    "name": "Lea Verou",
+    "role": "Web 标准专家 · 开发工具作者",
+    "description": "参与 CSS 与 Web 标准设计，创建 Prism，并参与 Color.js。她将可用性研究与开发工具实践连接起来。",
+    "category": "前端与工具",
+    "tags": [
+      "CSS",
+      "Web 标准",
+      "颜色科学"
+    ],
+    "x": "https://x.com/leaverou",
+    "website": "https://lea.verou.me/",
+    "github": "https://github.com/leaverou",
+    "works": [
+      {
+        "title": "Prism",
+        "url": "https://prismjs.com/"
+      },
+      {
+        "title": "Color.js",
+        "url": "https://colorjs.io/"
+      }
+    ],
+    "start": {
+      "title": "Lea 的 Web 技术文章",
+      "url": "https://lea.verou.me/blog/",
+      "note": "从 CSS、颜色与交互设计文章切入，观察 API 易用性如何影响开发者和最终用户。"
+    },
+    "sources": [
+      "https://lea.verou.me/",
+      "https://lea.verou.me/about/"
+    ],
+    "language": "English",
+    "alias": null,
+    "verification": "个人官网与公开档案互链核实；账号可访问性可能受平台登录要求影响。",
+    "otherLinks": [],
+    "checkedAt": "2026-10-10",
+    "id": "lea-verou"
+  },
+  {
+    "name": "廖雪峰",
+    "role": "中文编程教程作者",
+    "description": "编写 Python、Java、JavaScript、SQL 与 Git 教程，并通过手写框架讲解后端系统的工作方式。",
+    "category": "软件工程",
+    "tags": [
+      "编程入门",
+      "Python",
+      "Java"
+    ],
+    "language": "中文",
+    "x": "https://x.com/liaoxuefeng",
+    "website": "https://liaoxuefeng.com/",
+    "github": "https://github.com/michaelliao",
+    "works": [
+      {
+        "title": "Python 教程",
+        "url": "https://liaoxuefeng.com/books/python/index.html"
+      },
+      {
+        "title": "Git 教程",
+        "url": "https://liaoxuefeng.com/books/git/index.html"
+      }
+    ],
+    "start": {
+      "title": "Python 教程",
+      "url": "https://liaoxuefeng.com/books/python/index.html",
+      "note": "适合中文读者从基础语法逐步上手；需要版本控制基础时搭配 Git 教程。"
+    },
+    "sources": [
+      "https://liaoxuefeng.com/",
+      "https://github.com/michaelliao"
+    ],
+    "verification": {
+      "x": "GitHub 资料明确链接 @liaoxuefeng。",
+      "website": "官网自述为廖雪峰官方网站，GitHub 资料链接相同域名。",
+      "github": "官网页脚直接链接 michaelliao，与 GitHub 返回官网的链接互证。",
+      "note": "GitHub 当前显示名是 Crypto Michael，不能因显示名变化误认成其他人。"
+    },
+    "checkedAt": "2026-10-10",
+    "id": "liao-xuefeng"
+  },
+  {
+    "name": "Joe Beda",
+    "category": "云原生与平台",
+    "tags": [
+      "Kubernetes",
+      "云原生",
+      "技术教育"
+    ],
+    "x": "https://x.com/jbeda",
+    "website": "https://www.eightypercent.net/",
+    "github": "https://github.com/jbeda",
+    "language": "English",
+    "works": [
+      {
+        "title": "TGI Kubernetes 024: Kubernetes Job objects",
+        "url": "https://www.youtube.com/watch?v=-gLMTm85R3M"
+      },
+      {
+        "title": "Kubernetes",
+        "url": "https://github.com/kubernetes/kubernetes"
+      }
+    ],
+    "start": {
+      "title": "TGI Kubernetes: Job objects",
+      "url": "https://www.youtube.com/watch?v=-gLMTm85R3M",
+      "note": "用一次具体实验学习 Job 与控制器；视频较早，命令需对照当前 Kubernetes 文档。"
+    },
+    "sources": [
+      "https://github.com/jbeda",
+      "https://www.cncf.io/kubeweekly/kubeweekly-119/",
+      "https://www.cncf.io/kubeweekly/kubeweekly-123/"
+    ],
+    "evidence": {
+      "x": "CNCF 官方 KubeWeekly 直接把 Joe Beda 链接至 twitter.com/jbeda。",
+      "website": "GitHub 个人资料直接列出 www.eightypercent.net。",
+      "github": "GitHub 页面署名 Joe Beda，官方 CNCF 介绍确认其 Kubernetes 贡献。"
+    },
+    "verification": "X 由官方历史资料确认；当前 GitHub 不再列出 X。个人站本次读取遇到证书过期，保留本人 GitHub 公布的地址并注明。 个人站链接标注为本轮无法访问。",
+    "role": "Kubernetes 原始创建者之一",
+    "description": "Kubernetes 原始创建者之一，通过演讲与 TGI Kubernetes 实践系列解释集群机制、应用部署和安全。",
+    "checkedAt": "2026-10-10",
+    "id": "joe-beda",
+    "websiteStatus": "本轮无法访问"
+  },
+  {
+    "name": "Addy Osmani",
+    "role": "Web 性能与开发体验作者",
+    "description": "长期参与 Chrome 开发者工具与性能工作，并撰写 JavaScript 模式和工程团队相关著作。适合关注性能、开发体验与工程实践。",
+    "category": "前端与工具",
+    "tags": [
+      "Web 性能",
+      "JavaScript",
+      "开发体验"
+    ],
+    "x": "https://x.com/addyosmani",
+    "website": "https://addyosmani.com/",
+    "github": "https://github.com/addyosmani",
+    "works": [
+      {
+        "title": "Learning JavaScript Design Patterns",
+        "url": "https://www.oreilly.com/library/view/learning-javascript-design/9781098139865/"
+      },
+      {
+        "title": "Quicklink",
+        "url": "https://github.com/GoogleChromeLabs/quicklink"
+      }
+    ],
+    "start": {
+      "title": "Addy 的技术博客",
+      "url": "https://addyosmani.com/blog/",
+      "note": "按性能、代码质量和工程实践选读；对照自己的项目评估建议的适用条件。"
+    },
+    "sources": [
+      "https://addyosmani.com/"
+    ],
+    "language": "English",
+    "alias": null,
+    "verification": "个人官网与公开档案互链核实；账号可访问性可能受平台登录要求影响。",
+    "otherLinks": [],
+    "checkedAt": "2026-10-10",
+    "id": "addy-osmani"
+  },
+  {
+    "name": "Tim Hockin",
+    "category": "云原生与平台",
+    "tags": [
+      "Kubernetes",
+      "网络",
+      "容器"
+    ],
+    "x": "https://x.com/thockin",
+    "website": null,
+    "github": "https://github.com/thockin",
+    "language": "English",
+    "works": [
+      {
+        "title": "Why Kubernetes doesn’t use libnetwork",
+        "url": "https://kubernetes.io/blog/2016/01/why-kubernetes-doesnt-use-libnetwork/"
+      },
+      {
+        "title": "go-build-template",
+        "url": "https://github.com/thockin/go-build-template"
+      }
+    ],
+    "start": {
+      "title": "Kubernetes 网络模型设计文章",
+      "url": "https://kubernetes.io/blog/2016/01/why-kubernetes-doesnt-use-libnetwork/",
+      "note": "阅读 CNI 选择背后的历史约束与设计思路，再配合当前网络文档。"
+    },
+    "sources": [
+      "https://github.com/thockin",
+      "https://kubernetes.io/blog/2016/01/why-kubernetes-doesnt-use-libnetwork/"
+    ],
+    "evidence": {
+      "x": "GitHub 资料直接链接 x.com/thockin。",
+      "website": "未确认独立个人网站。",
+      "github": "GitHub 署名 Tim Hockin，Kubernetes 官方文章由 Tim Hockin 署名。"
+    },
+    "verification": "X 由 GitHub 自填链接确认；个人站未确认。推荐文章是历史设计材料。",
+    "role": "Kubernetes 核心贡献者",
+    "description": "Kubernetes 核心贡献者，长期参与容器网络与接口设计，并公开解释网络模型背后的工程取舍。",
+    "checkedAt": "2026-10-10",
+    "id": "tim-hockin"
+  },
+  {
+    "name": "Kent C. Dodds",
+    "role": "软件教育者 · Testing Library 贡献者",
+    "description": "围绕 JavaScript、React 与测试持续分享课程和文章，推动以用户行为为中心的测试实践。适合提升应用质量和全栈开发能力。",
+    "category": "前端与工具",
+    "tags": [
+      "React",
+      "测试",
+      "全栈"
+    ],
+    "x": "https://x.com/kentcdodds",
+    "website": "https://kentcdodds.com/",
+    "github": "https://github.com/kentcdodds",
+    "works": [
+      {
+        "title": "React Testing Library",
+        "url": "https://github.com/testing-library/react-testing-library"
+      },
+      {
+        "title": "Epic Web",
+        "url": "https://www.epicweb.dev/"
+      }
+    ],
+    "start": {
+      "title": "Kent 的免费技术博客",
+      "url": "https://kentcdodds.com/blog",
+      "note": "先从测试与 React 分类文章入手，结合自己的应用练习；部分课程为付费内容。"
+    },
+    "sources": [
+      "https://kentcdodds.com/",
+      "https://kentcdodds.com/about",
+      "https://github.com/kentcdodds"
+    ],
+    "language": "English",
+    "alias": null,
+    "verification": "个人官网与公开档案互链核实；账号可访问性可能受平台登录要求影响。",
+    "otherLinks": [],
+    "checkedAt": "2026-10-10",
+    "id": "kent-c-dodds"
+  },
+  {
+    "name": "Alexis Richardson",
+    "category": "云原生与平台",
+    "tags": [
+      "GitOps",
+      "配置管理",
+      "平台工程"
+    ],
+    "x": "https://x.com/monadic",
+    "website": null,
+    "github": "https://github.com/monadic",
+    "language": "English",
+    "works": [
+      {
+        "title": "ConfigHub",
+        "url": "https://confighub.com/"
+      },
+      {
+        "title": "microtraderx",
+        "url": "https://github.com/monadic/microtraderx"
+      }
+    ],
+    "start": {
+      "title": "ConfigHub 博客",
+      "url": "https://confighub.com/blog",
+      "note": "从署名文章了解 GitOps、配置数据与平台工程的当前思考。"
+    },
+    "sources": [
+      "https://github.com/monadic",
+      "https://www.confighub.com/",
+      "https://www.cncf.io/blog/2018/04/30/cant-attend-kubecon-cloudnativecon-in-copenhagen-join-us-virtually/"
+    ],
+    "evidence": {
+      "x": "CNCF 官方活动文章列出 Alexis Richardson @monadic。",
+      "website": "未确认独立个人站；GitHub 所列 confighub.com 为公司网站。",
+      "github": "GitHub 页面署名 alexis richardson，资料列 ConfigHub，官方站确认其联合创始人身份。"
+    },
+    "verification": "X 来自 CNCF 官方历史资料，最近活跃度未核实。ConfigHub 为项目/公司站，不作为独立个人站。",
+    "role": "GitOps 推动者 · RabbitMQ 创始人",
+    "description": "RabbitMQ 与 Weaveworks 创始人、GitOps 推动者，持续研究云原生配置管理和应用运维工作流。",
+    "checkedAt": "2026-10-10",
+    "id": "alexis-richardson"
+  },
+  {
+    "name": "Sindre Sorhus",
+    "role": "开源维护者 · 独立应用开发者",
+    "description": "维护大量 Node.js 与 TypeScript 工具，创建 Awesome 资源列表，也持续开发 Apple 平台应用。适合学习小工具的设计与长期维护。",
+    "category": "前端与工具",
+    "tags": [
+      "Node.js",
+      "TypeScript",
+      "开源维护"
+    ],
+    "x": "https://x.com/sindresorhus",
+    "website": "https://sindresorhus.com/",
+    "github": "https://github.com/sindresorhus",
+    "works": [
+      {
+        "title": "Awesome",
+        "url": "https://github.com/sindresorhus/awesome"
+      },
+      {
+        "title": "Type-fest",
+        "url": "https://github.com/sindresorhus/type-fest"
+      }
+    ],
+    "start": {
+      "title": "Awesome 资源索引",
+      "url": "https://github.com/sindresorhus/awesome",
+      "note": "从自己使用的技术进入主题列表，再阅读一个小工具的源码，观察专注且可组合的 API。"
+    },
+    "sources": [
+      "https://sindresorhus.com/",
+      "https://sindresorhus.com/about"
+    ],
+    "language": "English",
+    "alias": null,
+    "verification": "个人官网与公开档案互链核实；账号可访问性可能受平台登录要求影响。",
+    "otherLinks": [],
+    "checkedAt": "2026-10-10",
+    "id": "sindre-sorhus"
+  },
+  {
+    "name": "Guillermo Rauch",
+    "role": "Vercel 创建者 · Web 工具作者",
+    "description": "创建 Vercel，参与 Socket.IO 等开源工作，通过写作探索 Web 应用架构与开发流程。适合关注部署体验和 Web 平台演进。",
+    "category": "前端与工具",
+    "tags": [
+      "Vercel",
+      "Web 架构",
+      "开发体验"
+    ],
+    "x": "https://x.com/rauchg",
+    "website": "https://rauchg.com/",
+    "github": "https://github.com/rauchg",
+    "works": [
+      {
+        "title": "Vercel",
+        "url": "https://vercel.com/"
+      },
+      {
+        "title": "个人博客源码",
+        "url": "https://github.com/rauchg/blog"
+      }
+    ],
+    "start": {
+      "title": "Guillermo 的 Web 文章",
+      "url": "https://rauchg.com/",
+      "note": "从开发、预览和交付流程相关主题开始，思考工具如何缩短从代码到产品的距离。"
+    },
+    "sources": [
+      "https://rauchg.com/",
+      "https://github.com/rauchg"
+    ],
+    "language": "English",
+    "alias": null,
+    "verification": "个人官网与公开档案互链核实；账号可访问性可能受平台登录要求影响。",
+    "otherLinks": [],
+    "checkedAt": "2026-10-10",
+    "id": "guillermo-rauch"
+  }
+]
