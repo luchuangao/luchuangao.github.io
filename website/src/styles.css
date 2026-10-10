@@ -236,6 +236,8 @@ h1 span { display: block; white-space: nowrap; }
 .hero-product-x-tracker .hero-product-visual { animation-delay: -4s; }
 .hero-product-zilo { margin-top: -40px; }
 .hero-product-zilo .hero-product-visual { animation-delay: -1s; }
+.hero-product-juecha { margin-top: 40px; }
+.hero-product-juecha .hero-product-visual { animation-delay: -3s; }
 .hero-product-name { font-size: 16px; }
 .hero-product-subtitle { font-size: 10px; white-space: normal; text-wrap: balance; }
 .featured-extension { background: #f2f5fc; }
@@ -249,13 +251,13 @@ h1 span { display: block; white-space: nowrap; }
 }
 @media (max-width: 1050px) and (min-width: 761px) {
   .hero-products { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
-  .hero-product-callhome, .hero-product-compound, .hero-product-littlebird, .hero-product-x-tracker, .hero-product-zilo { margin-top: 0; }
+  .hero-product-callhome, .hero-product-compound, .hero-product-littlebird, .hero-product-x-tracker, .hero-product-zilo, .hero-product-juecha { margin-top: 0; }
   .hero-product img { width: min(100%,105px); }
   .hero-product-name { font-size: 14px; }
 }
 @media (max-width: 760px) {
   .hero-products { gap: 14px; padding: 20px 0 47px; }
-  .hero-product-callhome, .hero-product-compound, .hero-product-littlebird, .hero-product-x-tracker, .hero-product-zilo { margin-top: 0; }
+  .hero-product-callhome, .hero-product-compound, .hero-product-littlebird, .hero-product-x-tracker, .hero-product-zilo, .hero-product-juecha { margin-top: 0; }
   .hero-product img { width: min(100%,85px); }
   .hero-product-name { font-size: 13px; }
   .hero-product-subtitle { font-size: 10px; }

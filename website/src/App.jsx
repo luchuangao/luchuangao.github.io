@@ -149,7 +149,31 @@ const zilo = {
 };
 
 
-const releasedProducts = [callHome, compound, littlebird, xTracker, zilo];
+const juecha = {
+  id: 'juecha', type: 'app', status: 'released',
+  name: '觉察：屏幕时间管理', shortName: '觉察', subtitle: '屏幕时间与专注',
+  image: 'juecha-icon.jpg', platforms: 'iPhone', tagline: '在打开之前，重新做一次选择。',
+  description: ['在无意识打开短视频和社交 App 之前，先停一下。', '设置使用额度、开始专注，并回顾自己的选择。'],
+  highlights: ['每日使用额度', '即时觉察', '专注与回顾'],
+  detail: '觉察是一款面向成年人的数字自律工具。它不会替你决定该不该娱乐，而是在你准备打开目标 App 时，留出一点空间，让你重新做一次选择。',
+  download: 'https://apps.apple.com/hk/app/id6797240253',
+  support: './juecha-support/', privacy: './juecha-support/privacy.html',
+  features: [
+    ['每日使用额度', '为自己选择的 App 设置每日使用时间，达到额度后由 iOS 显示系统级干预。'],
+    ['即时觉察与睡前暂停', '在打开目标 App 前增加短暂停顿，也可以设置睡前暂停时段。'],
+    ['专注计时', '开始 25 分钟专注与 5 分钟休息，专注时暂停选定的 App。'],
+    ['回顾变化', '查看干预次数、节省时间和专注记录，观察自己的使用节奏。'],
+    ['重视隐私', '不读取聊天或浏览内容；管理对象与记录优先保存在设备本地。'],
+  ],
+  screens: [
+    { image: 'juecha-limit.jpg', width: 518, height: 1120, alt: '觉察每日使用额度设置页', caption: '为常用 App 设定边界' },
+    { image: 'juecha-focus.jpg', width: 518, height: 1120, alt: '觉察专注计时与暂停 App 页面', caption: '留出一段专注时间' },
+    { image: 'juecha-review.jpg', width: 518, height: 1120, alt: '觉察近 30 天干预与节省时间记录', caption: '回顾每一次选择' },
+    { image: 'juecha-profile.jpg', width: 518, height: 1120, alt: '觉察连续天数与阶段里程碑', caption: '看见持续的小变化' },
+  ],
+};
+
+const releasedProducts = [callHome, compound, littlebird, xTracker, zilo, juecha];
 
 function DownloadLink({ product, className = 'primary-button' }) {
   if (product.installMethod === 'unpacked') return <a className={className} href={product.download} download>
