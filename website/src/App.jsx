@@ -136,7 +136,7 @@ const zilo = {
   detail: 'Zilo 是一款面向个人的原生 Mac 清单应用。离线管理任务、日历、习惯和专注，也可在任务中撰写 Markdown 文档、插入图片与思维导图，并导出 Word、PDF 或 Markdown。',
   download: './assets/Zilo-1.0-11.dmg',
   source: 'https://github.com/luchuangao/Zilo',
-  note: '需要 macOS 14 或更高版本。此版本已完成 Developer ID 签名与 Apple 公证。应用以本机数据为主；iCloud 同步尚未完成生产环境验证。',
+  note: '需要 macOS 14 或更高版本。下载并打开 DMG，将 Zilo 拖入“应用程序”即可安装。此版本已完成 Developer ID 签名与 Apple 公证。应用以本机数据为主；iCloud 同步尚未完成生产环境验证。',
   features: [
     ['清单与规划', '用清单、文件夹、标签和过滤器整理任务；通过列表、看板、时间线与日历安排每天的事。'],
     ['Markdown 文档', '支持 Markdown、代码块语法高亮、检查项、图片和思维导图，并可导出 Word、PDF 与 Markdown。'],
@@ -198,7 +198,7 @@ function FeaturedProduct({ product, onSelect, onGuide, index }) {
         <button className="secondary-button" type="button" aria-haspopup="dialog" onClick={() => onSelect(product)}>了解更多<ArrowRightIcon size={20} aria-hidden="true" /></button>
         {product.installMethod === 'unpacked' && <button className="secondary-button" type="button" onClick={() => onGuide(product)}>安装指南</button>}
       </div>
-      {product.version && <p className="download-meta">v{product.version} · 需开启开发者模式</p>}
+      {product.version && <p className="download-meta">{product.installMethod === 'unpacked' ? `v${product.version} · 需开启开发者模式` : product.build ? `v${product.version} · 构建 ${product.build} · 通用架构` : `v${product.version}`}</p>}
       <div className="card-support-links">
         {product.support && <a href={product.support} target={product.type === 'extension' ? '_blank' : undefined} rel={product.type === 'extension' ? 'noopener noreferrer' : undefined}>{product.type === 'extension' ? '问题反馈' : '产品支持'}{product.type === 'extension' && <span className="sr-only">（在新标签页打开）</span>}</a>}
         {product.privacy && <a href={product.privacy}>隐私政策</a>}
@@ -320,7 +320,6 @@ export function App() {
           <div className="dialog-actions"><DownloadLink product={active} />
             {active.installMethod === 'unpacked' && <button className="secondary-button" type="button" onClick={() => setShowGuide(!showGuide)}>{showGuide ? '产品介绍' : '安装指南'}</button>}
           </div>
-          {active.note && <p className="learning-note">{active.note}</p>}
           <div className="support-links">
             {active.support && <a href={active.support} target={active.type === 'extension' ? '_blank' : undefined} rel={active.type === 'extension' ? 'noopener noreferrer' : undefined}>{active.type === 'extension' ? '问题反馈' : '产品支持'}{active.type === 'extension' && <span className="sr-only">（在新标签页打开）</span>}</a>}
             {active.privacy && <a href={active.privacy}>隐私政策</a>}
