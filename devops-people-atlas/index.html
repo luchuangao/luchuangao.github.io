@@ -3,48 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#164b3b">
+  <meta name="theme-color" content="#ffffff">
   <meta name="description" content="发现开发与运维领域值得长期关注的人。浏览代表人物的 X、个人网站、GitHub、代表作品和学习入口。">
   <title>工程人物志 · Dev & Ops Atlas</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261011-simple">
+  <script src="app.js?v=20261011-simple" defer></script>
 </head>
 <body>
   <a class="skip" href="#directory">跳至人物目录</a>
-  <header class="header"><div class="header-inner">
-    <a class="brand" href="#"><span class="brand-icon" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>工程人物志<small>DEV & OPS ATLAS</small></span></a>
-    <nav aria-label="主导航"><a href="#directory" class="nav-current">人物目录</a><button id="reading-nav">阅读入口</button><button id="about-nav">关于收录 <span>↗</span></button></nav>
-    <button class="top-save" id="top-save"><span aria-hidden="true">☆</span> 我的收藏 <span id="saved-count">0</span></button>
-  </div></header>
+  <header class="header wrap">
+    <div><h1>工程人物志</h1><p>开发与运维人物、作品和学习入口。</p></div>
+    <button id="about-nav" class="quiet-button">收录说明</button>
+  </header>
   <main>
-    <section class="hero wrap" aria-labelledby="hero-title">
-      <div class="hero-copy"><p class="eyebrow"><span class="live-dot"></span> A FIELD GUIDE TO ENGINEERING MINDS</p>
-        <h1 id="hero-title">找到值得<br><span>长期关注</span>的人<span class="period">。</span></h1>
-        <p class="hero-description">从写下第一行代码，到让系统稳定运行。<br>沿着创造者的思考与作品，找到你的下一段学习旅程。</p>
-        <a class="primary" href="#directory">探索人物目录 <span>↓</span></a>
-        <div class="hero-stats"><div><strong id="total-people">—</strong><span>代表人物</span></div><div><strong>06</strong><span>工程方向</span></div><div><strong class="stat-date">2026.10</strong><span>本轮资料核实</span></div></div>
-      </div>
-      <aside class="field-notes"><div class="notes-top"><span>THE STARTING POINTS</span><span>↗</span></div><h2>关注一个人，<br>从一个好问题开始。</h2><p class="notes-intro">三个方向，三个阅读起点。</p>
-        <a href="https://vuejs.org/guide/introduction.html" target="_blank" rel="noopener noreferrer" class="note-link"><span class="note-number">01</span><div><small>前端与工具</small><strong>框架，为什么这样设计？</strong><span>尤雨溪 · Vue 指南</span></div><b>↗</b></a>
-        <a href="https://www.brendangregg.com/usemethod.html" target="_blank" rel="noopener noreferrer" class="note-link"><span class="note-number">02</span><div><small>运维与可观测性</small><strong>系统慢了，先看哪里？</strong><span>Brendan Gregg · USE 方法</span></div><b>↗</b></a>
-        <a href="https://martinfowler.com/refactoring/" target="_blank" rel="noopener noreferrer" class="note-link"><span class="note-number">03</span><div><small>软件工程</small><strong>好代码，如何持续演进？</strong><span>Martin Fowler · Refactoring</span></div><b>↗</b></a>
-        <div class="notes-bottom"><span>代码背后，是人。</span><span class="notes-glyph" aria-hidden="true">{ ↗ }</span></div>
-      </aside>
-    </section>
     <section id="directory" class="directory wrap" aria-labelledby="directory-title">
-      <div class="section-heading"><div><p class="eyebrow">THE DIRECTORY / 01</p><h2 id="directory-title">探索工程世界的创造者</h2></div><p>按方向找到同路人，按作品找到新思路。</p></div>
-      <div class="search-row"><div class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><label for="search" class="sr-only">搜索人物、项目或技术主题</label><input id="search" type="search" placeholder="搜索人物、项目或技术主题，如 Kubernetes、Vue、Python…" autocomplete="off"><kbd>/</kbd></div><button class="collection-button" id="saved-toggle" aria-pressed="false">☆ 只看收藏</button></div>
+      <h2 id="directory-title" class="sr-only">人物目录</h2>
+      <div class="search-row"><div class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><label for="search" class="sr-only">搜索人物、项目或技术主题</label><input id="search" type="search" placeholder="搜索姓名、项目或技术主题…" autocomplete="off"><kbd>/</kbd></div><button class="collection-button" id="saved-toggle" aria-pressed="false">☆ 只看收藏</button></div>
       <div class="categories" id="categories" role="group" aria-label="工程方向"></div>
       <div class="toolbar"><div class="toolbar-left"><span id="result-count" role="status" aria-live="polite">正在载入人物资料…</span><button id="clear-filters" hidden>重置筛选 ×</button></div><div class="toolbar-controls"><label class="sr-only" for="language">内容语言</label><select id="language"><option value="all">全部内容语言</option><option value="中文">含中文内容</option><option value="English">英文内容</option></select><label class="sr-only" for="sort">排序方式</label><select id="sort"><option value="curated">编辑排序</option><option value="name">姓名 A–Z</option></select><div class="view-switch" role="group" aria-label="浏览内容"><button id="people-view" class="active" aria-pressed="true" title="人物卡片">人物</button><button id="reading-view" aria-pressed="false" title="学习入口">阅读</button></div></div></div>
       <div class="grid" id="grid"></div>
       <div id="empty" class="empty" hidden><span aria-hidden="true">⌕</span><h3>还没有找到匹配的人物</h3><p>试试其他关键词，或放宽筛选条件。</p><button id="empty-reset" class="primary">查看全部人物</button></div>
-      <div class="directory-note"><span class="check-symbol">✓</span><p>链接优先依据个人官网和公开档案核实。未确认的账号会明确标注；收录不代表排名或背书。</p><button id="method-link">查看收录说明 ↗</button></div>
     </section>
-    <section class="closing wrap"><p class="eyebrow">KEEP YOUR CURIOSITY ALIVE</p><h2>好的关注列表，<br>是一份会生长的学习地图。</h2><p>读他们的文章，运行他们的代码，形成你自己的判断。</p><button id="export">下载人物资料 <span>↓</span></button></section>
   </main>
-  <footer class="wrap"><a class="footer-brand" href="#">工程人物志 <span>DEV & OPS ATLAS</span></a><p>为好奇的工程师整理 · 核实日期 2026-10-10</p><button id="footer-about">资料与来源 ↗</button></footer>
+  <footer class="wrap"><p>36 位人物 · 资料核实于 2026-10-10</p><div><button id="export">下载资料</button><button id="footer-about">资料与来源</button></div></footer>
   <dialog id="detail" aria-labelledby="profile-name"><button class="dialog-close" aria-label="关闭人物详情">×</button><div id="detail-body"></div></dialog>
-  <dialog id="about" aria-labelledby="about-title"><button class="dialog-close" aria-label="关闭收录说明">×</button><div class="about-body"><p class="eyebrow">ABOUT THIS FIELD GUIDE</p><h2 id="about-title">一份可追溯的工程人物目录</h2><p>首版精选对编程语言、开源软件、Web 开发、云基础设施、软件工程或运维实践有代表性贡献的人物。它是学习导航，不是影响力排行榜，也无法覆盖这一领域的所有重要人物。</p><h3>这里收录什么</h3><p>个人账号与网站、主要贡献、代表项目或著作、内容语言，以及编辑推荐的学习入口。项目链接可能指向组织仓库；它们会与个人 GitHub 账号分别展示。</p><h3>如何核实</h3><p>本轮核实日期为 2026-10-10。优先采用本人官网、官网互链及可确认身份的 GitHub 档案。每个人物详情均列出来源。未找到可靠依据的链接标记为“未确认”；这不表示本人没有账号。</p><p>核实指身份和公开链接的交叉确认，不意味着 X 登录页、每个地区的可访问性或未来链接状态均已保证。部分人物主要使用其他平台，详情中会注明。</p><h3>如何使用</h3><p>输入姓名、技术或作品名，按工程方向及内容语言筛选；点击“人物详情”查看代表作品、学习入口和来源。收藏只保存在当前浏览器。下载资料可获得全部收录数据及来源，便于自行维护。</p><p class="about-footnote">简介为中文编辑整理，推荐学习入口属于编辑选择。资料按本轮核实状态呈现，不会自动更新。</p></div></dialog>
+  <dialog id="about" aria-labelledby="about-title"><button class="dialog-close" aria-label="关闭收录说明">×</button><div class="about-body"><p class="eyebrow">ABOUT THIS FIELD GUIDE</p><h2 id="about-title">一份可追溯的工程人物目录</h2><p>首版精选对编程语言、开源软件、Web 开发、云基础设施、软件工程或运维实践有代表性贡献的人物。它是学习导航，不是影响力排行榜，也无法覆盖这一领域的所有重要人物。</p><h3>这里收录什么</h3><p>个人账号与网站、主要贡献、代表项目或著作、内容语言，以及编辑推荐的学习入口。项目链接可能指向组织仓库；它们会与个人 GitHub 账号分别展示。</p><h3>如何核实</h3><p>本轮核实日期为 2026-10-10。优先采用本人官网、官网互链及可确认身份的 GitHub 档案。每个人物详情均列出来源。未找到可靠依据的账号链接不展示；这不表示本人没有账号。</p><p>核实指身份和公开链接的交叉确认，不意味着 X 登录页、每个地区的可访问性或未来链接状态均已保证。部分人物主要使用其他平台，详情中会注明。</p><h3>如何使用</h3><p>输入姓名、技术或作品名，按工程方向及内容语言筛选；点击“人物详情”查看代表作品、学习入口和来源。收藏只保存在当前浏览器。下载资料可获得全部收录数据及来源，便于自行维护。</p><p class="about-footnote">简介为中文编辑整理，推荐学习入口属于编辑选择。资料按本轮核实状态呈现，不会自动更新。</p></div></dialog>
   <div id="toast" role="status" class="toast"></div>
 </body></html>

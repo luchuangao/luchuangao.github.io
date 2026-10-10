@@ -18,11 +18,12 @@ function avatar(person) {
   return `<span class="avatar" aria-hidden="true">${esc(initials)}${username ? `<img src="https://github.com/${esc(username)}.png?size=120" loading="lazy" alt="" onerror="this.remove()">` : ''}</span>`;
 }
 function socials(person) {
-  return `<div class="socials">${[['x','X'],['website','个人网站'],['github','GitHub']].map(([key,label]) => person[key] ? link(person[key], `${icons[key]}${key==='website'&&person.websiteStatus?'网站 · 暂不可用':label}`) : `<span class="unconfirmed" title="未找到可靠的公开身份依据">${label} · 未确认</span>`).join('')}</div>`;
+  const entries = [['x','X'],['website','个人网站'],['github','GitHub']].filter(([key]) => person[key]);
+  return entries.length ? `<div class="socials">${entries.map(([key,label]) => link(person[key], `${icons[key]}${key==='website'&&person.websiteStatus?'网站 · 暂不可用':label}`)).join('')}</div>` : '';
 }
 function saveButton(person) {return `<button class="save" data-save="${esc(person.id)}" aria-label="${saved.has(person.id)?'取消收藏':'收藏'} ${esc(person.name)}" aria-pressed="${saved.has(person.id)}">${saved.has(person.id)?'★':'☆'}</button>`;}
 function personCard(person) {
-  return `<article class="card"><div class="card-top"><span class="card-category">${esc(person.category)}</span>${saveButton(person)}</div><div class="person">${avatar(person)}<div><h3><button data-detail="${esc(person.id)}">${esc(person.name)}${person.alias ? `<span class="alias">${esc(person.alias)}</span>` : ''}</button></h3><div class="role">${esc(person.role)}</div></div></div><p class="description">${esc(person.description)}</p><div class="tags">${person.tags.map(tag=>`<span class="tag">${esc(tag)}</span>`).join('')}</div><div class="works-line"><span>代表作</span>${person.works.slice(0,2).map(work=>link(work.url,esc(work.title))).join('<span>·</span>')}</div>${socials(person)}<div class="card-bottom"><span>${esc(person.language)} · ${[person.x,person.website,person.github].filter(Boolean).length}/3 入口已确认</span><button data-detail="${esc(person.id)}">人物详情 ↗</button></div></article>`;
+  return `<article class="card" data-person="${esc(person.id)}"><div class="card-top"><span class="card-category">${esc(person.category)}</span>${saveButton(person)}</div><div class="person">${avatar(person)}<div><h3><button data-detail="${esc(person.id)}">${esc(person.name)}${person.alias ? `<span class="alias">${esc(person.alias)}</span>` : ''}</button></h3><div class="role">${esc(person.role)}</div></div></div><p class="description">${esc(person.description)}</p><div class="tags">${person.tags.map(tag=>`<span class="tag">${esc(tag)}</span>`).join('')}</div><div class="works-line"><span>代表作</span>${person.works.slice(0,2).map(work=>link(work.url,esc(work.title))).join('<span>·</span>')}</div>${socials(person)}<div class="card-bottom"><span>${esc(person.language)}</span><button data-detail="${esc(person.id)}">人物详情 ↗</button></div></article>`;
 }
 function readingCard(person) {
   return `<article class="card reading-card"><div class="card-top"><span class="card-category">${esc(person.category)}</span>${saveButton(person)}</div><div class="reading-kicker">编辑推荐 · 学习入口</div><h3>${link(person.start.url,esc(person.start.title))}</h3><p class="description">${esc(person.start.note)}</p><div class="reading-by">${avatar(person)}<button data-detail="${esc(person.id)}">${esc(person.name)} ↗</button><span>· ${esc(person.language)}</span></div>${link(person.start.url,'开始阅读 <span>↗</span>','reading-open')}</article>`;
@@ -38,9 +39,9 @@ function render() {
   $('grid').innerHTML = people.map(state.view==='people'?personCard:readingCard).join('');
   $('empty').hidden = people.length>0;
   $('result-count').textContent = `显示 ${people.length} / ${state.people.length} 位人物${state.savedOnly?' · 我的收藏':''}`;
-  $('saved-count').textContent = state.people.filter(person=>saved.has(person.id)).length;
   $('saved-toggle').setAttribute('aria-pressed',state.savedOnly);
-  $('saved-toggle').textContent = `${state.savedOnly?'★':'☆'} 只看收藏`;
+  const savedCount = state.people.filter(person=>saved.has(person.id)).length;
+  $('saved-toggle').textContent = `${state.savedOnly?'★':'☆'} 收藏${savedCount ? ` · ${savedCount}` : ''}`;
   $('people-view').classList.toggle('active',state.view==='people');
   $('reading-view').classList.toggle('active',state.view==='reading');
   $('people-view').setAttribute('aria-pressed',state.view==='people');
@@ -64,19 +65,18 @@ function showDetail(id) {
 async function load() {
   try {
     const response=await fetch('people.json');if(!response.ok)throw new Error('Failed to load');
-    state.people=await response.json();$('total-people').textContent=String(state.people.length).padStart(2,'0');render();
+    state.people=await response.json();render();
   } catch {$('result-count').textContent='资料暂时无法载入';$('grid').innerHTML='<div class="error"><h3>资料暂时无法载入</h3><p>请检查网络后重试。</p><button id="reload">重新加载</button></div>';$('reload').addEventListener('click',load);}
 }
 $('categories').addEventListener('click',event=>{const button=event.target.closest('[data-category]');if(button){state.category=button.dataset.category;render();}});
-$('grid').addEventListener('click',event=>{const saveTarget=event.target.closest('[data-save]');const detailTarget=event.target.closest('[data-detail]');if(saveTarget)save(saveTarget.dataset.save);else if(detailTarget)showDetail(detailTarget.dataset.detail);});
+$('grid').addEventListener('click',event=>{const saveTarget=event.target.closest('[data-save]');const detailTarget=event.target.closest('[data-detail]');if(saveTarget)save(saveTarget.dataset.save);else if(detailTarget)showDetail(detailTarget.dataset.detail);else if(!event.target.closest('a,button')){const card=event.target.closest('[data-person]');if(card)showDetail(card.dataset.person);}});
 $('search').addEventListener('input',event=>{state.query=event.target.value;render();});
 $('language').addEventListener('change',event=>{state.language=event.target.value;render();});
 $('sort').addEventListener('change',event=>{state.sort=event.target.value;render();});
 $('saved-toggle').addEventListener('click',()=>{state.savedOnly=!state.savedOnly;render();});
-$('top-save').addEventListener('click',()=>{resetFilters();state.savedOnly=true;render();$('directory').scrollIntoView();});
 for(const id of ['clear-filters','empty-reset']) $(id).addEventListener('click',resetFilters);
-for(const [id,view] of [['people-view','people'],['reading-view','reading'],['reading-nav','reading']]) $(id).addEventListener('click',()=>{state.view=view;render();if(id==='reading-nav')$('directory').scrollIntoView();});
-for(const id of ['about-nav','method-link','footer-about']) $(id).addEventListener('click',()=>$('about').showModal());
+for(const [id,view] of [['people-view','people'],['reading-view','reading']]) $(id).addEventListener('click',()=>{state.view=view;render();});
+for(const id of ['about-nav','footer-about']) $(id).addEventListener('click',()=>$('about').showModal());
 document.querySelectorAll('dialog').forEach(dialog=>{dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',event=>{if(event.target===dialog){const bounds=dialog.getBoundingClientRect();if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)dialog.close();}});});
 document.addEventListener('keydown',event=>{if(event.key==='/'&&!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)&&!document.querySelector('dialog[open]')){event.preventDefault();$('search').focus();}});
 $('export').addEventListener('click',()=>{if(!state.people.length){toast('请等待人物资料载入。');return;}const blob=new Blob([JSON.stringify({title:'工程人物志',checkedAt:'2026-10-10',people:state.people},null,2)],{type:'application/json;charset=utf-8'});const url=URL.createObjectURL(blob);const anchor=document.createElement('a');anchor.href=url;anchor.download='engineering-atlas-2026-10-10.json';anchor.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('已下载人物资料与来源。');});
