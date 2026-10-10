@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { ArrowRightIcon, ArrowUpRightIcon, XIcon, GithubLogoIcon, DownloadSimpleIcon, CopyIcon } from '@phosphor-icons/react';
 import '@fontsource-variable/noto-sans-sc';
+import { TranslateIcon, SquaresFourIcon, DeviceMobileIcon, DesktopIcon, GlobeIcon } from '@phosphor-icons/react';
+import { translator, initialLanguage, localizeProduct, platformFilters, categoryFilters } from './i18n.js';
 
 const callHome = {
   id: 'callhome',
@@ -175,183 +177,133 @@ const juecha = {
 
 const releasedProducts = [callHome, compound, littlebird, xTracker, zilo, juecha];
 
-function DownloadLink({ product, className = 'primary-button' }) {
-  if (product.installMethod === 'unpacked') return <a className={className} href={product.download} download>
-    下载插件 ZIP<DownloadSimpleIcon size={20} aria-hidden="true" />
-  </a>;
-  if (product.installMethod === 'dmg') return <a className={className} href={product.download} download>
-    下载 Mac 版 DMG<DownloadSimpleIcon size={20} aria-hidden="true" />
-  </a>;
-  return <a className={className} href={product.download} target="_blank" rel="noopener noreferrer">
-    App Store 下载<ArrowUpRightIcon size={20} aria-hidden="true" />
-    <span className="sr-only">（在新标签页打开）</span>
+function DownloadLink({ product, t, className = 'primary-button' }) {
+  const local = ['unpacked', 'dmg'].includes(product.installMethod);
+  const label = product.installMethod === 'unpacked' ? '下载插件 ZIP' : product.installMethod === 'dmg' ? '下载 Mac 版 DMG' : 'App Store 下载';
+  return <a className={className} href={product.download} download={local || undefined} target={local ? undefined : '_blank'} rel={local ? undefined : 'noopener noreferrer'}>
+    {t(label)}{local ? <DownloadSimpleIcon size={20} aria-hidden="true" /> : <ArrowUpRightIcon size={20} aria-hidden="true" />}
+    {!local && <span className="sr-only">{t('（在新标签页打开）')}</span>}
   </a>;
 }
-
-function HeroProducts({ onSelect }) {
-  return <div className="hero-products" role="group" aria-label="已发布产品速览">
-    <div className="hero-orbit" aria-hidden="true" />
-    {releasedProducts.map(product => <button
-      className={`hero-product hero-product-${product.id}`}
-      key={product.id} type="button" aria-label={`了解${product.name}`}
-      aria-haspopup="dialog" onClick={() => onSelect(product)}
-    >
-      <span className="hero-product-visual">
-        <img src={`./assets/${product.image}`} alt="" width="256" height="256" fetchPriority="high" />
-        <span className="hero-product-name">{product.shortName}</span>
-        <span className="hero-product-subtitle">{product.subtitle}</span>
-      </span>
-    </button>)}
-    <span className="hero-availability"><span aria-hidden="true" />应用与插件，现已发布</span>
+function ProductLinks({ product, t, className }) {
+  return <div className={className}>
+    {product.support && <a href={product.support} target={product.type === 'extension' ? '_blank' : undefined} rel={product.type === 'extension' ? 'noopener noreferrer' : undefined}>{t(product.type === 'extension' ? '问题反馈' : '产品支持')}{product.type === 'extension' && <span className="sr-only">{t('（在新标签页打开）')}</span>}</a>}
+    {product.privacy && <a href={product.privacy}>{t('隐私政策')}</a>}
+    {product.source && <a href={product.source} target="_blank" rel="noopener noreferrer">{t('源码与说明')}<span className="sr-only">{t('（在新标签页打开）')}</span></a>}
   </div>;
 }
-
-function FeaturedProduct({ product, onSelect, onGuide, index }) {
+function productStatus(product, t) {
+  return t(product.installMethod === 'unpacked' ? '网站下载 · 手动安装' : product.installMethod === 'dmg' ? '网站下载 · 已公证' : '已发布');
+}
+function HeroProducts({ products, onSelect, t, language }) {
+  return <div className="hero-products" role="group" aria-label={t('已发布产品速览')}>
+    <div className="hero-orbit" aria-hidden="true" />
+    {products.map(product => <button className={`hero-product hero-product-${product.id}`} key={product.id} type="button" aria-label={language === 'en' ? `Learn about ${product.name}` : `了解${product.name}`} aria-haspopup="dialog" onClick={() => onSelect(product)}>
+      <span className="hero-product-visual"><img src={`./assets/${product.image}`} alt="" width="256" height="256" fetchPriority="high" /><span className="hero-product-name">{product.shortName}</span><span className="hero-product-subtitle">{product.subtitle}</span></span>
+    </button>)}
+    <span className="hero-availability"><span aria-hidden="true" />{t('应用与插件，现已发布')}</span>
+  </div>;
+}
+function FeaturedProduct({ product, onSelect, onGuide, index, t }) {
   return <article className={`featured-product featured-${product.id}${product.type === 'extension' ? ' featured-extension' : ''}`} id={`product-${product.id}`} aria-labelledby={`${product.id}-title`}>
     <div className="featured-copy">
-      <div className="product-status"><span className="release-status">{product.installMethod === 'unpacked' ? '网站下载 · 手动安装' : product.installMethod === 'dmg' ? '网站下载 · 已公证' : '已发布'}</span><span>{product.platforms}</span><span className="product-number">0{index + 1}</span></div>
-      <div className="featured-identity">
-        <img src={`./assets/${product.image}`} width="72" height="72" alt="" loading="lazy" />
-        <h3 id={`${product.id}-title`}>{product.shortName}<span>{product.subtitle}</span></h3>
-      </div>
+      <div className="product-status"><span className="release-status">{productStatus(product,t)}</span><span>{product.platforms}</span><span className="product-number">{String(index + 1).padStart(2,'0')}</span></div>
+      <div className="featured-identity"><img src={`./assets/${product.image}`} width="72" height="72" alt="" loading="lazy" /><h3 id={`${product.id}-title`}>{product.shortName}<span>{product.subtitle}</span></h3></div>
       <p className="featured-tagline">{product.tagline}</p>
       <p className="featured-description">{product.description.map(line => <span key={line}>{line}</span>)}</p>
-      <ul className="product-highlights" aria-label={`${product.shortName}功能`}>{product.highlights.map(item => <li key={item}>{item}</li>)}</ul>
-      <div className="featured-actions">
-        <DownloadLink product={product} />
-        <button className="secondary-button" type="button" aria-haspopup="dialog" onClick={() => onSelect(product)}>了解更多<ArrowRightIcon size={20} aria-hidden="true" /></button>
-        {product.installMethod === 'unpacked' && <button className="secondary-button" type="button" onClick={() => onGuide(product)}>安装指南</button>}
-      </div>
-      {product.version && <p className="download-meta">{product.installMethod === 'unpacked' ? `v${product.version} · 需开启开发者模式` : product.build ? `v${product.version} · 构建 ${product.build} · 通用架构` : `v${product.version}`}</p>}
-      <div className="card-support-links">
-        {product.support && <a href={product.support} target={product.type === 'extension' ? '_blank' : undefined} rel={product.type === 'extension' ? 'noopener noreferrer' : undefined}>{product.type === 'extension' ? '问题反馈' : '产品支持'}{product.type === 'extension' && <span className="sr-only">（在新标签页打开）</span>}</a>}
-        {product.privacy && <a href={product.privacy}>隐私政策</a>}
-        {product.source && <a href={product.source} target="_blank" rel="noopener noreferrer">源码与说明<span className="sr-only">（在新标签页打开）</span></a>}
-      </div>
+      <ul className="product-highlights" aria-label={`${product.shortName} ${t('功能')}`}>{product.highlights.map(item => <li key={item}>{item}</li>)}</ul>
+      <div className="featured-actions"><DownloadLink product={product} t={t} /><button className="secondary-button" type="button" aria-haspopup="dialog" onClick={() => onSelect(product)}>{t('了解更多')}<ArrowRightIcon size={20} aria-hidden="true" /></button>{product.installMethod === 'unpacked' && <button className="secondary-button" type="button" aria-haspopup="dialog" onClick={() => onGuide(product)}>{t('安装指南')}</button>}</div>
+      {product.version && <p className="download-meta">v{product.version}{product.installMethod === 'unpacked' ? ` · ${t('需开启开发者模式')}` : product.build ? ` · ${t('构建')} ${product.build} · ${t('通用架构')}` : ''}</p>}
+      <ProductLinks product={product} t={t} className="card-support-links" />
     </div>
-    <div className="product-screens" aria-label={`${product.shortName}真实界面`}>
-      {product.screens.map(screen => <figure key={screen.image}>
-        <img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" decoding="async" />
-        <figcaption>{screen.caption}</figcaption>
-      </figure>)}
-      {product.screenNote && <p className="screen-note">{product.screenNote}</p>}
-    </div>
+    <div className="product-screens" aria-label={`${product.shortName} ${t('真实界面')}`}>{product.screens.map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" decoding="async" /><figcaption>{screen.caption}</figcaption></figure>)}{product.screenNote && <p className="screen-note">{product.screenNote}</p>}</div>
   </article>;
 }
-
-function InstallGuide({ product }) {
-  const [copyStatus, setCopyStatus] = useState('');
-  async function copyAddress() {
-    try {
-      await navigator.clipboard.writeText('chrome://extensions');
-      setCopyStatus('已复制，粘贴到 Chrome 地址栏即可。');
-    } catch {
-      setCopyStatus('未能复制，请手动复制上方地址。');
-    }
-  }
+function InstallGuide({ product, t }) {
+  const [copyResult, setCopyResult] = useState('');
+  async function copyAddress() { try { await navigator.clipboard.writeText('chrome://extensions'); setCopyResult('已复制，粘贴到 Chrome 地址栏即可。'); } catch { setCopyResult('未能复制，请手动复制上方地址。'); } }
   return <section className="install-guide" aria-labelledby="install-title">
-    <h3 id="install-title">手动安装</h3>
-    <p>在电脑上的 Chrome 中操作，手机可浏览此指南。</p>
+    <h3 id="install-title">{t('手动安装')}</h3><p>{t('在电脑上的 Chrome 中操作，手机可浏览此指南。')}</p>
     <ol className="install-steps">
-      <li><strong>下载并解压 ZIP</strong><span>将文件解压到一个固定位置，保留这个文件夹。</span></li>
-      <li><strong>打开扩展管理页</strong><span>把下方地址粘贴到 Chrome 地址栏，再按回车。</span>
-        <div className="extension-address"><code>chrome://extensions</code><button className="copy-address" type="button" onClick={copyAddress} aria-label="复制扩展管理地址"><CopyIcon size={18} aria-hidden="true" />复制</button></div>
-        <p className="copy-status" role="status">{copyStatus}</p>
-      </li>
-      <li><strong>开启开发者模式</strong><span>打开扩展管理页右上角的“开发者模式”。</span></li>
-      <li><strong>加载解压后的文件夹</strong><span>点击“加载已解压的扩展程序”，选择直接包含 <code>manifest.json</code> 的文件夹。</span></li>
-      <li><strong>打开 X-Tracker</strong><span>在扩展菜单中固定插件，点击图标打开侧栏。在“列表”中添加 X 用户名，再到“动态”中阅读。读取 X 内容前，请先在同一个 Chrome 中登录 X。</span></li>
+      <li><strong>{t('下载并解压 ZIP')}</strong><span>{t('将文件解压到一个固定位置，保留这个文件夹。')}</span></li>
+      <li><strong>{t('打开扩展管理页')}</strong><span>{t('把下方地址粘贴到 Chrome 地址栏，再按回车。')}</span><div className="extension-address"><code>chrome://extensions</code><button className="copy-address" type="button" onClick={copyAddress} aria-label={t('复制扩展管理地址')}><CopyIcon size={18} aria-hidden="true" />{t('复制')}</button></div><p className="copy-status" role="status">{t(copyResult)}</p></li>
+      <li><strong>{t('开启开发者模式')}</strong><span>{t('打开扩展管理页右上角的“开发者模式”。')}</span></li>
+      <li><strong>{t('加载解压后的文件夹')}</strong><span>{t('点击“加载已解压的扩展程序”，选择直接包含')} <code>manifest.json</code> {t('的文件夹。')}</span></li>
+      <li><strong>{t('打开 X-Tracker')}</strong><span>{t('在扩展菜单中固定插件，点击图标打开侧栏。在“列表”中添加 X 用户名，再到“动态”中阅读。读取 X 内容前，请先在同一个 Chrome 中登录 X。')}</span></li>
     </ol>
-    <div className="install-update"><h4>以后如何更新？</h4><p>下载新版，把文件覆盖到原来的插件文件夹，然后在扩展管理页重新加载 X-Tracker。无需卸载，以保留本地列表、缓存和收藏；此安装方式不自动更新。</p></div>
-    <details className="install-notes"><summary>使用与权限说明</summary><p>当前版本请求网站访问（含所有网址）、标签页、脚本执行、本地存储和下载权限。读取 X 时使用不激活的临时标签页，完成后关闭。可读取内容受 X 登录、账号权限、限流和页面结构影响。</p><p>翻译依赖 Chrome 内置翻译 API，首次可能需下载语言包。账号设置导出不包含推文缓存和收藏，卸载插件会删除本地数据。</p><a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-an-unpacked-extension" target="_blank" rel="noopener noreferrer">Chrome 官方安装说明<span className="sr-only">（在新标签页打开）</span></a></details>
-    <p className="download-meta">{product.shortName} v{product.version} · 网站下载，尚未在 Chrome Web Store 上架</p>
+    <div className="install-update"><h4>{t('以后如何更新？')}</h4><p>{t('下载新版，把文件覆盖到原来的插件文件夹，然后在扩展管理页重新加载 X-Tracker。无需卸载，以保留本地列表、缓存和收藏；此安装方式不自动更新。')}</p></div>
+    <details className="install-notes"><summary>{t('使用与权限说明')}</summary><p>{t('当前版本请求网站访问（含所有网址）、标签页、脚本执行、本地存储和下载权限。读取 X 时使用不激活的临时标签页，完成后关闭。可读取内容受 X 登录、账号权限、限流和页面结构影响。')}</p><p>{t('翻译依赖 Chrome 内置翻译 API，首次可能需下载语言包。账号设置导出不包含推文缓存和收藏，卸载插件会删除本地数据。')}</p><a href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-an-unpacked-extension" target="_blank" rel="noopener noreferrer">{t('Chrome 官方安装说明')}<span className="sr-only">{t('（在新标签页打开）')}</span></a></details>
+    <p className="download-meta">{product.shortName} v{product.version} · {t('网站下载，尚未在 Chrome Web Store 上架')}</p>
   </section>;
 }
-
+function ProductFilters({ products, platform, category, onPlatform, onCategory, t }) {
+  const icons = {all: SquaresFourIcon, ios: DeviceMobileIcon, mac: DesktopIcon, chrome: GlobeIcon};
+  const platformProducts = products.filter(p => platform === 'all' || p.platform === platform);
+  return <div className="product-filters">
+    <div className="filter-row" role="group" aria-label={t('按平台分类')}><span className="filter-label">{t('平台')}</span><div className="filter-options">{platformFilters.map(([id,label]) => {
+      const count = products.filter(p => id === 'all' || p.platform === id).length; const Icon = icons[id];
+      return count > 0 && <button type="button" className={`filter-chip${platform === id ? ' selected' : ''}`} aria-pressed={platform === id} key={id} onClick={() => onPlatform(id)}><Icon size={19} aria-hidden="true" />{t(label)}<span className="filter-count">{count}</span></button>;
+    })}</div></div>
+    <div className="filter-row category-row" role="group" aria-label={t('按用途分类')}><span className="filter-label">{t('用途')}</span><div className="filter-options">{categoryFilters.map(([id,label]) => {
+      const count = platformProducts.filter(p => id === 'all' || p.category === id).length;
+      return count > 0 && <button type="button" className={`filter-chip${category === id ? ' selected' : ''}`} aria-pressed={category === id} key={id} onClick={() => onCategory(id)}>{t(label)}<span className="filter-count">{count}</span></button>;
+    })}</div></div>
+  </div>;
+}
 export function App() {
-  const [active, setActive] = useState(null);
-  const [showGuide, setShowGuide] = useState(false);
-  function selectProduct(product) { setShowGuide(false); setActive(product); }
-  function openGuide(product) { setShowGuide(true); setActive(product); }
+  const [language, setLanguage] = useState(initialLanguage);
+  const t = translator(language);
+  const products = releasedProducts.map(product => localizeProduct(product,language));
+  const [platform, setPlatform] = useState('all'); const [category, setCategory] = useState('all');
+  const visible = products.filter(p => (platform === 'all' || p.platform === platform) && (category === 'all' || p.category === category));
+  const [active, setActive] = useState(null); const [showGuide, setShowGuide] = useState(false);
+  const activeProduct = products.find(p => p.id === active);
+  function selectProduct(product) { setShowGuide(false); setActive(typeof product === 'string' ? product : product.id); }
+  function openGuide(product) { setShowGuide(true); setActive(product.id); }
+  function changePlatform(id) { setPlatform(id); setCategory('all'); }
   const dialogRef = useRef(null);
   useEffect(() => {
+    document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
+    document.title = `luchuangao · ${t('产品与创作')}`;
+    document.querySelector('meta[name="description"]')?.setAttribute('content',language === 'en' ? 'Explore independent apps and tools by luchuangao: Call Home, Compound Calculator, Little Bird Music, X-Tracker, Zilo and Juecha.' : 'luchuangao 的产品与创作空间。探索常回家看看、复利计算器、小小鸟音乐、X-Tracker、Zilo 与觉察。');
+    try { localStorage.setItem('luchuangao-language',language); } catch { /* Language switching works without persistent storage. */ }
+  }, [language]);
+  useEffect(() => {
     const dialog = dialogRef.current;
-    if (active && !dialog.open) dialog.showModal();
-    if (!active && dialog.open) dialog.close();
-    if (active) {
-      const previous = document.body.style.overflow;
-      document.body.style.overflow = 'hidden';
-      return () => { document.body.style.overflow = previous; };
-    }
+    if (active && !dialog.open) dialog.showModal(); if (!active && dialog.open) dialog.close();
+    if (active) { const previous = document.body.style.overflow; document.body.style.overflow = 'hidden'; return () => { document.body.style.overflow = previous; }; }
   }, [active]);
   function trapDialogFocus(event) {
-    if (event.key !== 'Tab') return;
+    if(event.key !== 'Tab') return;
     const controls = Array.from(event.currentTarget.querySelectorAll('button, a[href], summary')).filter(element => element.getClientRects().length);
-    const first = controls[0];
-    const last = controls[controls.length - 1];
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault(); last?.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault(); first?.focus();
-    }
+    const first = controls[0], last = controls[controls.length-1];
+    if(event.shiftKey && document.activeElement === first) {event.preventDefault(); last?.focus();} else if(!event.shiftKey && document.activeElement === last) {event.preventDefault(); first?.focus();}
   }
   return <>
-    <a className="skip-link" href="#products">跳到产品列表</a>
+    <a className="skip-link" href="#products">{t('跳到产品列表')}</a>
     <div className="page-top">
-      <header className="site-header">
-        <nav className="navigation" aria-label="主导航">
-          <a className="wordmark" href="#home" aria-label="luchuangao 首页"><img className="brand-logo" src="./assets/luchuangao-atelier-logo.png" alt="" width="210" height="44" /></a>
-          <a href="#products">产品</a>
-          <button type="button" onClick={() => selectProduct('about')}>关于我</button>
-          <a href="https://github.com/luchuangao" target="_blank" rel="noopener noreferrer">GitHub<span className="sr-only">（在新标签页打开）</span></a>
-        </nav>
-      </header>
+      <header className="site-header"><nav className="navigation" aria-label={t('主导航')}>
+        <a className="wordmark" href="#home" aria-label={t('luchuangao 首页')}><img className="brand-logo" src="./assets/luchuangao-atelier-logo.png" alt="" width="210" height="44" /></a>
+        <div className="nav-links"><a href="#products">{t('产品')}</a><button type="button" onClick={() => selectProduct('about')}>{t('关于我')}</button><a href="https://github.com/luchuangao" target="_blank" rel="noopener noreferrer">GitHub<span className="sr-only">{t('（在新标签页打开）')}</span></a></div>
+        <button className="language-button" type="button" lang={language === 'zh' ? 'en' : 'zh-CN'} aria-label={language === 'zh' ? 'Switch to English' : '切换为中文'} onClick={() => setLanguage(language === 'zh' ? 'en' : 'zh')}><TranslateIcon size={20} aria-hidden="true" /><span>{language === 'zh' ? 'English' : '中文'}</span></button>
+      </nav></header>
       <main id="home">
-        <section className="hero" aria-labelledby="hero-title">
-          <div className="hero-copy">
-            <p className="hero-eyebrow"><span aria-hidden="true" />luchuangao · 产品与创作</p>
-            <h1 id="hero-title"><span>把想法，</span><span>做成好用的产品。</span></h1>
-            <p className="hero-description">从长期思考、日常聆听，到专注阅读。<br />为生活里的小事，做一些好用的工具。</p>
-            <a className="primary-button" href="#products">探索产品<ArrowRightIcon size={23} aria-hidden="true" /></a>
-          </div>
-          <HeroProducts onSelect={selectProduct} />
-        </section>
-        <section className="products-section" id="products" aria-labelledby="products-title">
-          <div className="section-heading"><div><p className="section-eyebrow">为日常而做</p><h2 id="products-title">我的产品</h2><p>已经发布，可以从这里开始体验。</p></div><span className="product-count">{releasedProducts.length} 款已发布产品</span></div>
-          <div className="released-products">{releasedProducts.map((product, index) => <FeaturedProduct key={product.id} product={product} index={index} onSelect={selectProduct} onGuide={openGuide} />)}</div>
+        <section className="hero" aria-labelledby="hero-title"><div className="hero-copy"><p className="hero-eyebrow"><span aria-hidden="true" />luchuangao · {t('产品与创作')}</p><h1 id="hero-title"><span>{t('把想法，')}</span><span>{t('做成好用的产品。')}</span></h1><p className="hero-description">{t('从长期思考、日常聆听，到专注阅读。')}<br />{t('为生活里的小事，做一些好用的工具。')}</p><a className="primary-button" href="#products">{t('探索产品')}<ArrowRightIcon size={23} aria-hidden="true" /></a></div><HeroProducts products={products} onSelect={selectProduct} t={t} language={language} /></section>
+        <section className="products-section" id="products" aria-labelledby="products-title"><div className="section-heading"><div><p className="section-eyebrow">{t('为日常而做')}</p><h2 id="products-title">{t('我的产品')}</h2><p>{t('已经发布，可以从这里开始体验。')}</p></div><span className="product-count">{language === 'en' ? `${products.length} available products` : `${products.length} 款已发布产品`}</span></div>
+          <ProductFilters products={products} platform={platform} category={category} onPlatform={changePlatform} onCategory={setCategory} t={t} />
+          <p className="filter-results" role="status" aria-live="polite">{language === 'en' ? `Showing ${visible.length} of ${products.length} products` : `显示 ${visible.length} / ${products.length} 款产品`}</p>
+          <div className="released-products">{visible.map(product => <FeaturedProduct key={product.id} product={product} index={products.findIndex(p => p.id === product.id)} onSelect={selectProduct} onGuide={openGuide} t={t} />)}</div>
+          {visible.length === 0 && <div className="empty-products"><p>{t('没有符合条件的产品。')}</p><button className="secondary-button" onClick={() => {setPlatform('all');setCategory('all');}}>{t('查看全部产品')}</button></div>}
         </section>
       </main>
-      <footer className="site-footer">
-        <div className="footer-identity"><a href="#home" aria-label="回到首页"><img className="brand-logo" src="./assets/luchuangao-atelier-logo.png" alt="luchuangao" width="210" height="44" loading="lazy" /></a><p>把想法，做成好用的产品。</p></div>
-        <nav className="footer-links" aria-label="页脚导航"><a href="#products">探索产品</a><button type="button" onClick={() => selectProduct('about')}>关于我</button><a href="https://github.com/luchuangao" target="_blank" rel="noopener noreferrer">GitHub<ArrowUpRightIcon size={15} aria-hidden="true" /><span className="sr-only">（在新标签页打开）</span></a></nav>
-      </footer>
+      <footer className="site-footer"><div className="footer-identity"><a href="#home" aria-label={t('回到首页')}><img className="brand-logo" src="./assets/luchuangao-atelier-logo.png" alt="luchuangao" width="210" height="44" loading="lazy" /></a><p>{t('把想法，做成好用的产品。')}</p></div><nav className="footer-links" aria-label={t('页脚导航')}><a href="#products">{t('探索产品')}</a><button type="button" onClick={() => selectProduct('about')}>{t('关于我')}</button><a href="https://github.com/luchuangao" target="_blank" rel="noopener noreferrer">GitHub<ArrowUpRightIcon size={15} aria-hidden="true" /><span className="sr-only">{t('（在新标签页打开）')}</span></a></nav></footer>
     </div>
-    <dialog ref={dialogRef} className="detail-dialog" onKeyDown={trapDialogFocus} aria-labelledby="dialog-title" onCancel={() => setActive(null)} onClose={() => setActive(null)} onClick={event => { if (event.target === dialogRef.current) setActive(null); }}>
-      <div className="dialog-inner">
-        <button className="close-button" type="button" aria-label="关闭详情" onClick={() => setActive(null)}><XIcon size={22} aria-hidden="true" /></button>
-        {active === 'about' ? <>
-          <p className="eyebrow">关于我</p><h2 id="dialog-title">你好，我是 luchuangao。</h2>
-          <p className="dialog-description">这里是我的产品与创作空间。<br />把想法，做成好用的产品。</p>
-          <a className="primary-button" href="https://github.com/luchuangao" target="_blank" rel="noopener noreferrer"><GithubLogoIcon size={22} aria-hidden="true" />访问 GitHub<span className="sr-only">（在新标签页打开）</span></a>
-        </> : active && <>
-          <img className="dialog-product-icon app-icon" src={`./assets/${active.image}`} alt="" width="88" height="88" />
-          <p className="eyebrow">{active.platforms} · {active.installMethod === 'dmg' ? '网站下载 · 已公证' : '已发布'}</p><h2 id="dialog-title">{active.name}</h2>
-          <p className="dialog-description">{active.detail}</p>
-          {showGuide && active.installMethod === 'unpacked' ? <InstallGuide key={active.id} product={active} /> : <>
-            <ul className="detail-features">{active.features.map(([title, description]) => <li key={title}><strong>{title}</strong><span>{description}</span></li>)}</ul>
-            {active.previewScreen && <figure className="detail-preview"><img src={`./assets/${active.previewScreen.image}`} alt={active.previewScreen.alt} width={active.previewScreen.width} height={active.previewScreen.height} loading="lazy" /><figcaption>先预览，再保存 · 演示内容</figcaption></figure>}
-          </>}
-          <div className="dialog-actions"><DownloadLink product={active} />
-            {active.installMethod === 'unpacked' && <button className="secondary-button" type="button" onClick={() => setShowGuide(!showGuide)}>{showGuide ? '产品介绍' : '安装指南'}</button>}
-          </div>
-          <div className="support-links">
-            {active.support && <a href={active.support} target={active.type === 'extension' ? '_blank' : undefined} rel={active.type === 'extension' ? 'noopener noreferrer' : undefined}>{active.type === 'extension' ? '问题反馈' : '产品支持'}{active.type === 'extension' && <span className="sr-only">（在新标签页打开）</span>}</a>}
-            {active.privacy && <a href={active.privacy}>隐私政策</a>}
-            {active.source && <a href={active.source} target="_blank" rel="noopener noreferrer">源码与说明<span className="sr-only">（在新标签页打开）</span></a>}
-          </div>
-          {active.note && <p className="learning-note">{active.note}</p>}
-        </>}
-      </div>
-    </dialog>
+    <dialog ref={dialogRef} className="detail-dialog" onKeyDown={trapDialogFocus} aria-labelledby="dialog-title" onCancel={() => setActive(null)} onClose={() => setActive(null)} onClick={event => {if(event.target === dialogRef.current) setActive(null);}}><div className="dialog-inner"><button className="close-button" type="button" aria-label={t('关闭详情')} onClick={() => setActive(null)}><XIcon size={22} aria-hidden="true" /></button>
+      {active === 'about' ? <><p className="eyebrow">{t('关于我')}</p><h2 id="dialog-title">{t('你好，我是 luchuangao。')}</h2><p className="dialog-description">{t('这里是我的产品与创作空间。')}<br />{t('把想法，做成好用的产品。')}</p><a className="primary-button" href="https://github.com/luchuangao" target="_blank" rel="noopener noreferrer"><GithubLogoIcon size={22} aria-hidden="true" />{t('访问 GitHub')}<span className="sr-only">{t('（在新标签页打开）')}</span></a></> : activeProduct && <>
+        <img className="dialog-product-icon app-icon" src={`./assets/${activeProduct.image}`} alt="" width="88" height="88" /><p className="eyebrow">{activeProduct.platforms} · {productStatus(activeProduct,t)}</p><h2 id="dialog-title">{activeProduct.name}</h2><p className="dialog-description">{activeProduct.detail}</p>
+        {showGuide && activeProduct.installMethod === 'unpacked' ? <InstallGuide key={activeProduct.id} product={activeProduct} t={t} /> : <><ul className="detail-features">{activeProduct.features.map(([title,description]) => <li key={title}><strong>{title}</strong><span>{description}</span></li>)}</ul>{activeProduct.previewScreen && <figure className="detail-preview"><img src={`./assets/${activeProduct.previewScreen.image}`} alt={activeProduct.previewScreen.alt} width={activeProduct.previewScreen.width} height={activeProduct.previewScreen.height} loading="lazy" /><figcaption>{t('先预览，再保存 · 演示内容')}</figcaption></figure>}</>}
+        <div className="dialog-actions"><DownloadLink product={activeProduct} t={t} />{activeProduct.installMethod === 'unpacked' && <button className="secondary-button" type="button" onClick={() => setShowGuide(!showGuide)}>{t(showGuide ? '产品介绍' : '安装指南')}</button>}</div><ProductLinks product={activeProduct} t={t} className="support-links" />{activeProduct.note && <p className="learning-note">{activeProduct.note}</p>}
+      </>}
+    </div></dialog>
   </>;
 }

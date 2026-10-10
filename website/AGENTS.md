@@ -17,3 +17,9 @@ Complete lockup: public/assets/luchuangao-atelier-logo.png. Crop only its transp
 On 2026-10-09, the user requested removal of all design examples. Do not restore the focus, notes or image demo products, their hero icons, demo dialogs, or demo filters. Show only real products with verified information. The homepage and catalog currently feature the compound calculator, Little Bird Music, and X-Tracker. Preserve the real screenshots, individual App Store URLs and support/privacy links. Keep the responsive real-product hero, cool-white and blue branding, and accessible product details when adding future products.
 
 Preserve X-Tracker v1.14.2, its ZIP download, actual browser screenshots, source/feedback links, and manual installation guide. It is distributed on the website and is not listed on Chrome Web Store; do not label it as a store install or turn its screenshots into phone mockups.
+
+## Bilingual content and categories
+
+The user requested Chinese/English switching and real product classification on 2026-10-10. Preserve the language switch, saved language preference, translated navigation, product content, details and installation guide. The frontend uses src/i18n.js for UI translations, English product content and classification metadata. Keep translation fields aligned with each product's Chinese data and actual screenshots; downloads and protected support pages retain their original URLs.
+
+Platform and purpose filters are allowed and required; the earlier prohibition concerns removed design-example/status filters, not these real-product categories. Current platform groups are iPhone/iPad, Mac and Chrome extensions. Compute counts from actual product metadata, preserve filtering when changing language, and add classification plus bilingual content for every future product. Do not invent unreleased products or statuses to populate categories.
