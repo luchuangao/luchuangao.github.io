@@ -1107,53 +1107,6 @@
     "id": "fabrice-bellard"
   },
   {
-    "name": "阮一峰",
-    "role": "技术作者、科技爱好者周刊作者",
-    "description": "编写中文开发教程，持续整理技术周刊。",
-    "category": "软件工程",
-    "tags": [
-      "技术写作",
-      "JavaScript",
-      "科技周刊"
-    ],
-    "language": "中文",
-    "x": "https://x.com/ruanyf",
-    "website": "https://www.ruanyifeng.com/",
-    "github": "https://github.com/ruanyf",
-    "works": [
-      {
-        "title": "科技爱好者周刊",
-        "url": "https://github.com/ruanyf/weekly"
-      },
-      {
-        "title": "ECMAScript 6 入门",
-        "url": "https://github.com/ruanyf/es6tutorial"
-      },
-      {
-        "title": "全栈工程师培训材料",
-        "url": "https://github.com/ruanyf/jstraining"
-      }
-    ],
-    "start": {
-      "title": "科技爱好者周刊",
-      "url": "https://github.com/ruanyf/weekly",
-      "note": "从近期周刊发现开发工具与学习资料。"
-    },
-    "sources": [
-      "https://www.ruanyifeng.com/",
-      "https://www.ruanyifeng.com/blog/index.html",
-      "https://github.com/ruanyf"
-    ],
-    "verification": {
-      "x": "个人博客页脚直接链接 Twitter，GitHub 资料也明确链接 twitter.com/ruanyf。",
-      "website": "网站自述为阮一峰个人网站。",
-      "github": "个人博客页脚直接链接 GitHub，与教程、周刊作者一致。",
-      "note": "收录的是公开技术资料入口。"
-    },
-    "checkedAt": "2026-10-10",
-    "id": "ruan-yifeng"
-  },
-  {
     "name": "Solomon Hykes",
     "category": "云原生与平台",
     "tags": [
@@ -1234,48 +1187,6 @@
     "otherLinks": [],
     "checkedAt": "2026-10-10",
     "id": "lea-verou"
-  },
-  {
-    "name": "廖雪峰",
-    "role": "中文编程教程作者",
-    "description": "编写编程与 Git 教程，用实践讲解后端系统。",
-    "category": "软件工程",
-    "tags": [
-      "编程入门",
-      "Python",
-      "Java"
-    ],
-    "language": "中文",
-    "x": "https://x.com/liaoxuefeng",
-    "website": "https://liaoxuefeng.com/",
-    "github": "https://github.com/michaelliao",
-    "works": [
-      {
-        "title": "Python 教程",
-        "url": "https://liaoxuefeng.com/books/python/index.html"
-      },
-      {
-        "title": "Git 教程",
-        "url": "https://liaoxuefeng.com/books/git/index.html"
-      }
-    ],
-    "start": {
-      "title": "Python 教程",
-      "url": "https://liaoxuefeng.com/books/python/index.html",
-      "note": "适合中文读者从基础语法逐步上手。"
-    },
-    "sources": [
-      "https://liaoxuefeng.com/",
-      "https://github.com/michaelliao"
-    ],
-    "verification": {
-      "x": "GitHub 资料明确链接 @liaoxuefeng。",
-      "website": "官网自述为廖雪峰官方网站，GitHub 资料链接相同域名。",
-      "github": "官网页脚直接链接 michaelliao，与 GitHub 返回官网的链接互证。",
-      "note": "GitHub 当前显示名是 Crypto Michael，不能因显示名变化误认成其他人。"
-    },
-    "checkedAt": "2026-10-10",
-    "id": "liao-xuefeng"
   },
   {
     "name": "Joe Beda",
