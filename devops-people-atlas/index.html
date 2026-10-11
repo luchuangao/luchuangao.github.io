@@ -4,30 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ffffff">
-  <meta name="description" content="发现开发与运维领域值得长期关注的人。浏览代表人物的 X、个人网站、GitHub、代表作品和学习入口。">
+  <meta name="description" content="开发、运维与 AI 人物目录。浏览 X、个人网站、GitHub、YouTube、代表作品、学习入口及资料来源。">
   <title>工程人物志 · Dev & Ops Atlas</title>
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css?v=20261011-simple">
-  <script src="app.js?v=20261011-simple" defer></script>
+  <link rel="stylesheet" href="style.css?v=20261011-ai-sidebar">
+  <script src="app.js?v=20261011-ai-sidebar" defer></script>
 </head>
 <body>
   <a class="skip" href="#directory">跳至人物目录</a>
-  <header class="header wrap">
-    <div><h1>工程人物志</h1><p>开发与运维人物、作品和学习入口。</p></div>
-    <button id="about-nav" class="quiet-button">收录说明</button>
+  <header class="header">
+    <h1><a href="./">工程人物志</a></h1>
+    <div class="search-box"><img class="ui-icon" src="assets/icons/search.svg" alt=""><label for="search" class="sr-only">搜索人物、项目或技术主题</label><input id="search" type="search" placeholder="搜索姓名、项目或技术主题…" autocomplete="off"></div>
+    <button class="collection-button" id="saved-toggle" aria-pressed="false"><img class="ui-icon" src="assets/icons/star.svg" alt=""><span>收藏</span></button>
   </header>
-  <main>
-    <section id="directory" class="directory wrap" aria-labelledby="directory-title">
-      <h2 id="directory-title" class="sr-only">人物目录</h2>
-      <div class="search-row"><div class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><label for="search" class="sr-only">搜索人物、项目或技术主题</label><input id="search" type="search" placeholder="搜索姓名、项目或技术主题…" autocomplete="off"><kbd>/</kbd></div><button class="collection-button" id="saved-toggle" aria-pressed="false">☆ 只看收藏</button></div>
-      <div class="categories" id="categories" role="group" aria-label="工程方向"></div>
-      <div class="toolbar"><div class="toolbar-left"><span id="result-count" role="status" aria-live="polite">正在载入人物资料…</span><button id="clear-filters" hidden>重置筛选 ×</button></div><div class="toolbar-controls"><label class="sr-only" for="language">内容语言</label><select id="language"><option value="all">全部内容语言</option><option value="中文">含中文内容</option><option value="English">英文内容</option></select><label class="sr-only" for="sort">排序方式</label><select id="sort"><option value="curated">编辑排序</option><option value="name">姓名 A–Z</option></select><div class="view-switch" role="group" aria-label="浏览内容"><button id="people-view" class="active" aria-pressed="true" title="人物卡片">人物</button><button id="reading-view" aria-pressed="false" title="学习入口">阅读</button></div></div></div>
-      <div class="grid" id="grid"></div>
-      <div id="empty" class="empty" hidden><span aria-hidden="true">⌕</span><h3>还没有找到匹配的人物</h3><p>试试其他关键词，或放宽筛选条件。</p><button id="empty-reset" class="primary">查看全部人物</button></div>
-    </section>
+  <aside class="sidebar" aria-label="人物导航">
+    <p class="sidebar-label">方向</p>
+    <div class="categories" id="categories" role="group" aria-label="工程方向"></div>
+    <div class="sidebar-bottom"><button id="about-nav"><img class="ui-icon" src="assets/icons/book.svg" alt="">收录说明</button></div>
+  </aside>
+  <main id="directory" class="directory" aria-labelledby="directory-title">
+    <div class="toolbar">
+      <div class="toolbar-left"><h2 id="directory-title">全部人物 <span class="heading-count" id="heading-count"></span></h2><button id="clear-filters" hidden>重置</button></div>
+      <div class="toolbar-controls">
+        <label for="sort">排序：</label><select id="sort"><option value="curated">默认</option><option value="name">姓名 A–Z</option></select>
+        <details class="more-options"><summary aria-label="更多筛选选项" title="更多筛选选项"><img class="ui-icon" src="assets/icons/sliders.svg" alt=""></summary><div class="options-panel"><label for="language">内容语言</label><select id="language"><option value="all">全部内容语言</option><option value="中文">含中文内容</option><option value="English">英文内容</option></select><span>浏览内容</span><div class="view-switch" role="group" aria-label="浏览内容"><button id="people-view" class="active" aria-pressed="true">人物</button><button id="reading-view" aria-pressed="false">阅读入口</button></div></div></details>
+      </div>
+    </div>
+    <span class="sr-only" id="result-count" role="status" aria-live="polite">正在载入人物资料…</span>
+    <div class="grid" id="grid"></div>
+    <div id="empty" class="empty" hidden><h3>没有找到匹配的人物</h3><p>试试其他关键词，或放宽筛选条件。</p><button id="empty-reset" class="primary">查看全部人物</button></div>
+    <footer><p id="data-summary">正在载入人物资料…</p><div><button id="export">下载资料</button><button id="footer-about">资料与来源</button></div></footer>
   </main>
-  <footer class="wrap"><p>36 位人物 · 资料核实于 2026-10-10</p><div><button id="export">下载资料</button><button id="footer-about">资料与来源</button></div></footer>
-  <dialog id="detail" aria-labelledby="profile-name"><button class="dialog-close" aria-label="关闭人物详情">×</button><div id="detail-body"></div></dialog>
-  <dialog id="about" aria-labelledby="about-title"><button class="dialog-close" aria-label="关闭收录说明">×</button><div class="about-body"><p class="eyebrow">ABOUT THIS FIELD GUIDE</p><h2 id="about-title">一份可追溯的工程人物目录</h2><p>首版精选对编程语言、开源软件、Web 开发、云基础设施、软件工程或运维实践有代表性贡献的人物。它是学习导航，不是影响力排行榜，也无法覆盖这一领域的所有重要人物。</p><h3>这里收录什么</h3><p>个人账号与网站、主要贡献、代表项目或著作、内容语言，以及编辑推荐的学习入口。项目链接可能指向组织仓库；它们会与个人 GitHub 账号分别展示。</p><h3>如何核实</h3><p>本轮核实日期为 2026-10-10。优先采用本人官网、官网互链及可确认身份的 GitHub 档案。每个人物详情均列出来源。未找到可靠依据的账号链接不展示；这不表示本人没有账号。</p><p>核实指身份和公开链接的交叉确认，不意味着 X 登录页、每个地区的可访问性或未来链接状态均已保证。部分人物主要使用其他平台，详情中会注明。</p><h3>如何使用</h3><p>输入姓名、技术或作品名，按工程方向及内容语言筛选；点击“人物详情”查看代表作品、学习入口和来源。收藏只保存在当前浏览器。下载资料可获得全部收录数据及来源，便于自行维护。</p><p class="about-footnote">简介为中文编辑整理，推荐学习入口属于编辑选择。资料按本轮核实状态呈现，不会自动更新。</p></div></dialog>
+  <dialog id="detail" aria-labelledby="profile-name"><button class="dialog-close" aria-label="关闭人物详情"><img class="ui-icon" src="assets/icons/x-lg.svg" alt=""></button><div id="detail-body"></div></dialog>
+  <dialog id="about" aria-labelledby="about-title"><button class="dialog-close" aria-label="关闭收录说明"><img class="ui-icon" src="assets/icons/x-lg.svg" alt=""></button><div class="about-body"><p class="eyebrow">ABOUT</p><h2 id="about-title">收录说明</h2><p>开发、运维与 AI 的人物学习导航。精选代表人物，不作排名。</p><h3>内容</h3><p>简介、代表作、个人账号、YouTube 频道与学习入口。点击卡片查看详情和来源。</p><h3>来源</h3><p>优先采用本人官网与公开档案。未确认的入口不展示；团队项目与个人账号分开。</p><p>开发与运维资料核实于 2026-10-10；AI 与 YouTube 补充于 2026-10-11。各人物详情标注日期。</p><h3>使用</h3><p>支持搜索、分类、语言筛选和资料下载。收藏保存在当前浏览器。</p><p class="about-footnote">学习入口为编辑推荐。资料不会自动更新；外部平台可能需要登录。</p></div></dialog>
   <div id="toast" role="status" class="toast"></div>
 </body></html>

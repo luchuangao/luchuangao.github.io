@@ -2,7 +2,7 @@
   {
     "name": "Evan You",
     "role": "Vue 与 Vite 创建者",
-    "description": "创建 Vue 和 Vite，推动 JavaScript 工具链演进。适合关注框架设计、开发体验与开源项目的长期维护。",
+    "description": "创建 Vue 与 Vite，推动前端框架和工具链演进。",
     "category": "前端与工具",
     "tags": [
       "Vue",
@@ -25,7 +25,7 @@
     "start": {
       "title": "Vue 官方指南",
       "url": "https://vuejs.org/guide/introduction.html",
-      "note": "从组件、响应式和组合式 API 理解 Vue 的设计思路；指南也提供中文版本。"
+      "note": "从组件、响应式和组合式 API 理解 Vue 的设计思路。"
     },
     "sources": [
       "https://evanyou.me/"
@@ -80,14 +80,14 @@
     },
     "verification": "X 身份由官方历史文章佐证；未核实最近发帖活跃度。个人网站未确认。",
     "role": "Kubernetes 实践教育者",
-    "description": "以实践教学推动 Kubernetes 和云原生知识普及，把集群组件、配置与排障讲解成可动手完成的步骤。",
+    "description": "通过实践教学讲解 Kubernetes 与云原生技术。",
     "checkedAt": "2026-10-10",
     "id": "kelsey-hightower"
   },
   {
     "name": "Linus Torvalds",
     "role": "Linux 与 Git 创始人",
-    "description": "创建 Linux 内核和 Git，将系统开发与大规模开源协作的基础工具带给全球开发者。",
+    "description": "创建 Linux 内核与 Git，奠定开源协作的基础。",
     "category": "语言与系统",
     "tags": [
       "Linux",
@@ -111,7 +111,7 @@
     "start": {
       "title": "Linux 内核开发 HOWTO",
       "url": "https://docs.kernel.org/process/howto.html",
-      "note": "先了解内核开发流程、代码规范与提交补丁的方式；适合已有 C 基础的读者。"
+      "note": "先了解内核开发流程、代码规范与提交补丁的方式。"
     },
     "sources": [
       "https://github.com/torvalds",
@@ -169,14 +169,14 @@
     },
     "verification": "账号由 GitHub README 自填链接确认；同时列有 Mastodon 和 Bluesky，X 活跃度未核实。",
     "role": "系统知识作者 · 图解教育者",
-    "description": "用博客、图解小册子和小型实验解释 Linux、网络、Git 与调试工具，让底层计算机知识更容易学习。",
+    "description": "用图解和实验讲清 Linux、网络与调试工具。",
     "checkedAt": "2026-10-10",
     "id": "julia-evans"
   },
   {
     "name": "Simon Willison",
     "role": "Django 联合创始人、Datasette 作者",
-    "description": "构建数据探索与发布工具，并以持续实验和可复现记录分享 Web 开发、SQLite 与大语言模型实践。",
+    "description": "开发 Datasette，分享数据工具与大语言模型实践。",
     "category": "数据与后端",
     "tags": [
       "Django",
@@ -223,7 +223,7 @@
   {
     "name": "Martin Fowler",
     "role": "软件工程作者与架构思想传播者",
-    "description": "系统化讲解重构、企业应用架构和敏捷实践，帮助团队在变化中维护清晰的软件结构。",
+    "description": "系统讲解重构、软件架构与敏捷开发。",
     "category": "软件工程",
     "tags": [
       "重构",
@@ -266,7 +266,7 @@
   {
     "name": "Anthony Fu",
     "role": "开源工具作者 · Vue / Vite 生态",
-    "description": "创建 Vitest、VueUse、UnoCSS 和 Slidev，将开发过程中的小问题变成可组合的开源工具。适合学习工具设计和开源协作。",
+    "description": "创建 Vitest、VueUse、UnoCSS 与 Slidev。",
     "category": "前端与工具",
     "tags": [
       "Vitest",
@@ -317,7 +317,7 @@
   {
     "name": "Guido van Rossum",
     "role": "Python 创始人",
-    "description": "以可读性和开发效率为核心创造 Python，并长期推动语言设计与社区治理。",
+    "description": "创造 Python，关注语言的可读性与开发效率。",
     "category": "语言与系统",
     "tags": [
       "Python",
@@ -359,7 +359,7 @@
   {
     "name": "Sarah Drasner",
     "role": "工程领导者 · 开发与管理作者",
-    "description": "连接前端开发、动画与工程管理，撰写 SVG Animations 和 Engineering Management for the Rest of Us。适合学习技术表达与团队建设。",
+    "description": "分享前端动画、技术表达与工程管理经验。",
     "category": "软件工程",
     "tags": [
       "工程管理",
@@ -382,7 +382,7 @@
     "start": {
       "title": "Sarah 的写作目录",
       "url": "https://sarah.dev/writing",
-      "note": "按技术与管理主题选读；从清楚表达复杂问题开始，再延伸到工程团队协作。"
+      "note": "按技术与管理主题选读。"
     },
     "sources": [
       "https://github.com/sdras",
@@ -398,7 +398,7 @@
   {
     "name": "David Heinemeier Hansson",
     "role": "Ruby on Rails 创建者",
-    "description": "创建 Ruby on Rails，分享全栈开发、软件经营和基础设施选择的实践。适合关注约定优于配置、简化架构与产品交付。",
+    "description": "创建 Ruby on Rails，分享全栈开发与软件经营实践。",
     "category": "数据与后端",
     "tags": [
       "Ruby on Rails",
@@ -437,7 +437,9 @@
       }
     ],
     "checkedAt": "2026-10-10",
-    "id": "david-heinemeier-hansson"
+    "id": "david-heinemeier-hansson",
+    "youtube": "https://www.youtube.com/@dhh37",
+    "youtubeCheckedAt": "2026-10-11"
   },
   {
     "name": "Jessie Frazelle",
@@ -464,7 +466,7 @@
     "start": {
       "title": "dockerfiles",
       "url": "https://github.com/jessfraz/dockerfiles",
-      "note": "阅读实际容器配置与隔离思路；旧例子的依赖和安全设置需结合当前文档判断。"
+      "note": "观察容器配置与隔离；旧示例需对照现行文档。"
     },
     "sources": [
       "https://jessfraz.com/",
@@ -477,7 +479,7 @@
     },
     "verification": "个人站与 GitHub 双向互链确认；部分容器教程为历史文章。",
     "role": "容器与系统工程师",
-    "description": "围绕容器隔离、安全、Linux 与个人基础设施开展实践，分享 Dockerfile、系统实验和自动化经验。",
+    "description": "探索容器隔离、安全与 Linux 系统实践。",
     "checkedAt": "2026-10-10",
     "id": "jessie-frazelle"
   },
@@ -523,14 +525,14 @@
     },
     "verification": "个人站互链确认账号归属；X 最近发帖活跃度未单独核实。",
     "role": "系统性能专家 · 火焰图作者",
-    "description": "长期研究系统性能，开发火焰图并整理 Linux、eBPF 与性能分析方法，让瓶颈定位更有依据。",
+    "description": "开发火焰图，整理 Linux 与 eBPF 性能分析方法。",
     "checkedAt": "2026-10-10",
     "id": "brendan-gregg"
   },
   {
     "name": "Dan Abramov",
     "role": "React 贡献者 · 技术写作者",
-    "description": "参与 React 开发，通过 Overreacted 与 Just JavaScript 解释 UI、状态和 JavaScript 心智模型。适合补齐原理，而不仅是记住 API。",
+    "description": "参与 React 开发，讲解 UI、状态与 JavaScript 原理。",
     "category": "前端与工具",
     "tags": [
       "React",
@@ -574,7 +576,7 @@
   {
     "name": "Rob Pike",
     "role": "Go 联合设计者、系统程序员",
-    "description": "参与 Go、Plan 9 和 UTF-8 的设计，持续探索并发、简洁性与软件工程之间的关系。",
+    "description": "参与 Go、Plan 9 与 UTF-8 的设计。",
     "category": "语言与系统",
     "tags": [
       "Go",
@@ -621,7 +623,7 @@
   {
     "name": "Kent Beck",
     "role": "极限编程与测试驱动开发先驱",
-    "description": "推广小步反馈、测试驱动开发与渐进式软件设计，让代码质量成为日常开发的一部分。",
+    "description": "推广测试驱动开发、小步反馈与渐进式设计。",
     "category": "软件工程",
     "tags": [
       "TDD",
@@ -645,7 +647,7 @@
     "start": {
       "title": "Tidy First? Newsletter",
       "url": "https://newsletter.kentbeck.com/",
-      "note": "从公开文章学习小步整理代码、设计取舍与反馈循环；部分内容需订阅。"
+      "note": "从公开文章学习小步整理代码、设计取舍与反馈循环。"
     },
     "sources": [
       "https://kentbeck.com/",
@@ -664,7 +666,7 @@
   {
     "name": "Salvatore Sanfilippo",
     "role": "Redis 创始人，网名 antirez",
-    "description": "创建 Redis，并持续分享数据结构、系统编程和简洁代码的实践，展示高性能后端工具的设计过程。",
+    "description": "创建 Redis，分享数据结构与系统编程实践。",
     "category": "数据与后端",
     "tags": [
       "Redis",
@@ -747,7 +749,7 @@
     },
     "verification": "个人站与 GitHub 互链确认；X 活跃度未单独核实。",
     "role": "HashiCorp 联合创始人 · Ghostty 作者",
-    "description": "HashiCorp 联合创始人，参与建立基础设施自动化工具生态，并开发 Ghostty、libxev 等系统工具。",
+    "description": "联合创办 HashiCorp，开发 Ghostty 等系统工具。",
     "checkedAt": "2026-10-10",
     "id": "mitchell-hashimoto"
   },
@@ -790,14 +792,14 @@
     },
     "verification": "X 页面说明仅偶尔使用；charity.wtf 现使用 Substack 发布。GitHub 未确认，不展示猜测账号。",
     "role": "可观测性实践者",
-    "description": "围绕可观测性、生产环境调试和工程团队协作持续写作，推动开发者承担代码运行后的反馈与维护。",
+    "description": "分享可观测性、生产调试与工程团队实践。",
     "checkedAt": "2026-10-10",
     "id": "charity-majors"
   },
   {
     "name": "Rich Harris",
     "role": "Svelte 与 Rollup 创建者",
-    "description": "用编译器思路探索 UI 框架，并创建 Rollup。适合关注响应式、构建工具和让开发体验更简单的设计取舍。",
+    "description": "创建 Svelte 与 Rollup，探索编译器驱动的开发体验。",
     "category": "前端与工具",
     "tags": [
       "Svelte",
@@ -820,7 +822,7 @@
     "start": {
       "title": "Svelte 交互教程",
       "url": "https://svelte.dev/tutorial",
-      "note": "通过可运行的示例学习组件和响应式；想理解历史设计，可继续读作者的 Svelte 3 发布文章。"
+      "note": "通过可运行的示例学习组件和响应式。"
     },
     "sources": [
       "https://github.com/Rich-Harris",
@@ -841,7 +843,7 @@
   {
     "name": "Russ Cox",
     "role": "Go 核心设计与实现贡献者",
-    "description": "深入研究 Go 工具链、正则表达式和软件依赖，用清晰文章解释工程实现与正确性。",
+    "description": "研究 Go 工具链、正则表达式与软件依赖。",
     "category": "语言与系统",
     "tags": [
       "Go",
@@ -888,7 +890,7 @@
   {
     "name": "Robert C. Martin",
     "role": "Clean Code 作者、软件工程讲师",
-    "description": "围绕整洁代码、测试纪律和架构边界写作，强调开发者对可维护性与专业实践的责任。",
+    "description": "讲解整洁代码、测试纪律与架构边界。",
     "category": "软件工程",
     "tags": [
       "Clean Code",
@@ -971,7 +973,7 @@
     },
     "verification": "X 由 GitHub 自填链接确认；个人网站未确认。公司人物页的职务可能随时间变化。",
     "role": "HashiCorp 联合创始人",
-    "description": "HashiCorp 联合创始人，围绕分布式系统、安全与多云基础设施推动工具设计，也维护数据结构和网络项目。",
+    "description": "联合创办 HashiCorp，推动基础设施自动化工具设计。",
     "checkedAt": "2026-10-10",
     "id": "armon-dadgar"
   },
@@ -1013,14 +1015,16 @@
     },
     "verification": "X 为个人站历史内容所关联的账号；当前个人站和 GitHub 主要列 Bluesky 等渠道，未确认 X 活跃度。",
     "role": "SRE 与可观测性实践者",
-    "description": "结合 SRE 实践和可观测性教学，讨论可靠性、生产调试以及技术债与值班中断的治理。",
+    "description": "分享 SRE、可观测性与生产环境治理经验。",
     "checkedAt": "2026-10-10",
-    "id": "liz-fong-jones"
+    "id": "liz-fong-jones",
+    "youtube": "https://www.youtube.com/@lizthegrey",
+    "youtubeCheckedAt": "2026-10-11"
   },
   {
     "name": "Tanner Linsley",
     "role": "TanStack 创建者",
-    "description": "构建 TanStack 系列工具，覆盖异步数据、表格和路由等应用难题。适合关注跨框架 API、状态管理与开源工具的产品化。",
+    "description": "创建 TanStack 工具，覆盖数据请求、表格与路由。",
     "category": "前端与工具",
     "tags": [
       "TanStack",
@@ -1058,7 +1062,7 @@
   {
     "name": "Fabrice Bellard",
     "role": "QEMU、FFmpeg 与 QuickJS 创始开发者",
-    "description": "在模拟器、编译器、多媒体和 JavaScript 引擎之间持续创作，以紧凑实现展示系统编程的可能性。",
+    "description": "开发模拟器、编译器、多媒体与 JavaScript 引擎。",
     "category": "语言与系统",
     "tags": [
       "QEMU",
@@ -1105,7 +1109,7 @@
   {
     "name": "阮一峰",
     "role": "技术作者、科技爱好者周刊作者",
-    "description": "以中文教程和持续更新的技术周刊连接开发知识、工具与行业观察，降低读者接触新技术的门槛。",
+    "description": "编写中文开发教程，持续整理技术周刊。",
     "category": "软件工程",
     "tags": [
       "技术写作",
@@ -1133,7 +1137,7 @@
     "start": {
       "title": "科技爱好者周刊",
       "url": "https://github.com/ruanyf/weekly",
-      "note": "从近期周刊发现开发工具与学习资料；学习 JavaScript 可继续阅读 ES6 教程。"
+      "note": "从近期周刊发现开发工具与学习资料。"
     },
     "sources": [
       "https://www.ruanyifeng.com/",
@@ -1188,14 +1192,14 @@
     },
     "verification": "X 使用 GitHub 当前自填的 @solomonstre；GitHub 用户名为 shykes，两者不同。未确认 X 最近活跃度。",
     "role": "Docker 创始人 · Dagger 联合创始人",
-    "description": "Docker 创始人，后来共同创办 Dagger，持续探索以容器构建可编程、可复现的开发与 CI 流程。",
+    "description": "创建 Docker，联合创办 Dagger，探索容器化开发与 CI。",
     "checkedAt": "2026-10-10",
     "id": "solomon-hykes"
   },
   {
     "name": "Lea Verou",
     "role": "Web 标准专家 · 开发工具作者",
-    "description": "参与 CSS 与 Web 标准设计，创建 Prism，并参与 Color.js。她将可用性研究与开发工具实践连接起来。",
+    "description": "参与 CSS 标准，创建 Prism，并参与 Color.js。",
     "category": "前端与工具",
     "tags": [
       "CSS",
@@ -1234,7 +1238,7 @@
   {
     "name": "廖雪峰",
     "role": "中文编程教程作者",
-    "description": "编写 Python、Java、JavaScript、SQL 与 Git 教程，并通过手写框架讲解后端系统的工作方式。",
+    "description": "编写编程与 Git 教程，用实践讲解后端系统。",
     "category": "软件工程",
     "tags": [
       "编程入门",
@@ -1258,7 +1262,7 @@
     "start": {
       "title": "Python 教程",
       "url": "https://liaoxuefeng.com/books/python/index.html",
-      "note": "适合中文读者从基础语法逐步上手；需要版本控制基础时搭配 Git 教程。"
+      "note": "适合中文读者从基础语法逐步上手。"
     },
     "sources": [
       "https://liaoxuefeng.com/",
@@ -1298,7 +1302,7 @@
     "start": {
       "title": "TGI Kubernetes: Job objects",
       "url": "https://www.youtube.com/watch?v=-gLMTm85R3M",
-      "note": "用一次具体实验学习 Job 与控制器；视频较早，命令需对照当前 Kubernetes 文档。"
+      "note": "用 Job 实验理解控制器；旧命令需对照现行文档。"
     },
     "sources": [
       "https://github.com/jbeda",
@@ -1312,7 +1316,7 @@
     },
     "verification": "X 由官方历史资料确认；当前 GitHub 不再列出 X。个人站本次读取遇到证书过期，保留本人 GitHub 公布的地址并注明。 个人站链接标注为本轮无法访问。",
     "role": "Kubernetes 原始创建者之一",
-    "description": "Kubernetes 原始创建者之一，通过演讲与 TGI Kubernetes 实践系列解释集群机制、应用部署和安全。",
+    "description": "参与创建 Kubernetes，通过演讲与实验讲解集群机制。",
     "checkedAt": "2026-10-10",
     "id": "joe-beda",
     "websiteStatus": "本轮无法访问"
@@ -1320,7 +1324,7 @@
   {
     "name": "Addy Osmani",
     "role": "Web 性能与开发体验作者",
-    "description": "长期参与 Chrome 开发者工具与性能工作，并撰写 JavaScript 模式和工程团队相关著作。适合关注性能、开发体验与工程实践。",
+    "description": "参与 Chrome 工具与性能工作，分享 Web 工程实践。",
     "category": "前端与工具",
     "tags": [
       "Web 性能",
@@ -1343,7 +1347,7 @@
     "start": {
       "title": "Addy 的技术博客",
       "url": "https://addyosmani.com/blog/",
-      "note": "按性能、代码质量和工程实践选读；对照自己的项目评估建议的适用条件。"
+      "note": "按性能、代码质量和工程实践选读。"
     },
     "sources": [
       "https://addyosmani.com/"
@@ -1353,7 +1357,9 @@
     "verification": "个人官网与公开档案互链核实；账号可访问性可能受平台登录要求影响。",
     "otherLinks": [],
     "checkedAt": "2026-10-10",
-    "id": "addy-osmani"
+    "id": "addy-osmani",
+    "youtube": "https://www.youtube.com/@AddyOsmani",
+    "youtubeCheckedAt": "2026-10-11"
   },
   {
     "name": "Tim Hockin",
@@ -1393,14 +1399,14 @@
     },
     "verification": "X 由 GitHub 自填链接确认；个人站未确认。推荐文章是历史设计材料。",
     "role": "Kubernetes 核心贡献者",
-    "description": "Kubernetes 核心贡献者，长期参与容器网络与接口设计，并公开解释网络模型背后的工程取舍。",
+    "description": "参与 Kubernetes 容器网络与接口设计。",
     "checkedAt": "2026-10-10",
     "id": "tim-hockin"
   },
   {
     "name": "Kent C. Dodds",
     "role": "软件教育者 · Testing Library 贡献者",
-    "description": "围绕 JavaScript、React 与测试持续分享课程和文章，推动以用户行为为中心的测试实践。适合提升应用质量和全栈开发能力。",
+    "description": "分享 JavaScript、React 与面向用户行为的测试实践。",
     "category": "前端与工具",
     "tags": [
       "React",
@@ -1423,19 +1429,22 @@
     "start": {
       "title": "Kent 的免费技术博客",
       "url": "https://kentcdodds.com/blog",
-      "note": "先从测试与 React 分类文章入手，结合自己的应用练习；部分课程为付费内容。"
+      "note": "先从测试与 React 分类文章入手，结合自己的应用练习。"
     },
     "sources": [
       "https://kentcdodds.com/",
       "https://kentcdodds.com/about",
-      "https://github.com/kentcdodds"
+      "https://github.com/kentcdodds",
+      "https://kentcdodds.com/info"
     ],
     "language": "English",
     "alias": null,
     "verification": "个人官网与公开档案互链核实；账号可访问性可能受平台登录要求影响。",
     "otherLinks": [],
     "checkedAt": "2026-10-10",
-    "id": "kent-c-dodds"
+    "id": "kent-c-dodds",
+    "youtube": "https://www.youtube.com/c/kentcdodds-vids",
+    "youtubeCheckedAt": "2026-10-11"
   },
   {
     "name": "Alexis Richardson",
@@ -1476,14 +1485,14 @@
     },
     "verification": "X 来自 CNCF 官方历史资料，最近活跃度未核实。ConfigHub 为项目/公司站，不作为独立个人站。",
     "role": "GitOps 推动者 · RabbitMQ 创始人",
-    "description": "RabbitMQ 与 Weaveworks 创始人、GitOps 推动者，持续研究云原生配置管理和应用运维工作流。",
+    "description": "创办 RabbitMQ 与 Weaveworks，推动 GitOps 实践。",
     "checkedAt": "2026-10-10",
     "id": "alexis-richardson"
   },
   {
     "name": "Sindre Sorhus",
     "role": "开源维护者 · 独立应用开发者",
-    "description": "维护大量 Node.js 与 TypeScript 工具，创建 Awesome 资源列表，也持续开发 Apple 平台应用。适合学习小工具的设计与长期维护。",
+    "description": "维护 Node.js 工具与 Awesome 列表，开发 Apple 应用。",
     "category": "前端与工具",
     "tags": [
       "Node.js",
@@ -1522,7 +1531,7 @@
   {
     "name": "Guillermo Rauch",
     "role": "Vercel 创建者 · Web 工具作者",
-    "description": "创建 Vercel，参与 Socket.IO 等开源工作，通过写作探索 Web 应用架构与开发流程。适合关注部署体验和 Web 平台演进。",
+    "description": "创建 Vercel，探索 Web 架构与开发流程。",
     "category": "前端与工具",
     "tags": [
       "Vercel",
@@ -1557,5 +1566,719 @@
     "otherLinks": [],
     "checkedAt": "2026-10-10",
     "id": "guillermo-rauch"
+  },
+  {
+    "id": "andrej-karpathy",
+    "name": "Andrej Karpathy",
+    "role": "深度学习研究者与教育者",
+    "description": "用代码讲清神经网络与语言模型，创建 micrograd 与 nanoGPT。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "LLM",
+      "神经网络",
+      "从零实现"
+    ],
+    "language": "English",
+    "x": "https://x.com/karpathy",
+    "website": "https://karpathy.ai/",
+    "github": "https://github.com/karpathy",
+    "youtube": "https://www.youtube.com/@AndrejKarpathy",
+    "works": [
+      {
+        "title": "micrograd",
+        "url": "https://github.com/karpathy/micrograd"
+      },
+      {
+        "title": "nanoGPT",
+        "url": "https://github.com/karpathy/nanoGPT"
+      }
+    ],
+    "start": {
+      "title": "Neural Networks: Zero to Hero",
+      "url": "https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ",
+      "note": "结合视频和代码，从反向传播开始动手实现神经网络。"
+    },
+    "sources": [
+      "https://karpathy.ai/",
+      "https://github.com/karpathy"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "id": "andrew-ng",
+    "name": "Andrew Ng",
+    "role": "机器学习教育者 · DeepLearning.AI 创建者",
+    "description": "创建机器学习课程，分享 AI 教育与应用实践。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "机器学习",
+      "AI 教育",
+      "应用工程"
+    ],
+    "language": "English",
+    "x": "https://x.com/AndrewYNg",
+    "website": "https://www.andrewng.org/",
+    "github": null,
+    "youtube": null,
+    "works": [
+      {
+        "title": "机器学习专项课程",
+        "url": "https://www.andrewng.org/courses"
+      },
+      {
+        "title": "DeepLearning.AI",
+        "url": "https://www.deeplearning.ai/"
+      }
+    ],
+    "start": {
+      "title": "Andrew Ng 课程目录",
+      "url": "https://www.andrewng.org/courses",
+      "note": "按自己的基础选择机器学习、深度学习或应用开发课程。"
+    },
+    "sources": [
+      "https://www.andrewng.org/",
+      "https://www.andrewng.org/courses"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11",
+    "alias": "吴恩达"
+  },
+  {
+    "id": "sebastian-raschka",
+    "name": "Sebastian Raschka",
+    "role": "LLM 研究工程师与技术作者",
+    "description": "用 PyTorch 与配套代码讲解大语言模型的训练与实现。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "PyTorch",
+      "LLM",
+      "模型训练"
+    ],
+    "language": "English",
+    "x": "https://x.com/rasbt",
+    "website": "https://sebastianraschka.com/",
+    "github": "https://github.com/rasbt",
+    "youtube": "https://www.youtube.com/@SebastianRaschka",
+    "works": [
+      {
+        "title": "LLMs from Scratch",
+        "url": "https://github.com/rasbt/LLMs-from-scratch"
+      },
+      {
+        "title": "Ahead of AI",
+        "url": "https://magazine.sebastianraschka.com/"
+      }
+    ],
+    "start": {
+      "title": "Build a Large Language Model (From Scratch)",
+      "url": "https://github.com/rasbt/LLMs-from-scratch",
+      "note": "从分词、注意力机制到预训练和微调，配合书籍与代码逐步学习。"
+    },
+    "sources": [
+      "https://sebastianraschka.com/about/",
+      "https://github.com/rasbt"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "id": "jeremy-howard",
+    "name": "Jeremy Howard",
+    "role": "fast.ai 联合创始人",
+    "description": "联合创办 fast.ai，推动以实践为起点的深度学习教育。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "深度学习",
+      "fastai",
+      "实践教学"
+    ],
+    "language": "English",
+    "x": "https://x.com/jeremyphoward",
+    "website": "https://jeremy.fast.ai/",
+    "github": "https://github.com/jph00",
+    "youtube": "https://www.youtube.com/@howardjeremyp",
+    "works": [
+      {
+        "title": "fastai",
+        "url": "https://github.com/fastai/fastai"
+      },
+      {
+        "title": "nbdev",
+        "url": "https://nbdev.fast.ai/"
+      }
+    ],
+    "start": {
+      "title": "Practical Deep Learning for Coders",
+      "url": "https://course.fast.ai/",
+      "note": "面向有编程经验的学习者，从真实任务进入深度学习。"
+    },
+    "sources": [
+      "https://github.com/jph00",
+      "https://jeremy.fast.ai/",
+      "https://course.fast.ai/",
+      "https://www.youtube.com/@howardjeremyp"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "id": "lilian-weng",
+    "name": "Lilian Weng",
+    "role": "机器学习研究者 · Lil’Log 作者",
+    "description": "系统梳理深度学习、强化学习与大模型研究。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "LLM",
+      "强化学习",
+      "Agent"
+    ],
+    "language": "English",
+    "x": "https://x.com/lilianweng",
+    "website": "https://lilianweng.github.io/",
+    "github": "https://github.com/lilianweng",
+    "youtube": null,
+    "works": [
+      {
+        "title": "Lil’Log",
+        "url": "https://lilianweng.github.io/"
+      },
+      {
+        "title": "LLM Powered Autonomous Agents",
+        "url": "https://lilianweng.github.io/posts/2023-06-23-agent/"
+      }
+    ],
+    "start": {
+      "title": "LLM Powered Autonomous Agents",
+      "url": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+      "note": "先理解规划、记忆和工具使用三个部分，再顺着引用阅读相关研究。"
+    },
+    "sources": [
+      "https://lilianweng.github.io/",
+      "https://github.com/lilianweng"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "id": "chip-huyen",
+    "name": "Chip Huyen",
+    "role": "AI 工程与机器学习系统作者",
+    "description": "讲解 AI 产品的数据、评估、部署与系统设计。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "AI 工程",
+      "ML 系统",
+      "评估"
+    ],
+    "language": "English",
+    "x": "https://x.com/chipro",
+    "website": "https://huyenchip.com/",
+    "github": "https://github.com/chiphuyen",
+    "youtube": null,
+    "works": [
+      {
+        "title": "Designing Machine Learning Systems",
+        "url": "https://github.com/chiphuyen/dmls-book"
+      },
+      {
+        "title": "AI Engineering",
+        "url": "https://huyenchip.com/books/"
+      }
+    ],
+    "start": {
+      "title": "Chip Huyen 的书籍与资源",
+      "url": "https://huyenchip.com/books/",
+      "note": "按模型系统设计与基础模型应用两条路线，选择适合自己的学习资源。"
+    },
+    "sources": [
+      "https://huyenchip.com/",
+      "https://huyenchip.com/books/"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "id": "jay-alammar",
+    "name": "Jay Alammar",
+    "role": "机器学习可视化作者",
+    "description": "用图解介绍 Transformer、语言模型与表示学习。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "Transformer",
+      "可视化",
+      "LLM"
+    ],
+    "language": "English",
+    "x": "https://x.com/JayAlammar",
+    "website": "https://jalammar.github.io/",
+    "github": "https://github.com/jalammar",
+    "youtube": "https://www.youtube.com/channel/UCmOwsoHty5PrmE-3QhUBfPQ",
+    "works": [
+      {
+        "title": "The Illustrated Transformer",
+        "url": "https://jalammar.github.io/illustrated-transformer/"
+      },
+      {
+        "title": "Ecco",
+        "url": "https://github.com/jalammar/ecco"
+      }
+    ],
+    "start": {
+      "title": "The Illustrated Transformer",
+      "url": "https://jalammar.github.io/illustrated-transformer/",
+      "note": "跟着图解理解注意力机制和编码器、解码器的数据流。"
+    },
+    "sources": [
+      "https://jalammar.github.io/",
+      "https://github.com/jalammar"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "id": "thomas-wolf",
+    "name": "Thomas Wolf",
+    "role": "Hugging Face 联合创始人",
+    "description": "联合创办 Hugging Face，推动开源模型与工具生态。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "Hugging Face",
+      "开源模型",
+      "NLP"
+    ],
+    "language": "English",
+    "x": "https://x.com/Thom_Wolf",
+    "website": "https://thomwolf.io/",
+    "github": "https://github.com/thomwolf",
+    "youtube": null,
+    "works": [
+      {
+        "title": "Transformers（团队项目）",
+        "url": "https://github.com/huggingface/transformers"
+      },
+      {
+        "title": "Datasets（团队项目）",
+        "url": "https://github.com/huggingface/datasets"
+      }
+    ],
+    "start": {
+      "title": "Hugging Face LLM Course",
+      "url": "https://huggingface.co/learn/llm-course/chapter1/1",
+      "note": "从 Transformers 工具入手，了解模型、分词器与数据集的协同方式。"
+    },
+    "sources": [
+      "https://thomwolf.io/",
+      "https://github.com/thomwolf"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "id": "francois-chollet",
+    "name": "François Chollet",
+    "role": "Keras 创建者 · AI 研究者",
+    "description": "创建 Keras，研究抽象推理与模型泛化能力。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "Keras",
+      "深度学习",
+      "ARC"
+    ],
+    "language": "English",
+    "x": "https://x.com/fchollet",
+    "website": "https://fchollet.com/",
+    "github": "https://github.com/fchollet",
+    "youtube": null,
+    "works": [
+      {
+        "title": "Keras",
+        "url": "https://github.com/keras-team/keras"
+      },
+      {
+        "title": "ARC Prize",
+        "url": "https://arcprize.org/"
+      }
+    ],
+    "start": {
+      "title": "Keras 开发者指南",
+      "url": "https://keras.io/guides/",
+      "note": "从模型构建、训练与自定义组件进入 Keras 的实践路线。"
+    },
+    "sources": [
+      "https://fchollet.com/",
+      "https://github.com/fchollet"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "id": "tim-dettmers",
+    "name": "Tim Dettmers",
+    "role": "模型量化与高效训练研究者",
+    "description": "研究低比特量化与节省显存的模型训练方法。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "量化",
+      "QLoRA",
+      "GPU"
+    ],
+    "language": "English",
+    "x": "https://x.com/tim_dettmers",
+    "website": "https://timdettmers.com/",
+    "github": "https://github.com/TimDettmers",
+    "youtube": null,
+    "works": [
+      {
+        "title": "bitsandbytes",
+        "url": "https://github.com/bitsandbytes-foundation/bitsandbytes"
+      },
+      {
+        "title": "QLoRA（共同研究）",
+        "url": "https://arxiv.org/abs/2305.14314"
+      }
+    ],
+    "start": {
+      "title": "QLoRA 论文与实现",
+      "url": "https://github.com/artidoro/qlora",
+      "note": "配合论文理解四比特量化和 LoRA。"
+    },
+    "sources": [
+      "https://github.com/TimDettmers",
+      "https://timdettmers.com/",
+      "https://arxiv.org/abs/2305.14314"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "id": "harrison-chase",
+    "name": "Harrison Chase",
+    "role": "LangChain 创建者",
+    "description": "创建 LangChain，参与 LangGraph 与 Agent 应用工具建设。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "LangChain",
+      "LangGraph",
+      "Agent"
+    ],
+    "language": "English",
+    "x": "https://x.com/hwchase17",
+    "website": null,
+    "github": "https://github.com/hwchase17",
+    "youtube": null,
+    "works": [
+      {
+        "title": "LangChain",
+        "url": "https://github.com/langchain-ai/langchain"
+      },
+      {
+        "title": "LangGraph（团队项目）",
+        "url": "https://github.com/langchain-ai/langgraph"
+      }
+    ],
+    "start": {
+      "title": "LangChain 官方文档",
+      "url": "https://docs.langchain.com/oss/python/langchain/overview",
+      "note": "先完成基础 Agent，再按需要学习状态管理、工具调用和调试。"
+    },
+    "sources": [
+      "https://github.com/hwchase17",
+      "https://www.langchain.com/blog/three-years-langchain",
+      "https://www.langchain.com/blog/chat-your-data-challenge"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "id": "fei-fei-li",
+    "name": "Fei-Fei Li",
+    "role": "计算机视觉研究者 · ImageNet 发起人",
+    "description": "发起 ImageNet，推动计算机视觉与以人为本的 AI。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "计算机视觉",
+      "ImageNet",
+      "空间智能"
+    ],
+    "language": "English",
+    "x": "https://x.com/drfeifei",
+    "website": null,
+    "github": null,
+    "youtube": null,
+    "works": [
+      {
+        "title": "ImageNet",
+        "url": "https://www.image-net.org/"
+      },
+      {
+        "title": "Stanford CS231n（课程）",
+        "url": "https://cs231n.stanford.edu/"
+      }
+    ],
+    "start": {
+      "title": "CS231n 课程资料",
+      "url": "https://cs231n.stanford.edu/",
+      "note": "面向有数学和编程基础的读者，学习视觉任务、神经网络与训练实践。"
+    },
+    "sources": [
+      "https://profiles.stanford.edu/fei-fei-li",
+      "https://www-cs.stanford.edu/groups/vision/people.html"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11",
+    "alias": "李飞飞",
+    "otherLinks": [
+      {
+        "title": "Stanford 学术主页",
+        "url": "https://profiles.stanford.edu/fei-fei-li"
+      }
+    ]
+  },
+  {
+    "id": "yann-lecun",
+    "name": "Yann LeCun",
+    "role": "深度学习与视觉学习先驱",
+    "description": "研究卷积神经网络、表示学习与自监督学习。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "CNN",
+      "自监督学习",
+      "表示学习"
+    ],
+    "language": "English",
+    "x": "https://x.com/ylecun",
+    "website": null,
+    "github": null,
+    "youtube": null,
+    "works": [
+      {
+        "title": "LeNet 研究（历史资料）",
+        "url": "https://yann.lecun.com/exdb/lenet/"
+      },
+      {
+        "title": "I-JEPA（共同研究）",
+        "url": "https://github.com/facebookresearch/ijepa"
+      }
+    ],
+    "start": {
+      "title": "I-JEPA 研究与代码",
+      "url": "https://github.com/facebookresearch/ijepa",
+      "note": "结合论文阅读 I-JEPA 代码；仓库已归档。"
+    },
+    "sources": [
+      "https://yann.lecun.org/",
+      "https://github.com/facebookresearch/ijepa"
+    ],
+    "verification": "本人主页注明不再在 X 发文；个人站本轮连接不稳定。",
+    "checkedAt": "2026-10-11",
+    "otherLinks": [
+      {
+        "title": "个人主页（本轮连接不稳定）",
+        "url": "https://yann.lecun.com/"
+      },
+      {
+        "title": "Bluesky",
+        "url": "https://bsky.app/profile/yann-lecun.bsky.social"
+      }
+    ]
+  },
+  {
+    "id": "geoffrey-hinton",
+    "name": "Geoffrey Hinton",
+    "role": "深度学习先驱",
+    "description": "推动神经网络与深度学习研究，关注 AI 的长期影响。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "神经网络",
+      "表示学习",
+      "AI 安全"
+    ],
+    "language": "English",
+    "x": "https://x.com/geoffreyhinton",
+    "website": "https://www.cs.toronto.edu/~hinton/",
+    "github": null,
+    "youtube": null,
+    "works": [
+      {
+        "title": "AlexNet（共同研究）",
+        "url": "https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks"
+      },
+      {
+        "title": "研究论文目录",
+        "url": "https://www.cs.toronto.edu/~hinton/"
+      }
+    ],
+    "start": {
+      "title": "Geoffrey Hinton 研究主页",
+      "url": "https://www.cs.toronto.edu/~hinton/",
+      "note": "从主页的论文、课程和演讲入口，选择与自身基础相符的资料。"
+    },
+    "sources": [
+      "https://www.cs.toronto.edu/~hinton/",
+      "https://x.com/geoffreyhinton/with_replies"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "id": "ilya-sutskever",
+    "name": "Ilya Sutskever",
+    "role": "深度学习研究者 · SSI 联合创始人",
+    "description": "参与序列学习研究，联合创办 SSI。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "序列学习",
+      "大模型",
+      "AI 安全"
+    ],
+    "language": "English",
+    "x": "https://x.com/ilyasut",
+    "website": "https://www.cs.toronto.edu/~ilya/",
+    "github": null,
+    "youtube": null,
+    "works": [
+      {
+        "title": "Sequence to Sequence Learning",
+        "url": "https://arxiv.org/abs/1409.3215"
+      },
+      {
+        "title": "SSI（联合创办）",
+        "url": "https://ssi.inc/"
+      }
+    ],
+    "start": {
+      "title": "Sequence to Sequence Learning with Neural Networks",
+      "url": "https://arxiv.org/abs/1409.3215",
+      "note": "从经典序列到序列模型入手，理解后续语言模型的发展背景。"
+    },
+    "sources": [
+      "https://www.cs.toronto.edu/~ilya/",
+      "https://ssi.inc/",
+      "https://x.com/ilyasut/with_replies",
+      "https://arxiv.org/abs/1409.3215"
+    ],
+    "verification": "学术主页含旧任职信息；当前身份参考 SSI 与 X 档案。",
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "id": "demis-hassabis",
+    "name": "Demis Hassabis",
+    "role": "Google DeepMind 联合创始人",
+    "description": "联合创办 DeepMind，推动游戏智能与科学 AI。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "AI 研究",
+      "强化学习",
+      "科学 AI"
+    ],
+    "language": "English",
+    "x": "https://x.com/demishassabis",
+    "website": null,
+    "github": null,
+    "youtube": null,
+    "works": [
+      {
+        "title": "AlphaGo（团队成果）",
+        "url": "https://deepmind.google/research/breakthroughs/alphago/"
+      },
+      {
+        "title": "AlphaFold（团队成果）",
+        "url": "https://github.com/google-deepmind/alphafold"
+      }
+    ],
+    "start": {
+      "title": "AlphaGo 研究介绍",
+      "url": "https://deepmind.google/research/breakthroughs/alphago/",
+      "note": "先从官方项目介绍理解搜索、强化学习与自我博弈，再阅读论文。"
+    },
+    "sources": [
+      "https://deepmind.google/about/",
+      "https://x.com/demishassabis/with_replies?lang=en"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11",
+    "otherLinks": [
+      {
+        "title": "Google DeepMind 官方介绍",
+        "url": "https://deepmind.google/about/"
+      }
+    ]
+  },
+  {
+    "id": "sam-altman",
+    "name": "Sam Altman",
+    "role": "OpenAI 联合创始人",
+    "description": "分享 AI 发展、产品与产业变化的观点。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "AI 产品",
+      "产业趋势",
+      "AGI"
+    ],
+    "language": "English",
+    "x": "https://x.com/sama",
+    "website": "https://blog.samaltman.com/",
+    "github": null,
+    "youtube": null,
+    "works": [
+      {
+        "title": "The Intelligence Age",
+        "url": "https://ia.samaltman.com/"
+      },
+      {
+        "title": "个人博客",
+        "url": "https://blog.samaltman.com/"
+      }
+    ],
+    "start": {
+      "title": "The Intelligence Age",
+      "url": "https://ia.samaltman.com/",
+      "note": "阅读作者对 AI 发展的预测，并对照研究证据。"
+    },
+    "sources": [
+      "https://blog.samaltman.com/",
+      "https://ia.samaltman.com/"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11"
+  },
+  {
+    "id": "dario-amodei",
+    "name": "Dario Amodei",
+    "role": "Anthropic 联合创始人 · AI 研究者",
+    "description": "研究模型能力与 AI 安全，讨论技术的社会影响。",
+    "category": "AI 与机器学习",
+    "tags": [
+      "AI 安全",
+      "模型研究",
+      "产业趋势"
+    ],
+    "language": "English",
+    "x": null,
+    "website": "https://darioamodei.com/",
+    "github": null,
+    "youtube": null,
+    "works": [
+      {
+        "title": "Machines of Loving Grace",
+        "url": "https://darioamodei.com/essay/machines-of-loving-grace"
+      },
+      {
+        "title": "个人文章与访谈",
+        "url": "https://darioamodei.com/"
+      }
+    ],
+    "start": {
+      "title": "Machines of Loving Grace",
+      "url": "https://darioamodei.com/essay/machines-of-loving-grace",
+      "note": "了解作者对 AI 应用与社会影响的判断。"
+    },
+    "sources": [
+      "https://darioamodei.com/",
+      "https://darioamodei.com/essay/machines-of-loving-grace"
+    ],
+    "verification": "官网与公开档案交叉核实；仅展示已确认的个人账号。",
+    "checkedAt": "2026-10-11"
   }
 ]
