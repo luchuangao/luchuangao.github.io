@@ -122,12 +122,12 @@ const xTracker = {
 
 const zilo = {
   id: 'zilo', type: 'app', status: 'released', installMethod: 'dmg',
-  name: 'Zilo', shortName: 'Zilo', subtitle: '自己的清单，自己掌握', image: 'zilo-icon.png',
-  platforms: 'macOS 14+', version: '1.0', build: '32', tagline: '让每天的事，有处安放。',
+  name: 'Zilo', shortName: 'Zilo', subtitle: '自己的清单，自己掌握', image: 'zilo-icon-ribbon.png',
+  platforms: 'macOS 14+', version: '1.0', build: '33', tagline: '让每天的事，有处安放。',
   description: ['在一处管理任务、文档、日历、习惯与专注。', '支持中英文界面，用子任务拆解计划，用番茄钟留出专注时间。'],
   highlights: ['中英文界面', 'Markdown · 思维导图', '任务 · 专注 · 习惯'],
   detail: 'Zilo 是一款原生个人清单应用。在 Mac 上整理任务与子任务、编辑 Markdown 文档，并安排日历、专注、习惯和倒数纪念日。支持中英文界面，iPhone 版正在真机测试。',
-  download: './assets/Zilo-1.0-32.dmg', source: 'https://github.com/luchuangao/Zilo',
+  download: './assets/Zilo-1.0-33.dmg', source: 'https://github.com/luchuangao/Zilo',
   note: 'Mac 版需要 macOS 14 或更高版本。打开 DMG，将 Zilo 拖入“应用程序”安装。本构建已完成 Developer ID 签名与 Apple 公证。iPhone 版仅供已注册设备测试，尚未在 App Store 发布。iCloud 同步已接入，但跨设备生产环境同步仍待验证。',
   features: [
     ['清单与子任务', '通过清单、标签和过滤器整理任务。点击任务名即可编辑；拖动手柄调整顺序，或将任务放入另一任务作为子任务。'],
