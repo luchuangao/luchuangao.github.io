@@ -75,7 +75,7 @@ function showDetail(id, open=true) {
 }
 async function load() {
   try {
-    const response=await fetch('people.json');if(!response.ok)throw new Error('Failed to load');
+    const response=await fetch('people.json?v=20261011-ai52');if(!response.ok)throw new Error('Failed to load');
     state.people=await response.json();render();
   } catch {$('result-count').textContent='资料暂时无法载入';$('grid').innerHTML='<div class="error"><h3>资料暂时无法载入</h3><p>请检查网络后重试。</p><button id="reload">重新加载</button></div>';$('reload').addEventListener('click',load);}
 }
