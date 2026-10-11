@@ -90,12 +90,21 @@ export const productEnglish = {
   },
   zilo: {
     name: 'Zilo', shortName: 'Zilo', subtitle: 'Your lists, your way', tagline: 'A place for the things you do.',
-    description: ['Keep tasks, calendars, habits and focus in one place.', 'Write Markdown documents with images and mind maps, then export to Word, PDF or Markdown.'],
-    highlights: ['Apple silicon & Intel Mac', 'Markdown, images & mind maps', 'Tasks, calendars, focus & habits'],
-    detail: 'Zilo is a native Mac task app for personal use. Manage tasks, calendars, habits and focus offline. Write Markdown documents inside tasks with images and mind maps, and export them to Word, PDF or Markdown.',
-    note: 'Requires macOS 14 or later. Open the downloaded DMG and drag Zilo to Applications. This build is Developer ID signed and Apple notarized. Data is primarily local; iCloud sync has not yet been verified in production.',
-    features: [['Lists & planning', 'Organize tasks with lists, folders, tags and filters. Plan your day in list, board, timeline and calendar views.'], ['Markdown documents', 'Use Markdown, syntax-highlighted code, checklists, images and mind maps. Export to Word, PDF or Markdown.'], ['Focus & habits', 'Track focus with a Pomodoro timer or stopwatch, and set habit goals, reminders and check-in frequency.']],
-    screens: [{alt: 'Actual Zilo Mac interface with a Markdown table and mind map inside a task', caption: 'Map ideas inside task documents'}, {alt: 'Actual Zilo Mac interface with Markdown formatting, tasks and Python code highlighting', caption: 'Markdown and highlighted code'}],
+    description: ['Keep tasks, documents, calendars, habits and focus in one place.', 'Choose Chinese or English. Break plans into subtasks and make time to focus.'],
+    highlights: ['Chinese & English', 'Markdown & mind maps', 'Tasks, focus & habits'],
+    detail: 'Zilo is a native personal task app. Organize tasks and subtasks, write Markdown documents, and manage calendars, focus, habits and countdowns on Mac. The interface supports Chinese and English. The iPhone version is currently undergoing device testing.',
+    note: 'The Mac version requires macOS 14 or later. Open the DMG and drag Zilo to Applications. This build is Developer ID signed and Apple notarized. The iPhone version is limited to registered test devices and is not available on the App Store. iCloud sync is integrated; cross-device production sync still needs verification.',
+    features: [['Lists & subtasks', 'Organize tasks with lists, tags and filters. Click a task name to edit it. Drag its handle to reorder it or make it a subtask of another task.'], ['Documents & code', 'Use Markdown, syntax-highlighted code blocks, images and mind maps. Export to Word, PDF or Markdown.'], ['Focus & everyday routines', 'Track focus with a Pomodoro timer or stopwatch, set habit goals and check-in schedules, and manage countdowns.'], ['Languages & reminders', 'Choose Chinese or English in Settings. Task, habit, focus and countdown reminders use system notifications.']],
+    screens: [
+      {image: 'zilo-mac-tasks-en.png', width: 2560, height: 1444, alt: 'English Zilo Mac interface showing today’s tasks, nested subtasks and a Markdown code preview', caption: 'Mac · Today’s tasks and Markdown documents'},
+      {image: 'zilo-mac-focus-en.png', width: 2560, height: 1444, alt: 'English Zilo Mac Pomodoro interface with timer, overview and focus history', caption: 'Mac · Pomodoro and focus history'},
+    ],
+    screenNote: 'Actual English interface · Sample tasks. Screenshots retain their original proportions.',
+    mobileTitle: 'iPhone test version preview', mobileNote: 'Actual iPhone simulator interface. Currently limited to registered test devices; no App Store download is available.',
+    mobileScreens: [
+      {image: 'zilo-iphone-tasks-en.png', width: 1206, height: 2622, alt: 'English Zilo iPhone Today view with an expanded parent task and subtasks', caption: 'Today’s tasks and subtasks'},
+      {image: 'zilo-iphone-focus-en.png', width: 1206, height: 2622, alt: 'English Zilo iPhone Pomodoro view with a 25-minute timer', caption: 'Make time to focus'},
+    ],
   },
   juecha: {
     name: 'Juecha: Screen Time & Focus', shortName: 'Juecha', subtitle: 'Screen time & focus', tagline: 'Pause before you open.',

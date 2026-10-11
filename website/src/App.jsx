@@ -121,32 +121,29 @@ const xTracker = {
 };
 
 const zilo = {
-  id: 'zilo',
-  type: 'app',
-  status: 'released',
-  installMethod: 'dmg',
-  name: 'Zilo',
-  shortName: 'Zilo',
-  subtitle: '自己的清单，自己掌握',
-  image: 'zilo-icon.png',
-  platforms: 'macOS 14+',
-  version: '1.0',
-  build: '11',
-  tagline: '让每天的事，有处安放。',
-  description: ['在一处管理清单、日历、习惯与专注。', '用 Markdown 记录文档，插入图片和思维导图，并导出 Word、PDF 与 Markdown。'],
-  highlights: ['Apple 芯片与 Intel Mac', 'Markdown · 图片 · 思维导图', '任务、日历、专注与习惯'],
-  detail: 'Zilo 是一款面向个人的原生 Mac 清单应用。离线管理任务、日历、习惯和专注，也可在任务中撰写 Markdown 文档、插入图片与思维导图，并导出 Word、PDF 或 Markdown。',
-  download: './assets/Zilo-1.0-11.dmg',
-  source: 'https://github.com/luchuangao/Zilo',
-  note: '需要 macOS 14 或更高版本。下载并打开 DMG，将 Zilo 拖入“应用程序”即可安装。此版本已完成 Developer ID 签名与 Apple 公证。应用以本机数据为主；iCloud 同步尚未完成生产环境验证。',
+  id: 'zilo', type: 'app', status: 'released', installMethod: 'dmg',
+  name: 'Zilo', shortName: 'Zilo', subtitle: '自己的清单，自己掌握', image: 'zilo-icon.png',
+  platforms: 'macOS 14+', version: '1.0', build: '32', tagline: '让每天的事，有处安放。',
+  description: ['在一处管理任务、文档、日历、习惯与专注。', '支持中英文界面，用子任务拆解计划，用番茄钟留出专注时间。'],
+  highlights: ['中英文界面', 'Markdown · 思维导图', '任务 · 专注 · 习惯'],
+  detail: 'Zilo 是一款原生个人清单应用。在 Mac 上整理任务与子任务、编辑 Markdown 文档，并安排日历、专注、习惯和倒数纪念日。支持中英文界面，iPhone 版正在真机测试。',
+  download: './assets/Zilo-1.0-32.dmg', source: 'https://github.com/luchuangao/Zilo',
+  note: 'Mac 版需要 macOS 14 或更高版本。打开 DMG，将 Zilo 拖入“应用程序”安装。本构建已完成 Developer ID 签名与 Apple 公证。iPhone 版仅供已注册设备测试，尚未在 App Store 发布。iCloud 同步已接入，但跨设备生产环境同步仍待验证。',
   features: [
-    ['清单与规划', '用清单、文件夹、标签和过滤器整理任务；通过列表、看板、时间线与日历安排每天的事。'],
-    ['Markdown 文档', '支持 Markdown、代码块语法高亮、检查项、图片和思维导图，并可导出 Word、PDF 与 Markdown。'],
-    ['专注与习惯', '使用番茄钟或正计时记录专注，也可设定习惯目标、提醒和打卡频率。'],
+    ['清单与子任务', '通过清单、标签和过滤器整理任务。点击任务名即可编辑；拖动手柄调整顺序，或将任务放入另一任务作为子任务。'],
+    ['文档与代码', '支持 Markdown、语法高亮代码块、图片与思维导图，并可导出 Word、PDF 与 Markdown。'],
+    ['专注与日常', '使用番茄钟或正计时记录专注，设置习惯目标与打卡频率，并管理倒数纪念日。'],
+    ['语言与提醒', '可在设置中选择中文或英文界面；任务、习惯、专注和纪念日提醒接入系统通知。'],
   ],
   screens: [
-    { image: 'zilo-mindmap.png', width: 2520, height: 1410, alt: 'Zilo Mac 应用真实界面，任务详情中展示 Markdown 表格和思维导图', caption: '在任务文档中整理思维导图' },
-    { image: 'zilo-markdown.png', width: 2520, height: 1410, alt: 'Zilo Mac 应用真实界面，展示 Markdown 排版、任务清单与 Python 代码高亮', caption: 'Markdown 排版与代码高亮' },
+    { image: 'zilo-mac-tasks-zh.png', width: 2560, height: 1444, alt: 'Zilo Mac 中文界面，今日任务、嵌套子任务和 Markdown 代码预览', caption: 'Mac · 今日任务与 Markdown 文档' },
+    { image: 'zilo-mac-focus-zh.png', width: 2560, height: 1444, alt: 'Zilo Mac 中文番茄专注界面，计时器、概览与专注记录', caption: 'Mac · 番茄专注与记录' },
+  ],
+  screenNote: '真实中文界面 · 使用示例任务。截图按原始比例展示。',
+  mobileTitle: 'iPhone 测试版预览', mobileNote: '真实 iPhone 模拟器界面。当前仅支持已注册设备测试，尚无 App Store 下载。',
+  mobileScreens: [
+    { image: 'zilo-iphone-tasks-zh.png', width: 1206, height: 2622, alt: 'Zilo iPhone 中文今日任务界面，展开父任务和子任务', caption: '今日任务与子任务' },
+    { image: 'zilo-iphone-focus-zh.png', width: 1206, height: 2622, alt: 'Zilo iPhone 中文番茄专注界面，25 分钟计时器', caption: '随时开始专注' },
   ],
 };
 
@@ -305,6 +302,7 @@ export function App() {
       {active === 'about' ? <><p className="eyebrow">{t('关于我')}</p><h2 id="dialog-title">{t('你好，我是 luchuangao。')}</h2><p className="dialog-description">{t('这里是我的产品与创作空间。')}<br />{t('把想法，做成好用的产品。')}</p><a className="primary-button" href="https://github.com/luchuangao" target="_blank" rel="noopener noreferrer"><GithubLogoIcon size={22} aria-hidden="true" />{t('访问 GitHub')}<span className="sr-only">{t('（在新标签页打开）')}</span></a></> : activeProduct && <>
         <img className="dialog-product-icon app-icon" src={`./assets/${activeProduct.image}`} alt="" width="88" height="88" /><p className="eyebrow">{activeProduct.platforms} · {productStatus(activeProduct,t)}</p><h2 id="dialog-title">{activeProduct.name}</h2><p className="dialog-description">{activeProduct.detail}</p>
         {showGuide && activeProduct.installMethod === 'unpacked' ? <InstallGuide key={activeProduct.id} product={activeProduct} t={t} /> : <><ul className="detail-features">{activeProduct.features.map(([title,description]) => <li key={title}><strong>{title}</strong><span>{description}</span></li>)}</ul>{activeProduct.previewScreen && <figure className="detail-preview"><img src={`./assets/${activeProduct.previewScreen.image}`} alt={activeProduct.previewScreen.alt} width={activeProduct.previewScreen.width} height={activeProduct.previewScreen.height} loading="lazy" /><figcaption>{t('先预览，再保存 · 演示内容')}</figcaption></figure>}</>}
+        {activeProduct.id === 'zilo' && <section className="zilo-detail-screens" aria-label={t('真实界面')}><div className="zilo-mac-gallery">{activeProduct.screens.map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" /><figcaption>{screen.caption}</figcaption></figure>)}</div><h3>{activeProduct.mobileTitle}</h3><p className="learning-note">{activeProduct.mobileNote}</p><div className="zilo-mobile-gallery">{activeProduct.mobileScreens.map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" /><figcaption>{screen.caption}</figcaption></figure>)}</div></section>}
         <div className="dialog-actions"><DownloadLink product={activeProduct} t={t} />{activeProduct.installMethod === 'unpacked' && <button className="secondary-button" type="button" onClick={() => setShowGuide(!showGuide)}>{t(showGuide ? '产品介绍' : '安装指南')}</button>}</div><ProductLinks product={activeProduct} t={t} className="support-links" />{activeProduct.note && <p className="learning-note">{activeProduct.note}</p>}
       </>}
     </div></dialog>

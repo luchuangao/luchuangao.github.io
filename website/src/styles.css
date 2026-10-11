@@ -325,3 +325,16 @@ html[lang="en"] .featured-identity h3 { font-size: 23px; }
   html[lang="en"] .hero-product-name { font-size: 11px; }
   html[lang="en"] .hero-description { font-size: 14px; }
 }
+
+/* Zilo desktop captures and iPhone previews keep their actual aspect ratios. */
+.featured-zilo .product-screens { grid-template-columns: 1fr; max-width: 560px; gap: 20px; }
+.featured-zilo .product-screens figure:last-child { padding-top: 0; }
+.featured-zilo .product-screens img { border: 1px solid #e2e8f0; border-radius: 8px; }
+.zilo-detail-screens { margin: 28px 0; }
+.zilo-detail-screens figure { margin: 0; min-width: 0; }
+.zilo-detail-screens img { display: block; width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px; }
+.zilo-detail-screens figcaption { margin-top: 8px; font-size: 12px; line-height: 1.6; color: #667085; text-align: center; }
+.zilo-mac-gallery { display: grid; gap: 20px; }
+.zilo-detail-screens h3 { margin: 28px 0 12px; font-size: 18px; }
+.zilo-mobile-gallery { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; max-width: 380px; margin: 20px auto 0; }
+@media (max-width: 600px) { .featured-zilo .product-screens { max-width: 100%; } .zilo-mobile-gallery { grid-template-columns: 1fr; max-width: 240px; gap: 20px; } }
