@@ -13,6 +13,7 @@ export const translations = {
     '已经发布，可以从这里开始体验。': 'Explore by platform or find a tool for your day.',
     '已发布': 'Available now', '网站下载 · 手动安装': 'Website download · Manual install',
     '网站下载 · 已公证': 'Website download · Notarized',
+    '网站下载 · 未公证': 'Website download · Not notarized',
     'App Store 下载': 'View on App Store', '下载插件 ZIP': 'Download extension ZIP',
     '下载 Mac 版 DMG': 'Download for Mac', '了解更多': 'Learn more', '安装指南': 'Install guide',
     '产品介绍': 'Product overview', '问题反馈': 'Feedback', '产品支持': 'Support',
@@ -52,6 +53,26 @@ export function translator(language) {
 }
 
 export const productEnglish = {
+  hazefocus: {
+    name: 'HazeFocus', shortName: 'HazeFocus', subtitle: 'Less distraction. More clarity.',
+    tagline: 'Keep your focus on the current window.',
+    description: ['Automatically dim background windows and keep your work clear.', 'A native menu bar utility with Chinese and English, shortcuts and display controls.'],
+    highlights: ['Window focus', 'Adjustable intensity & color', 'Chinese & English'],
+    detail: 'HazeFocus is a native macOS menu bar utility that dims distractions while preserving the active window’s original brightness. Highlight one window or every window of the current app, and adjust dimming intensity, color and fade duration. The interface supports English and Chinese. Basic mode works without Accessibility access; granting access improves tracking.',
+    note: 'Requires macOS 13 or later. Universal for Apple Silicon and Intel. Open the DMG and drag HazeFocus to Applications. This build is ad-hoc signed and has not been Apple notarized; you may need to confirm its source in System Settings on first launch. It is not on the App Store. Display geometry is covered by tests; physical multi-display testing is still pending.',
+    features: [
+      ['Window focus', 'Highlight the current window or all windows of the current app. Background windows remain clickable, so you can switch tasks without minimizing or rearranging them.'],
+      ['Make it your own', 'Set intensity, color and fade duration. Save separate light and dark settings and pause automatically for selected apps.'],
+      ['Quick controls', 'Use a customizable global shortcut, scroll over or double-click the menu bar icon, and hold Fn to reveal other windows temporarily.'],
+      ['Displays & local settings', 'Highlight only the focused window or a front window on every display, with individual display exclusions. Settings stay local; no account, telemetry or network service is required.'],
+    ],
+    screens: [
+      { image: 'hazefocus-focus-en.png', width: 1720, height: 1300, alt: 'English HazeFocus focus settings with a live dimming preview and intensity slider', caption: 'Keep the active window clear' },
+      { image: 'hazefocus-dimming-en.png', width: 1720, height: 1300, alt: 'English HazeFocus dimming settings with color, fade duration and appearance options', caption: 'Tune dimming to your workflow' },
+    ],
+    screenNote: 'Actual English interface in version 1.0.2. The preview area is an in-app demonstration. Original screenshot proportions are preserved.',
+  },
+
   callhome: {
     name: 'Call Home: The Sound of Home', shortName: 'Call Home', subtitle: 'The sound of home',
     tagline: 'Make care part of everyday life.',
@@ -119,6 +140,7 @@ export const productEnglish = {
 export const classification = {
   callhome: { platform: 'ios', category: 'care' }, compound: { platform: 'ios', category: 'finance' },
   littlebird: { platform: 'ios', category: 'music' }, 'x-tracker': { platform: 'chrome', category: 'reading' },
+  hazefocus: { platform: 'mac', category: 'focus' },
   zilo: { platform: 'mac', category: 'focus' }, juecha: { platform: 'ios', category: 'focus' },
 };
 export const platformFilters = [['all', '全部'], ['ios', 'iPhone / iPad'], ['mac', 'Mac'], ['chrome', 'Chrome 插件']];

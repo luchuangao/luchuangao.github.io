@@ -172,7 +172,31 @@ const juecha = {
   ],
 };
 
-const releasedProducts = [callHome, compound, littlebird, xTracker, zilo, juecha];
+const hazeFocus = {
+  id: 'hazefocus', type: 'app', status: 'released', installMethod: 'dmg', notarized: false,
+  name: 'HazeFocus', shortName: 'HazeFocus', subtitle: '让背景淡去，让当前更清晰',
+  image: 'hazefocus-icon.png', platforms: 'macOS 13+', version: '1.0.2', build: '3',
+  tagline: '把注意力，留在当前窗口。',
+  description: ['自动调暗背景窗口，让眼前的工作保持清晰。', '原生菜单栏工具，支持中英文、快捷键与多显示器设置。'],
+  highlights: ['窗口聚焦', '可调强度与颜色', '中英文界面'],
+  detail: 'HazeFocus 是一款原生 macOS 菜单栏专注工具。自动压暗背景，保留当前窗口的原始亮度；可选择单个窗口或当前应用的所有窗口，按自己的习惯调整遮罩强度、颜色和渐变。支持中文与英文，基础模式无需辅助功能权限，授权后可改善窗口追踪。',
+  download: './assets/HazeFocus-1.0.2.dmg', source: 'https://github.com/luchuangao/HazeFocus',
+  support: 'https://github.com/luchuangao/HazeFocus/issues',
+  note: '需要 macOS 13 或更高版本，支持 Apple Silicon 和 Intel。打开 DMG，将 HazeFocus 拖入“应用程序”。当前包使用本地临时签名，尚未 Apple 公证；首次打开可能需要在系统设置中确认来源。没有 App Store 版本。多屏逻辑有测试覆盖，真实多屏硬件仍待验证。',
+  features: [
+    ['窗口聚焦', '在当前窗口与当前应用所有窗口之间选择；背景仍可点击，切换工作无需整理或最小化窗口。'],
+    ['按习惯调节', '调整强度、颜色和渐变时间，为深浅外观分别保存设置，给指定应用添加自动暂停例外。'],
+    ['快捷操作', '使用可自定义的全局快捷键、菜单栏滚动和双击操作；按住 Fn 临时显示其他窗口，松开恢复。'],
+    ['多屏与本地设置', '选择仅突出当前窗口或每屏保留一个窗口，可逐屏关闭遮罩。设置保存在本机，无账号、遥测和网络服务依赖。'],
+  ],
+  screens: [
+    { image: 'hazefocus-focus-zh.png', width: 1720, height: 1300, alt: 'HazeFocus 中文聚焦设置，展示背景调暗预览和强度调节', caption: '聚焦当前窗口，淡去背景干扰' },
+    { image: 'hazefocus-dimming-zh.png', width: 1720, height: 1300, alt: 'HazeFocus 中文遮罩设置，展示颜色、渐变与深浅外观选项', caption: '按习惯调整遮罩与外观' },
+  ],
+  screenNote: '1.0.2 真实中文界面。预览区域为应用自带的效果演示，截图保留原始比例。',
+};
+
+const releasedProducts = [callHome, compound, littlebird, xTracker, zilo, juecha, hazeFocus];
 
 function DownloadLink({ product, t, className = 'primary-button' }) {
   const local = ['unpacked', 'dmg'].includes(product.installMethod);
@@ -190,7 +214,7 @@ function ProductLinks({ product, t, className }) {
   </div>;
 }
 function productStatus(product, t) {
-  return t(product.installMethod === 'unpacked' ? '网站下载 · 手动安装' : product.installMethod === 'dmg' ? '网站下载 · 已公证' : '已发布');
+  return t(product.installMethod === 'unpacked' ? '网站下载 · 手动安装' : product.installMethod === 'dmg' ? (product.notarized === false ? '网站下载 · 未公证' : '网站下载 · 已公证') : '已发布');
 }
 function HeroProducts({ products, onSelect, t, language }) {
   return <div className="hero-products" role="group" aria-label={t('已发布产品速览')}>
@@ -262,7 +286,7 @@ export function App() {
   useEffect(() => {
     document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
     document.title = `luchuangao · ${t('产品与创作')}`;
-    document.querySelector('meta[name="description"]')?.setAttribute('content',language === 'en' ? 'Explore independent apps and tools by luchuangao: Call Home, Compound Calculator, Little Bird Music, X-Tracker, Zilo and Juecha.' : 'luchuangao 的产品与创作空间。探索常回家看看、复利计算器、小小鸟音乐、X-Tracker、Zilo 与觉察。');
+    document.querySelector('meta[name="description"]')?.setAttribute('content',language === 'en' ? 'Explore independent apps and tools by luchuangao: Call Home, Compound Calculator, Little Bird Music, X-Tracker, Zilo, Juecha and HazeFocus.' : 'luchuangao 的产品与创作空间。探索常回家看看、复利计算器、小小鸟音乐、X-Tracker、Zilo、觉察与 HazeFocus。');
     try { localStorage.setItem('luchuangao-language',language); } catch { /* Language switching works without persistent storage. */ }
   }, [language]);
   useEffect(() => {
@@ -303,6 +327,7 @@ export function App() {
         <img className="dialog-product-icon app-icon" src={`./assets/${activeProduct.image}`} alt="" width="88" height="88" /><p className="eyebrow">{activeProduct.platforms} · {productStatus(activeProduct,t)}</p><h2 id="dialog-title">{activeProduct.name}</h2><p className="dialog-description">{activeProduct.detail}</p>
         {showGuide && activeProduct.installMethod === 'unpacked' ? <InstallGuide key={activeProduct.id} product={activeProduct} t={t} /> : <><ul className="detail-features">{activeProduct.features.map(([title,description]) => <li key={title}><strong>{title}</strong><span>{description}</span></li>)}</ul>{activeProduct.previewScreen && <figure className="detail-preview"><img src={`./assets/${activeProduct.previewScreen.image}`} alt={activeProduct.previewScreen.alt} width={activeProduct.previewScreen.width} height={activeProduct.previewScreen.height} loading="lazy" /><figcaption>{t('先预览，再保存 · 演示内容')}</figcaption></figure>}</>}
         {activeProduct.id === 'zilo' && <section className="zilo-detail-screens" aria-label={t('真实界面')}><div className="zilo-mac-gallery">{activeProduct.screens.map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" /><figcaption>{screen.caption}</figcaption></figure>)}</div><h3>{activeProduct.mobileTitle}</h3><p className="learning-note">{activeProduct.mobileNote}</p><div className="zilo-mobile-gallery">{activeProduct.mobileScreens.map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" /><figcaption>{screen.caption}</figcaption></figure>)}</div></section>}
+        {activeProduct.id === 'hazefocus' && <section className="hazefocus-detail-screens" aria-label={t('真实界面')}>{activeProduct.screens.map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" /><figcaption>{screen.caption}</figcaption></figure>)}<p className="learning-note">{activeProduct.screenNote}</p></section>}
         <div className="dialog-actions"><DownloadLink product={activeProduct} t={t} />{activeProduct.installMethod === 'unpacked' && <button className="secondary-button" type="button" onClick={() => setShowGuide(!showGuide)}>{t(showGuide ? '产品介绍' : '安装指南')}</button>}</div><ProductLinks product={activeProduct} t={t} className="support-links" />{activeProduct.note && <p className="learning-note">{activeProduct.note}</p>}
       </>}
     </div></dialog>

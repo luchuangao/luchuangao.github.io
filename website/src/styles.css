@@ -338,3 +338,19 @@ html[lang="en"] .featured-identity h3 { font-size: 23px; }
 .zilo-detail-screens h3 { margin: 28px 0 12px; font-size: 18px; }
 .zilo-mobile-gallery { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; max-width: 380px; margin: 20px auto 0; }
 @media (max-width: 600px) { .featured-zilo .product-screens { max-width: 100%; } .zilo-mobile-gallery { grid-template-columns: 1fr; max-width: 240px; gap: 20px; } }
+
+/* HazeFocus is a real Mac app; preserve the proportions of its desktop captures. */
+.hero-product-hazefocus { grid-column: 2; margin-top: 0; }
+.hero-product-hazefocus .hero-product-visual { animation-delay: -5s; }
+.featured-hazefocus { background: #f3f6fc; }
+.featured-hazefocus .product-screens { grid-template-columns: 1fr; max-width: 560px; gap: 20px; }
+.featured-hazefocus .product-screens figure:last-of-type { padding-top: 0; }
+.featured-hazefocus .product-screens img { border: 1px solid #e2e8f0; border-radius: 8px; }
+.hazefocus-detail-screens { display: grid; gap: 20px; margin: 26px 0; }
+.hazefocus-detail-screens figure { margin: 0; min-width: 0; }
+.hazefocus-detail-screens img { display: block; width: 100%; height: auto; border: 1px solid #e2e8f0; border-radius: 8px; }
+.hazefocus-detail-screens figcaption { margin-top: 8px; font-size: 12px; line-height: 1.6; color: var(--muted); text-align: center; }
+@media (min-width: 761px) and (max-width: 1050px) { .hero-product-hazefocus { grid-column: 1 / -1; } }
+/* Keep the decorative orbit inside the hero as the product grid gains a row. */
+.hero { overflow: clip; }
+.featured-hazefocus .featured-tagline { text-wrap: balance; }
