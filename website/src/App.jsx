@@ -196,7 +196,39 @@ const hazeFocus = {
   screenNote: '1.0.2 真实中文界面。预览区域为应用自带的效果演示，截图保留原始比例。',
 };
 
-const releasedProducts = [callHome, compound, littlebird, xTracker, zilo, juecha, hazeFocus];
+const snapkit = {
+  id: 'snapkit', type: 'app', status: 'released', installMethod: 'dmg', notarized: false,
+  name: 'SnapKit', shortName: 'SnapKit', subtitle: '让窗口，各就各位', image: 'snapkit-icon.png',
+  platforms: 'macOS 13+ · Apple Silicon', version: '1.1.0', build: '3', architecture: 'Apple Silicon',
+  tagline: '一拖一按，桌面就整齐。',
+  description: ['用快捷键、边缘拖拽与网格布局，安排每一个窗口。', '原生 Mac 工具，支持中文和英文，自定义尺寸与触发区域。'],
+  highlights: ['19 条分屏命令', '自定义布局与快捷键', '中英文界面'],
+  detail: 'SnapKit 是一款原生 macOS 窗口管理工具。将窗口排列为半屏、四角、三等分或三分之二，通过菜单栏、快捷键和边缘拖拽调用。还可以在网格中编辑目标尺寸、位置和拖拽触发区。',
+  download: './assets/SnapKit-1.1.0-macOS-arm64.dmg', source: 'https://github.com/luchuangao/SnapKit', support: 'https://github.com/luchuangao/SnapKit/issues',
+  note: '当前为 Apple Silicon 测试版，需要 macOS 13+ 与辅助功能权限。采用临时签名，尚未完成 Apple 公证；首次打开可能需要在系统设置中允许。绿色按钮菜单为实验功能，多屏硬件兼容性仍待进一步验证。不包含 iCloud 同步或自动更新。',
+  features: [
+    ['分屏与还原', '内置半屏、四角、三等分、三分之二、最大化、居中和恢复等命令；使用菜单栏或可录制的快捷键调用。'],
+    ['布局由你定义', '在 24 × 12 网格中选取区域，也可输入精确百分比。添加自己的命令，为它设置快捷键与拖拽触发区域。'],
+    ['拖拽与预览', '拖到边缘，看到目标区域后松开吸附。调整触发延迟、预览外观、窗口间距和屏幕外边距；按住 Option 临时取消吸附。'],
+    ['原生与双语', '采用 Swift、AppKit 与 SwiftUI，无第三方应用依赖。可在设置中选择中文或英文，并忽略指定应用。设置保存在本机。'],
+  ],
+  screens: [
+    { image: 'snapkit-commands-zh.png', width: 1680, height: 1504, alt: 'SnapKit 1.1.0 中文命令界面，展示左半屏网格、快捷键和拖拽触发区', caption: '用网格，定义窗口的位置' },
+    { image: 'snapkit-general-zh.png', width: 1680, height: 1504, alt: 'SnapKit 1.1.0 中文通用设置，展示语言选择、快捷键、边缘吸附与间距', caption: '把分屏方式，调成自己的习惯' },
+  ],
+  cardScreenCount: 1,
+  screenNote: '1.1.0 真实中文界面 · 从运行中的 App 导出窗口，保持原始比例。',
+  installation: [
+    ['下载并打开 DMG', '下载 Apple Silicon 版安装镜像，在 Mac 上打开。当前需要 macOS 13 或更高版本。'],
+    ['拖入“应用程序”', '将 SnapKit 拖到 Applications，再从“应用程序”打开。更新前先退出旧版本，并替换应用。'],
+    ['按系统提示允许打开', '此构建尚未完成 Apple 公证。如 macOS 拦截，请按系统设置 → 隐私与安全性中的提示允许打开。'],
+    ['授予辅助功能权限', '在系统设置 → 隐私与安全性 → 辅助功能中添加并开启 SnapKit，随后通过菜单栏或快捷键排列窗口。'],
+    ['选择界面语言', '在 SnapKit 设置 → 通用 → 语言中，选择简体中文、English 或跟随系统。'],
+  ],
+  permissionNotes: ['辅助功能权限用于读取窗口位置与尺寸，并执行移动和缩放。不能调整某些非标准窗口，应用自己的最小尺寸也可能限制分屏。', '设置保存在本机；当前没有 iCloud 同步或自动更新器。绿色按钮菜单默认关闭，作为实验功能提供。'],
+};
+
+const releasedProducts = [callHome, compound, littlebird, xTracker, zilo, juecha, hazeFocus, snapkit];
 
 function DownloadLink({ product, t, className = 'primary-button' }) {
   const local = ['unpacked', 'dmg'].includes(product.installMethod);
@@ -214,7 +246,7 @@ function ProductLinks({ product, t, className }) {
   </div>;
 }
 function productStatus(product, t) {
-  return t(product.installMethod === 'unpacked' ? '网站下载 · 手动安装' : product.installMethod === 'dmg' ? (product.notarized === false ? '网站下载 · 未公证' : '网站下载 · 已公证') : '已发布');
+  return t(product.installMethod === 'unpacked' ? '网站下载 · 手动安装' : product.installMethod === 'dmg' ? (product.notarized === false ? (product.id === 'snapkit' ? '网站下载 · 测试版' : '网站下载 · 未公证') : '网站下载 · 已公证') : '已发布');
 }
 function HeroProducts({ products, onSelect, t, language }) {
   return <div className="hero-products" role="group" aria-label={t('已发布产品速览')}>
@@ -233,14 +265,24 @@ function FeaturedProduct({ product, onSelect, onGuide, index, t }) {
       <p className="featured-tagline">{product.tagline}</p>
       <p className="featured-description">{product.description.map(line => <span key={line}>{line}</span>)}</p>
       <ul className="product-highlights" aria-label={`${product.shortName} ${t('功能')}`}>{product.highlights.map(item => <li key={item}>{item}</li>)}</ul>
-      <div className="featured-actions"><DownloadLink product={product} t={t} /><button className="secondary-button" type="button" aria-haspopup="dialog" onClick={() => onSelect(product)}>{t('了解更多')}<ArrowRightIcon size={20} aria-hidden="true" /></button>{product.installMethod === 'unpacked' && <button className="secondary-button" type="button" aria-haspopup="dialog" onClick={() => onGuide(product)}>{t('安装指南')}</button>}</div>
-      {product.version && <p className="download-meta">v{product.version}{product.installMethod === 'unpacked' ? ` · ${t('需开启开发者模式')}` : product.build ? ` · ${t('构建')} ${product.build} · ${t('通用架构')}` : ''}</p>}
+      <div className="featured-actions"><DownloadLink product={product} t={t} /><button className="secondary-button" type="button" aria-haspopup="dialog" onClick={() => onSelect(product)}>{t('了解更多')}<ArrowRightIcon size={20} aria-hidden="true" /></button>{(product.installMethod === 'unpacked' || product.installation) && <button className="secondary-button" type="button" aria-haspopup="dialog" onClick={() => onGuide(product)}>{t('安装指南')}</button>}</div>
+      {product.version && <p className="download-meta">v{product.version}{product.installMethod === 'unpacked' ? ` · ${t('需开启开发者模式')}` : product.build ? ` · ${t('构建')} ${product.build} · ${t(product.architecture || '通用架构')}` : ''}</p>}
       <ProductLinks product={product} t={t} className="card-support-links" />
     </div>
-    <div className="product-screens" aria-label={`${product.shortName} ${t('真实界面')}`}>{product.screens.map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" decoding="async" /><figcaption>{screen.caption}</figcaption></figure>)}{product.screenNote && <p className="screen-note">{product.screenNote}</p>}</div>
+    <div className="product-screens" aria-label={`${product.shortName} ${t('真实界面')}`}>{product.screens.slice(0,product.cardScreenCount ?? product.screens.length).map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" decoding="async" /><figcaption>{screen.caption}</figcaption></figure>)}{product.screenNote && <p className="screen-note">{product.screenNote}</p>}</div>
   </article>;
 }
-function InstallGuide({ product, t }) {
+function MacInstallGuide({ product, t }) {
+  return <section className="install-guide" aria-labelledby="install-title">
+    <h3 id="install-title">{t('Mac 安装指南')}</h3>
+    <ol className="install-steps">{product.installation.map(([title,description]) => <li key={title}><strong>{title}</strong><span>{description}</span></li>)}</ol>
+    <details className="install-notes"><summary>{t('系统权限与兼容性')}</summary>{product.permissionNotes.map(note => <p key={note}>{note}</p>)}</details>
+  </section>;
+}
+function InstallGuide(props) {
+  return props.product.installMethod === 'dmg' ? <MacInstallGuide {...props} /> : <ExtensionInstallGuide {...props} />;
+}
+function ExtensionInstallGuide({ product, t }) {
   const [copyResult, setCopyResult] = useState('');
   async function copyAddress() { try { await navigator.clipboard.writeText('chrome://extensions'); setCopyResult('已复制，粘贴到 Chrome 地址栏即可。'); } catch { setCopyResult('未能复制，请手动复制上方地址。'); } }
   return <section className="install-guide" aria-labelledby="install-title">
@@ -286,7 +328,7 @@ export function App() {
   useEffect(() => {
     document.documentElement.lang = language === 'en' ? 'en' : 'zh-CN';
     document.title = `luchuangao · ${t('产品与创作')}`;
-    document.querySelector('meta[name="description"]')?.setAttribute('content',language === 'en' ? 'Explore independent apps and tools by luchuangao: Call Home, Compound Calculator, Little Bird Music, X-Tracker, Zilo, Juecha and HazeFocus.' : 'luchuangao 的产品与创作空间。探索常回家看看、复利计算器、小小鸟音乐、X-Tracker、Zilo、觉察与 HazeFocus。');
+    document.querySelector('meta[name="description"]')?.setAttribute('content',language === 'en' ? 'Explore independent apps and tools by luchuangao: Call Home, Compound Calculator, Little Bird Music, X-Tracker, Zilo, Juecha, HazeFocus and SnapKit.' : 'luchuangao 的产品与创作空间。探索常回家看看、复利计算器、小小鸟音乐、X-Tracker、Zilo、觉察、HazeFocus 与 SnapKit。');
     try { localStorage.setItem('luchuangao-language',language); } catch { /* Language switching works without persistent storage. */ }
   }, [language]);
   useEffect(() => {
@@ -325,10 +367,11 @@ export function App() {
     <dialog ref={dialogRef} className="detail-dialog" onKeyDown={trapDialogFocus} aria-labelledby="dialog-title" onCancel={() => setActive(null)} onClose={() => setActive(null)} onClick={event => {if(event.target === dialogRef.current) setActive(null);}}><div className="dialog-inner"><button className="close-button" type="button" aria-label={t('关闭详情')} onClick={() => setActive(null)}><XIcon size={22} aria-hidden="true" /></button>
       {active === 'about' ? <><p className="eyebrow">{t('关于我')}</p><h2 id="dialog-title">{t('你好，我是 luchuangao。')}</h2><p className="dialog-description">{t('这里是我的产品与创作空间。')}<br />{t('把想法，做成好用的产品。')}</p><a className="primary-button" href="https://github.com/luchuangao" target="_blank" rel="noopener noreferrer"><GithubLogoIcon size={22} aria-hidden="true" />{t('访问 GitHub')}<span className="sr-only">{t('（在新标签页打开）')}</span></a></> : activeProduct && <>
         <img className="dialog-product-icon app-icon" src={`./assets/${activeProduct.image}`} alt="" width="88" height="88" /><p className="eyebrow">{activeProduct.platforms} · {productStatus(activeProduct,t)}</p><h2 id="dialog-title">{activeProduct.name}</h2><p className="dialog-description">{activeProduct.detail}</p>
-        {showGuide && activeProduct.installMethod === 'unpacked' ? <InstallGuide key={activeProduct.id} product={activeProduct} t={t} /> : <><ul className="detail-features">{activeProduct.features.map(([title,description]) => <li key={title}><strong>{title}</strong><span>{description}</span></li>)}</ul>{activeProduct.previewScreen && <figure className="detail-preview"><img src={`./assets/${activeProduct.previewScreen.image}`} alt={activeProduct.previewScreen.alt} width={activeProduct.previewScreen.width} height={activeProduct.previewScreen.height} loading="lazy" /><figcaption>{t('先预览，再保存 · 演示内容')}</figcaption></figure>}</>}
-        {activeProduct.id === 'zilo' && <section className="zilo-detail-screens" aria-label={t('真实界面')}><div className="zilo-mac-gallery">{activeProduct.screens.map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" /><figcaption>{screen.caption}</figcaption></figure>)}</div><h3>{activeProduct.mobileTitle}</h3><p className="learning-note">{activeProduct.mobileNote}</p><div className="zilo-mobile-gallery">{activeProduct.mobileScreens.map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" /><figcaption>{screen.caption}</figcaption></figure>)}</div></section>}
+        {showGuide && (activeProduct.installMethod === 'unpacked' || activeProduct.installation) ? <InstallGuide key={activeProduct.id} product={activeProduct} t={t} /> : <><ul className="detail-features">{activeProduct.features.map(([title,description]) => <li key={title}><strong>{title}</strong><span>{description}</span></li>)}</ul>{activeProduct.previewScreen && <figure className="detail-preview"><img src={`./assets/${activeProduct.previewScreen.image}`} alt={activeProduct.previewScreen.alt} width={activeProduct.previewScreen.width} height={activeProduct.previewScreen.height} loading="lazy" /><figcaption>{t('先预览，再保存 · 演示内容')}</figcaption></figure>}</>}
         {activeProduct.id === 'hazefocus' && <section className="hazefocus-detail-screens" aria-label={t('真实界面')}>{activeProduct.screens.map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" /><figcaption>{screen.caption}</figcaption></figure>)}<p className="learning-note">{activeProduct.screenNote}</p></section>}
-        <div className="dialog-actions"><DownloadLink product={activeProduct} t={t} />{activeProduct.installMethod === 'unpacked' && <button className="secondary-button" type="button" onClick={() => setShowGuide(!showGuide)}>{t(showGuide ? '产品介绍' : '安装指南')}</button>}</div><ProductLinks product={activeProduct} t={t} className="support-links" />{activeProduct.note && <p className="learning-note">{activeProduct.note}</p>}
+        {activeProduct.id === 'snapkit' && !showGuide && <section className="snapkit-detail-screens" aria-label={t('真实界面')}>{activeProduct.screens.map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" /><figcaption>{screen.caption}</figcaption></figure>)}</section>}
+        {activeProduct.id === 'zilo' && <section className="zilo-detail-screens" aria-label={t('真实界面')}><div className="zilo-mac-gallery">{activeProduct.screens.map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" /><figcaption>{screen.caption}</figcaption></figure>)}</div><h3>{activeProduct.mobileTitle}</h3><p className="learning-note">{activeProduct.mobileNote}</p><div className="zilo-mobile-gallery">{activeProduct.mobileScreens.map(screen => <figure key={screen.image}><img src={`./assets/${screen.image}`} alt={screen.alt} width={screen.width} height={screen.height} loading="lazy" /><figcaption>{screen.caption}</figcaption></figure>)}</div></section>}
+        <div className="dialog-actions"><DownloadLink product={activeProduct} t={t} />{(activeProduct.installMethod === 'unpacked' || activeProduct.installation) && <button className="secondary-button" type="button" onClick={() => setShowGuide(!showGuide)}>{t(showGuide ? '产品介绍' : '安装指南')}</button>}</div><ProductLinks product={activeProduct} t={t} className="support-links" />{activeProduct.note && <p className="learning-note">{activeProduct.note}</p>}
       </>}
     </div></dialog>
   </>;

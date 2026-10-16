@@ -14,6 +14,8 @@ export const translations = {
     '已发布': 'Available now', '网站下载 · 手动安装': 'Website download · Manual install',
     '网站下载 · 已公证': 'Website download · Notarized',
     '网站下载 · 未公证': 'Website download · Not notarized',
+    '网站下载 · 测试版': 'Website download · Beta',
+    'Mac 安装指南': 'Mac installation guide', '系统权限与兼容性': 'Permissions & compatibility',
     'App Store 下载': 'View on App Store', '下载插件 ZIP': 'Download extension ZIP',
     '下载 Mac 版 DMG': 'Download for Mac', '了解更多': 'Learn more', '安装指南': 'Install guide',
     '产品介绍': 'Product overview', '问题反馈': 'Feedback', '产品支持': 'Support',
@@ -71,6 +73,33 @@ export const productEnglish = {
       { image: 'hazefocus-dimming-en.png', width: 1720, height: 1300, alt: 'English HazeFocus dimming settings with color, fade duration and appearance options', caption: 'Tune dimming to your workflow' },
     ],
     screenNote: 'Actual English interface in version 1.0.2. The preview area is an in-app demonstration. Original screenshot proportions are preserved.',
+  },
+
+  snapkit: {
+    name: 'SnapKit', shortName: 'SnapKit', subtitle: 'Windows, in place.', tagline: 'A shortcut to a calmer desktop.',
+    description: ['Arrange windows with shortcuts, edge snapping and an editable layout grid.', 'A native Mac utility with Chinese and English interfaces, custom sizes and activation areas.'],
+    highlights: ['19 window commands', 'Custom layouts & shortcuts', 'Chinese & English'],
+    detail: 'SnapKit is a native macOS window manager. Arrange windows into halves, quarters, thirds or two-thirds from the menu bar, keyboard shortcuts or screen edges. Edit target sizes, positions and drag activation areas in a visual grid.',
+    note: 'Apple Silicon beta for macOS 13+. Accessibility access is required. This build is ad-hoc signed and not Apple-notarized; macOS may require approval before opening. The green-button menu is experimental and broader multi-monitor hardware testing remains outstanding. No iCloud sync or automatic updater.',
+    features: [
+      ['Arrange & restore', 'Built-in halves, quarters, thirds, two-thirds, maximize, center and restore commands. Use the menu bar or record your own shortcuts.'],
+      ['Layouts of your own', 'Select an area in a 24 × 12 grid or enter exact percentages. Add custom commands with their own shortcuts and drag activation regions.'],
+      ['Drag & preview', 'Drag toward an edge, preview the target and release to snap. Adjust delays, preview appearance, spacing and screen margins. Hold Option to bypass snapping.'],
+      ['Native & bilingual', 'Built with Swift, AppKit and SwiftUI, with no third-party app dependencies. Choose Chinese or English and exclude selected apps. Preferences stay on your Mac.'],
+    ],
+    screens: [
+      { image: 'snapkit-commands-en.png', width: 1680, height: 1504, alt: 'English SnapKit 1.1.0 command editor showing the left-half grid, shortcut and drag activation area', caption: 'Give each window its place' },
+      { image: 'snapkit-general-en.png', width: 1680, height: 1504, alt: 'English SnapKit 1.1.0 general settings with language selection, shortcuts, snapping and spacing', caption: 'Make window management your own' },
+    ],
+    screenNote: 'Actual English interface · v1.1.0. Exported from the running app at its original proportions.',
+    installation: [
+      ['Download and open the DMG', 'Download the Apple Silicon disk image and open it on a Mac running macOS 13 or later.'],
+      ['Drag to Applications', 'Drag SnapKit into Applications, then open it from there. Quit an older version before replacing it.'],
+      ['Follow macOS approval prompts', 'This build is not Apple-notarized. If macOS blocks it, follow the approval prompts in System Settings → Privacy & Security.'],
+      ['Allow Accessibility access', 'Add and enable SnapKit in System Settings → Privacy & Security → Accessibility. Then use the menu bar or shortcuts to arrange windows.'],
+      ['Choose your language', 'In SnapKit Settings → General → Language, choose English, Simplified Chinese or System default.'],
+    ],
+    permissionNotes: ['Accessibility access lets SnapKit read window geometry and move or resize windows. Nonstandard windows and application minimum-size limits may prevent a layout from fitting exactly.', 'Preferences stay on your Mac. No iCloud sync or automatic updater is included. The experimental green-button menu is off by default.'],
   },
 
   callhome: {
@@ -141,7 +170,7 @@ export const classification = {
   callhome: { platform: 'ios', category: 'care' }, compound: { platform: 'ios', category: 'finance' },
   littlebird: { platform: 'ios', category: 'music' }, 'x-tracker': { platform: 'chrome', category: 'reading' },
   hazefocus: { platform: 'mac', category: 'focus' },
-  zilo: { platform: 'mac', category: 'focus' }, juecha: { platform: 'ios', category: 'focus' },
+  snapkit: { platform: 'mac', category: 'focus' }, zilo: { platform: 'mac', category: 'focus' }, juecha: { platform: 'ios', category: 'focus' },
 };
 export const platformFilters = [['all', '全部'], ['ios', 'iPhone / iPad'], ['mac', 'Mac'], ['chrome', 'Chrome 插件']];
 export const categoryFilters = [['all', '全部用途'], ['care', '生活关怀'], ['finance', '财务规划'], ['music', '音乐'], ['focus', '效率与专注'], ['reading', '浏览与阅读']];

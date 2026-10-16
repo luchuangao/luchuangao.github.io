@@ -354,3 +354,18 @@ html[lang="en"] .featured-identity h3 { font-size: 23px; }
 /* Keep the decorative orbit inside the hero as the product grid gains a row. */
 .hero { overflow: clip; }
 .featured-hazefocus .featured-tagline { text-wrap: balance; }
+
+/* SnapKit keeps its real desktop aspect ratio, with both language-specific views in details. */
+.hero-product-snapkit { grid-column: 2; margin-top: 0; }
+.hero-product-snapkit .hero-product-visual { animation-delay: -2.5s; }
+.hero-products:has(.hero-product-snapkit) .hero-orbit { inset: 12% 6% 15%; transform: rotate(-10deg); }
+.featured-snapkit { background: #f0f6ff; }
+.featured-snapkit .product-screens { grid-template-columns: 1fr; max-width: 500px; }
+.featured-snapkit .product-screens img, .snapkit-detail-screens img { border-radius: 8px; border: 1px solid #dce6f5; }
+.snapkit-detail-screens { display: grid; gap: 20px; margin: 25px 0; }
+.snapkit-detail-screens figure { margin: 0; min-width: 0; }
+.snapkit-detail-screens img { display: block; width: 100%; height: auto; }
+.snapkit-detail-screens figcaption { color: #667085; font-size: 12px; line-height: 1.6; text-align: center; margin-top: 8px; }
+@media (max-width: 1050px) { .hero-product-snapkit { grid-column: auto; margin-top: 0; } }
+
+.hero-products:has(.hero-product-snapkit) .hero-product-hazefocus { grid-column: auto; }
