@@ -199,12 +199,12 @@ const hazeFocus = {
 const snapkit = {
   id: 'snapkit', type: 'app', status: 'released', installMethod: 'dmg', notarized: true,
   name: 'SnapKit', shortName: 'SnapKit', subtitle: '让窗口，各就各位', image: 'snapkit-icon.png',
-  platforms: 'macOS 13+ · Apple Silicon', version: '1.1.1', build: '4', architecture: 'Apple Silicon',
+  platforms: 'macOS 13+ · Apple Silicon', version: '1.1.2', build: '5', architecture: 'Apple Silicon',
   tagline: '一拖一按，桌面就整齐。',
   description: ['用快捷键、边缘拖拽与网格布局，安排每一个窗口。', '原生 Mac 工具，支持中文和英文，自定义尺寸与触发区域。'],
   highlights: ['19 条分屏命令', '自定义布局与快捷键', '中英文界面'],
   detail: 'SnapKit 是一款原生 macOS 窗口管理工具。将窗口排列为半屏、四角、三等分或三分之二，通过菜单栏、快捷键和边缘拖拽调用。还可以在网格中编辑目标尺寸、位置和拖拽触发区。',
-  download: './assets/SnapKit-1.1.1-macOS-arm64.dmg', source: 'https://github.com/luchuangao/SnapKit', support: 'https://github.com/luchuangao/SnapKit/issues',
+  download: './assets/SnapKit-1.1.2-macOS-arm64.dmg', source: 'https://github.com/luchuangao/SnapKit', support: 'https://github.com/luchuangao/SnapKit/issues',
   note: '当前为 Apple Silicon 测试版，需要 macOS 13+ 与辅助功能权限。已使用 Developer ID 签名并通过 Apple 公证，App 附有公证票据。绿色按钮菜单为实验功能，多屏硬件兼容性仍待进一步验证。不包含 iCloud 同步或自动更新。',
   features: [
     ['分屏与还原', '内置半屏、四角、三等分、三分之二、最大化、居中和恢复等命令；使用菜单栏或可录制的快捷键调用。'],
