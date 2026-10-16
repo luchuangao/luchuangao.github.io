@@ -80,7 +80,7 @@ export const productEnglish = {
     description: ['Arrange windows with shortcuts, edge snapping and an editable layout grid.', 'A native Mac utility with Chinese and English interfaces, custom sizes and activation areas.'],
     highlights: ['19 window commands', 'Custom layouts & shortcuts', 'Chinese & English'],
     detail: 'SnapKit is a native macOS window manager. Arrange windows into halves, quarters, thirds or two-thirds from the menu bar, keyboard shortcuts or screen edges. Edit target sizes, positions and drag activation areas in a visual grid.',
-    note: 'Apple Silicon beta for macOS 13+. Accessibility access is required. This build is ad-hoc signed and not Apple-notarized; macOS may require approval before opening. The green-button menu is experimental and broader multi-monitor hardware testing remains outstanding. No iCloud sync or automatic updater.',
+    note: 'Apple Silicon beta for macOS 13+. Accessibility access is required. This build is Developer ID signed and Apple-notarized, with the ticket stapled to the app. The green-button menu is experimental and broader multi-monitor hardware testing remains outstanding. No iCloud sync or automatic updater.',
     features: [
       ['Arrange & restore', 'Built-in halves, quarters, thirds, two-thirds, maximize, center and restore commands. Use the menu bar or record your own shortcuts.'],
       ['Layouts of your own', 'Select an area in a 24 × 12 grid or enter exact percentages. Add custom commands with their own shortcuts and drag activation regions.'],
@@ -88,14 +88,14 @@ export const productEnglish = {
       ['Native & bilingual', 'Built with Swift, AppKit and SwiftUI, with no third-party app dependencies. Choose Chinese or English and exclude selected apps. Preferences stay on your Mac.'],
     ],
     screens: [
-      { image: 'snapkit-commands-en.png', width: 1680, height: 1504, alt: 'English SnapKit 1.1.0 command editor showing the left-half grid, shortcut and drag activation area', caption: 'Give each window its place' },
-      { image: 'snapkit-general-en.png', width: 1680, height: 1504, alt: 'English SnapKit 1.1.0 general settings with language selection, shortcuts, snapping and spacing', caption: 'Make window management your own' },
+      { image: 'snapkit-commands-en.png', width: 1680, height: 1504, alt: 'English SnapKit 1.1.1 command editor showing the left-half grid, shortcut and drag activation area', caption: 'Give each window its place' },
+      { image: 'snapkit-general-en.png', width: 1680, height: 1504, alt: 'English SnapKit 1.1.1 general settings with language selection, shortcuts, snapping and spacing', caption: 'Make window management your own' },
     ],
-    screenNote: 'Actual English interface · v1.1.0. Exported from the running app at its original proportions.',
+    screenNote: 'Actual English interface · v1.1.1. Exported from the running app at its original proportions.',
     installation: [
       ['Download and open the DMG', 'Download the Apple Silicon disk image and open it on a Mac running macOS 13 or later.'],
       ['Drag to Applications', 'Drag SnapKit into Applications, then open it from there. Quit an older version before replacing it.'],
-      ['Follow macOS approval prompts', 'This build is not Apple-notarized. If macOS blocks it, follow the approval prompts in System Settings → Privacy & Security.'],
+      ['Open SnapKit', 'This version is Apple-notarized. Confirm the macOS download prompt on first launch. Accessibility access is still required for window management.'],
       ['Allow Accessibility access', 'Add and enable SnapKit in System Settings → Privacy & Security → Accessibility. Then use the menu bar or shortcuts to arrange windows.'],
       ['Choose your language', 'In SnapKit Settings → General → Language, choose English, Simplified Chinese or System default.'],
     ],

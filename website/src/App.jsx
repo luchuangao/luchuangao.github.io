@@ -197,15 +197,15 @@ const hazeFocus = {
 };
 
 const snapkit = {
-  id: 'snapkit', type: 'app', status: 'released', installMethod: 'dmg', notarized: false,
+  id: 'snapkit', type: 'app', status: 'released', installMethod: 'dmg', notarized: true,
   name: 'SnapKit', shortName: 'SnapKit', subtitle: '让窗口，各就各位', image: 'snapkit-icon.png',
-  platforms: 'macOS 13+ · Apple Silicon', version: '1.1.0', build: '3', architecture: 'Apple Silicon',
+  platforms: 'macOS 13+ · Apple Silicon', version: '1.1.1', build: '4', architecture: 'Apple Silicon',
   tagline: '一拖一按，桌面就整齐。',
   description: ['用快捷键、边缘拖拽与网格布局，安排每一个窗口。', '原生 Mac 工具，支持中文和英文，自定义尺寸与触发区域。'],
   highlights: ['19 条分屏命令', '自定义布局与快捷键', '中英文界面'],
   detail: 'SnapKit 是一款原生 macOS 窗口管理工具。将窗口排列为半屏、四角、三等分或三分之二，通过菜单栏、快捷键和边缘拖拽调用。还可以在网格中编辑目标尺寸、位置和拖拽触发区。',
-  download: './assets/SnapKit-1.1.0-macOS-arm64.dmg', source: 'https://github.com/luchuangao/SnapKit', support: 'https://github.com/luchuangao/SnapKit/issues',
-  note: '当前为 Apple Silicon 测试版，需要 macOS 13+ 与辅助功能权限。采用临时签名，尚未完成 Apple 公证；首次打开可能需要在系统设置中允许。绿色按钮菜单为实验功能，多屏硬件兼容性仍待进一步验证。不包含 iCloud 同步或自动更新。',
+  download: './assets/SnapKit-1.1.1-macOS-arm64.dmg', source: 'https://github.com/luchuangao/SnapKit', support: 'https://github.com/luchuangao/SnapKit/issues',
+  note: '当前为 Apple Silicon 测试版，需要 macOS 13+ 与辅助功能权限。已使用 Developer ID 签名并通过 Apple 公证，App 附有公证票据。绿色按钮菜单为实验功能，多屏硬件兼容性仍待进一步验证。不包含 iCloud 同步或自动更新。',
   features: [
     ['分屏与还原', '内置半屏、四角、三等分、三分之二、最大化、居中和恢复等命令；使用菜单栏或可录制的快捷键调用。'],
     ['布局由你定义', '在 24 × 12 网格中选取区域，也可输入精确百分比。添加自己的命令，为它设置快捷键与拖拽触发区域。'],
@@ -213,15 +213,15 @@ const snapkit = {
     ['原生与双语', '采用 Swift、AppKit 与 SwiftUI，无第三方应用依赖。可在设置中选择中文或英文，并忽略指定应用。设置保存在本机。'],
   ],
   screens: [
-    { image: 'snapkit-commands-zh.png', width: 1680, height: 1504, alt: 'SnapKit 1.1.0 中文命令界面，展示左半屏网格、快捷键和拖拽触发区', caption: '用网格，定义窗口的位置' },
-    { image: 'snapkit-general-zh.png', width: 1680, height: 1504, alt: 'SnapKit 1.1.0 中文通用设置，展示语言选择、快捷键、边缘吸附与间距', caption: '把分屏方式，调成自己的习惯' },
+    { image: 'snapkit-commands-zh.png', width: 1680, height: 1504, alt: 'SnapKit 1.1.1 中文命令界面，展示左半屏网格、快捷键和拖拽触发区', caption: '用网格，定义窗口的位置' },
+    { image: 'snapkit-general-zh.png', width: 1680, height: 1504, alt: 'SnapKit 1.1.1 中文通用设置，展示语言选择、快捷键、边缘吸附与间距', caption: '把分屏方式，调成自己的习惯' },
   ],
   cardScreenCount: 1,
-  screenNote: '1.1.0 真实中文界面 · 从运行中的 App 导出窗口，保持原始比例。',
+  screenNote: '1.1.1 真实中文界面 · 从运行中的 App 导出窗口，保持原始比例。',
   installation: [
     ['下载并打开 DMG', '下载 Apple Silicon 版安装镜像，在 Mac 上打开。当前需要 macOS 13 或更高版本。'],
     ['拖入“应用程序”', '将 SnapKit 拖到 Applications，再从“应用程序”打开。更新前先退出旧版本，并替换应用。'],
-    ['按系统提示允许打开', '此构建尚未完成 Apple 公证。如 macOS 拦截，请按系统设置 → 隐私与安全性中的提示允许打开。'],
+    ['打开 SnapKit', '此版本已通过 Apple 公证。首次启动时确认 macOS 的下载提示；分屏功能仍需要授予辅助功能权限。'],
     ['授予辅助功能权限', '在系统设置 → 隐私与安全性 → 辅助功能中添加并开启 SnapKit，随后通过菜单栏或快捷键排列窗口。'],
     ['选择界面语言', '在 SnapKit 设置 → 通用 → 语言中，选择简体中文、English 或跟随系统。'],
   ],
